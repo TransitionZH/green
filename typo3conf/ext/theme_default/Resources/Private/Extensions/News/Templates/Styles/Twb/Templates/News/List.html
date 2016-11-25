@@ -1,0 +1,50 @@
+{namespace n=GeorgRinger\News\ViewHelpers}
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+      <f:switch expression="{settings.templateLayout}">
+        <f:case value="99">          
+          <div class="row news-list-99 imageBoxes clearfix" data-equalizer data-equalizer-mq="large-up">
+            <div class="small-12 text-right paddingRight">
+              <h3>{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:title.news')}</h3>
+            </div>
+            <f:for each="{news}" as="newsItem" iteration="iterator">
+              <f:render partial="List/Item99" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+            </f:for>
+          </div>
+        </f:case>
+        <f:case default="true">
+          <div class="row news-list-view">
+            <f:if condition="{settings.hidePagination}">
+              <f:then>
+                <f:for each="{news}" as="newsItem" iteration="iterator">
+                  <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                </f:for>
+              </f:then>
+              <f:else>
+                <n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+                  <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                    <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                  </f:for>
+                </n:widget.paginate>
+              </f:else>
+            </f:if>
+          </div>
+        </f:case>
+      </f:switch>			
+		</f:then>
+		<f:else>
+			<div class="alert ">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>

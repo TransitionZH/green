@@ -1,0 +1,112 @@
+#pageContent {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+#pageContent article.section:not(.colPos4) {
+  margin-bottom: 60px;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn {
+  width: 100%;
+  margin-right: 0;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn {
+  width: 48%;
+  margin-right: 2%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn {
+  width: 31%;
+  margin-right: 3.495%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn {
+  width: 23%;
+  margin-right: 2.667%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn {
+  width: 18%;
+  margin-right: 2.5%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn {
+  width: 14%;
+  margin-right: 3.2%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap {
+  width: 100%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap .csc-textpic-imagerow,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap .csc-textpic-imagerow,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap .csc-textpic-imagerow {
+  max-width: 100%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-imagecolumn .csc-textpic-image,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-imagecolumn .csc-textpic-image,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-imagecolumn .csc-textpic-image {
+  display: block;
+  margin-bottom: 9%;
+}
+#pageContent article.section .csc-textpic-center div.csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-imagecolumn.csc-textpic-lastcol,
+#pageContent article.section .csc-textpic-right div.csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-imagecolumn.csc-textpic-lastcol,
+#pageContent article.section .csc-textpic-left div.csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-imagecolumn.csc-textpic-lastcol {
+  margin-right: 0;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap[data-csc-cols="1"] .csc-textpic-imagecolumn {
+  width: 100%;
+  margin-right: 0;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap[data-csc-cols="2"] .csc-textpic-imagecolumn {
+  width: 48%;
+  margin-right: 2%;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap[data-csc-cols="3"] .csc-textpic-imagecolumn {
+  width: 31%;
+  margin-right: 3.495%;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap[data-csc-cols="4"] .csc-textpic-imagecolumn {
+  width: 23%;
+  margin-right: 2.667%;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap[data-csc-cols="5"] .csc-textpic-imagecolumn {
+  width: 18%;
+  margin-right: 2.5%;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap[data-csc-cols="6"] .csc-textpic-imagecolumn {
+  width: 14%;
+  margin-right: 3.2%;
+}
+#pageContent article.section .csc-textpic-intext-left div.csc-textpic-imagewrap,
+#pageContent article.section .csc-textpic-intext-right div.csc-textpic-imagewrap,
+#pageContent article.section .csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap,
+#pageContent article.section .csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap {
+  max-width: 50%;
+}

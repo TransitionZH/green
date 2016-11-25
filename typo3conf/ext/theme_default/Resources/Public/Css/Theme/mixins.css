@@ -1,0 +1,6 @@
+/*.generate-max-width(@n, @i: 10) when (@i =< @n) {
+	.max-width-@{i} {
+		max-width: (@i * 100% / @n);
+	}
+	.generate-max-width(@n, (@i + 10));
+}*/

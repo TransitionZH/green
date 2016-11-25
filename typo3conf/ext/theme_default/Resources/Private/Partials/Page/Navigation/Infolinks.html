@@ -1,0 +1,30 @@
+<ul class="clearfix">
+  <f:for each="{infonavigation}" as="infonavigationItem">
+      <li class="{f:if(condition: infonavigationItem.active, then:'active')} {f:if(condition: infonavigationItem.children, then:'dropdown')}">
+          <f:if condition="{infonavigationItem.children}">
+              <f:then>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      {infonavigationItem.title}
+                      <b class="caret"></b>
+                      <span class="bar"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <f:for each="{infonavigationItem.children}" as="child">
+                          <li class="{f:if(condition: child.active, then:'active')}">
+                              <f:link.page pageUid="{child.data.uid}" title="{child.title}">
+                                  {child.title}
+                              </f:link.page>
+                          </li>
+                      </f:for>
+                  </ul>
+              </f:then>
+              <f:else>
+                  <f:link.page pageUid="{infonavigationItem.data.uid}" title="{infonavigationItem.title}">
+                      {infonavigationItem.title}
+                      <span class="bar"></span>
+                  </f:link.page>
+              </f:else>
+          </f:if>
+      </li>
+  </f:for>
+</ul>

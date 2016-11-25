@@ -1,0 +1,26 @@
+<f:layout name="Default"/>
+<f:section name="Main">
+  <div class="container" id="pageContent">				
+     <div class="row">
+        <main class="col-xs-12" role="main">
+          <div class="row">
+            <div class="col-xs-12 margin-bottom">
+              <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-xs-12 teaser-home" data-mh="teaser-home">
+              <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '20'}"/>
+            </div>
+            <div class="col-sm-4 col-xs-12 teaser-home" data-mh="teaser-home">
+              <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '21'}"/>
+            </div>
+            <div class="col-sm-4 col-xs-12 teaser-home" data-mh="teaser-home">
+              <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '22'}"/>
+            </div>
+          </div>
+        </main>
+        
+    </div>
+  </div>
+</f:section>

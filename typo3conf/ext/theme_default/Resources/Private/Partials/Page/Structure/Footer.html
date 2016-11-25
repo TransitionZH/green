@@ -1,0 +1,31 @@
+<footer class="footerWrapper" id="pageFooter">
+  <div class="container">
+    <div class="row"> 
+      <f:if condition="{showFooter}">
+        <address id="pageAddress" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '11', colPos: '0'}"/>
+        </address>
+      </f:if>
+      <f:if condition="{showMeta}">
+        <nav id="navInfo" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-print"><f:render partial="Navigation/Infolinks" arguments="{_all}"/></nav>
+      </f:if>
+    </div>
+  </div>
+</footer>
+  
+  
+  
+<f:comment>
+  
+    <footer id="pageFooter" class="clearfix">
+      <div class="container">
+        <div class="row">
+          <address id="pageAddress" class="col-lg-8 col-md-8 col-sm-12 col-xs-12"><f:format.raw>{address}</f:format.raw></address>
+          <nav id="navService" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-print">
+            <f:format.raw>{navService}</f:format.raw>
+            <div class="print"><a href="javascript:print()"><i class="fa fa-print"></i></a></div>
+          </nav>
+        </div>					
+      </div>				
+    </footer>
+</f:comment>

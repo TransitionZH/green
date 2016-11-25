@@ -1,0 +1,13 @@
+<f:layout name="Default"/>
+<f:section name="Main">
+  <div class="container" id="pageContent">				
+     <div class="row">
+        <main class="col-md-8 col-xs-12" role="main">
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+        </main>
+        <aside class="col-md-4 col-xs-12">
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}"/>
+        </aside>
+    </div>
+  </div>
+</f:section>

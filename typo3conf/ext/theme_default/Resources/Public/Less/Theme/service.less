@@ -1,0 +1,35 @@
+#pageService {
+  #navService {
+    ul,
+    ul li {
+      list-style: none;
+      padding: 0;
+      margin: 0;      
+    }
+    ul {
+      li {
+        float: left;
+        width: 31.3333%;
+        margin-left: 2%;
+        a {
+          display: block;
+          width: 100%;
+          padding: 6px 12px;
+          text-align: center;
+          border-left: 2px solid @brand-primary;
+          border-right: 2px solid @brand-primary;
+          border-bottom: 2px solid @brand-primary;
+          border-bottom-left-radius: @border-radius-base;
+          border-bottom-right-radius: @border-radius-base;
+          background-color: #fff;
+          height: 55px;
+          line-height: 1.25em;
+          .box-shadow();
+          &:hover {
+            background-color: @gray-lighter;
+          }
+        }
+      }
+    }
+  }
+}

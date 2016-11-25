@@ -1,0 +1,17 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+
+<div id="powermail_fieldwrap_{field.uid}" class="form-group powermail_fieldwrap powermail_fieldwrap_select powermail_fieldwrap_{field.uid} {field.css}">
+	<label for="powermail_field_{field.marker}" class="col-md-4 col-xs-12 control-label powermail_label" title="{field.description}">
+		<vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss><f:if condition="{field.mandatory}"><span class="mandatory">*</span></f:if>
+	</label>
+	<div class="col-md-8 col-xs-12">
+		<vh:Form.SelectField
+				options="{field.modifiedSettings}"
+				property="{field.marker}"
+				class="form-control powermail_field powermail_select {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}"
+				id="powermail_field_{field.marker}"
+				additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}"
+				multiple="{field.multiselectForField}"
+				value="{vh:Misc.PrefillField(field:field, mail:mail)}" />
+	</div>
+</div>

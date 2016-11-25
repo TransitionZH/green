@@ -1,0 +1,13 @@
+<f:layout name="Default"/>
+<f:section name="Main">
+  <section id="pageMedia" class="clearfix hidden-print">
+    <f:cObject typoscriptObjectPath="lib.imageSlider" data="{colPos: '3'}"/>  
+  </section>
+  <section id="pagePath" class="container">
+    <f:format.raw>{path}</f:format.raw>	
+  </section>
+    
+  <main id="pageContent" class="container">				
+    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+  </main>
+</f:section>

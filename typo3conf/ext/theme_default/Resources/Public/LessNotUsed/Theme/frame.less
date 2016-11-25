@@ -1,0 +1,25 @@
+//
+// Frames
+// --------------------------------------------------
+.frame {
+    margin-top: @line-height-computed * 2;
+    margin-bottom: @line-height-computed * 2;
+
+    &.rulerbefore {
+        border-top: 1px solid @page-header-border-color;
+        padding-top: @line-height-computed * 2;
+    }
+    &.rulerafter {
+        border-bottom: 1px solid @page-header-border-color;
+        padding-bottom: @line-height-computed * 2;
+    }
+    &.well {
+        *:first-child {
+            margin-top: 0px;
+        }
+        *:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+}

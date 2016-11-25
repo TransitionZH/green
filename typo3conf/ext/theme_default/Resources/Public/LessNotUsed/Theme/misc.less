@@ -1,0 +1,102 @@
+//
+// Vertical Alignment
+// --------------------------------------------------
+.valign {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    > .vcontainer {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+
+//
+// Jumbotron
+// --------------------------------------------------
+.jumbotron {
+    a,
+    a:hover,
+    a:active,
+    a:focus {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+
+//
+// Panel
+// --------------------------------------------------
+.panel-body {
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+//
+// Lazyload Images
+// --------------------------------------------------
+img.lazyload {
+    opacity: 0.3;
+    .transition(opacity .3s ease-in 0s);
+}
+
+
+//
+// Language Menu
+// --------------------------------------------------
+.language-menu {
+    list-style: none;
+    padding-left: 0;
+    @media (min-width: @screen-sm-min) {
+        .list-inline();
+        > li:first-child {
+            padding-left: 0px;
+        }
+    }
+}
+
+
+//
+// Buttons from RTE
+// --------------------------------------------------
+.btn-default {
+    .btn();
+    .btn-default();
+}
+.btn-primary {
+    .btn();
+    .btn-primary();
+}
+.btn-success {
+    .btn();
+    .btn-success();
+}
+.btn-warning {
+    .btn();
+    .btn-warning();
+}
+.btn-danger {
+    .btn();
+    .btn-danger();
+}
+
+
+//
+// Misc
+// --------------------------------------------------
+.panel-group {
+    margin-bottom: 20px;
+}
+a:hover {
+    text-decoration: none;
+}
+.caret {
+    margin-left: 5px;
+}
+.caption {
+    color: @gray-light;
+}

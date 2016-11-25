@@ -1,0 +1,36 @@
+{namespace n=GeorgRinger\News\ViewHelpers}<!--
+	=====================
+		Partials/List/Item.html
+-->
+
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+<div class="news-list-item small-12 medium-4 columns noPadding" data-equalizer-watch>
+  <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="relPosition">
+    <f:if condition="{newsItem.falMediaPreviews}">
+      <f:then>
+        <div class="news-image" style="background-image: url({f:uri.image(src: newsItem.falMediaPreviews.0.originalResource.publicUrl)});"></div>
+        
+      </f:then>
+      <f:else>
+        <f:if condition="{settings.displayDummyIfNoMedia}">
+          <div class="news-image" style="background-image: url({settings.list.media.dummyImage});"></div>
+        </f:if>
+      </f:else>
+    </f:if>
+  
+    <div class="imageBoxDesc " style="">
+      <div class="imageBoxesTitle">
+        <span>{newsItem.title}</span>
+        <div class="divider"></div>      
+      </div>
+      <f:if condition="{newsItem.teaser}">
+        <f:then>
+          {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+        </f:then>
+        <f:else>
+          {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+        </f:else>
+      </f:if>
+    </div>
+  </n:link>
+</div>

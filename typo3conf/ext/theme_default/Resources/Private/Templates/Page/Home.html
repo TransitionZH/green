@@ -1,0 +1,34 @@
+<f:layout name="Default"/>
+<f:section name="Main">
+  
+  <div class="heroWrapper">
+    <!-- Hero Banner Starts -->
+    <div class="hero relPosition" style="background-image: url('img/main-hero-img.jpg');background-position: 50% 0%;">
+      <div class="heroIntro horizontalCenter">
+        <div class="row padding clearfix">
+          <div class="small-12 medium-12 large-6 columns">
+            <h6>Welcome to Altius</h6>
+            <div class="divider"></div>
+            <h1>A powerful template, designed for corporates, creative agencies and freelancers.</h1>
+            <div>
+              <a class="button btnOutline btnMedium" href="#">Get Started Now</a>
+            </div>
+          </div>
+        </div> 
+      </div> 
+    </div>
+    <!-- Hero Banner Ends -->
+  </div>
+
+  <div class="mainWrapper">
+
+    <!--TYPO3SEARCH_begin-->
+      <section id="p{data.uid}" class="{pageClass}">
+          <f:render section="Main"/>
+      </section>
+    <!--TYPO3SEARCH_end-->
+
+  </div>
+  <!-- Main Wrapper Ends -->
+
+</f:section>

@@ -1,0 +1,36 @@
+ul.csc-uploads {
+	li {
+		padding: 5px;
+		&.li-odd {
+			background-color: @background-color-oddeven;
+		}
+		span {
+			display: inline-block;
+			float: left;
+			/*margin-right: 10px;*/
+			&.csc-uploads-fileIcon {
+				width: 5%;
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+					img {
+						padding: 0;
+						float: none;
+						
+					}
+				}
+			}
+			&.csc-uploads-fileSize {
+				width: 10%;
+				text-align: right;
+			}
+			&.csc-uploads-fileDescription {
+				width: 70%;
+			}
+			&.csc-uploads-fileImage {
+				width: 20%;
+			}
+		}
+	}
+}

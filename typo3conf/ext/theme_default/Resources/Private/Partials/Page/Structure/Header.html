@@ -1,0 +1,13 @@
+<!--<f:render partial="Navigation/Mobile" arguments="{_all}"/>-->
+<f:render partial="Navigation/Main" arguments="{_all}"/>
+
+<f:if condition="{f:cObject(typoscriptObjectPath:'lib.imageSlider', data:'{colPos: \'3\'}')}">
+    <section id="pageMedia" class="clearfix hidden-print">
+        <f:cObject typoscriptObjectPath="lib.imageSlider" data="{colPos: '3'}"/>  
+    </section>
+</f:if>
+
+<section id="pageService" class="container">
+    <div class="col-md-6 col-xs-12"><div class="row"><f:render partial="Navigation/Breadcrumb" arguments="{_all}"/></div></div>
+    <div class="col-md-6 col-xs-12"><div class="row"><nav id="navService"><f:render partial="Navigation/Service" arguments="{_all}"/></nav></div></div>
+</section>

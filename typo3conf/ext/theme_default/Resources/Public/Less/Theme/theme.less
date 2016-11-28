@@ -1,20 +1,19 @@
 //
 // Import needed Bootstrap Files
 // --------------------------------------------------
-@import "../Bootstrap/bootstrap.less";
+@import (once) "../Bootstrap/bootstrap.less";
 
 //
 // Import needed Font Awesome Files
 // --------------------------------------------------
-@import "../FontAwesome/font-awesome.less";
-
+@import (once) "../FontAwesome/font-awesome.less";
 
 //
 // Theme default
 // --------------------------------------------------
-@import "variables.less";
-@import "mixins.less";
-@import "webfont.less";
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+@import (reference) "webfont.less";
 @import "text.less";
 @import "misc.less";
 @import "scaffolding.less";

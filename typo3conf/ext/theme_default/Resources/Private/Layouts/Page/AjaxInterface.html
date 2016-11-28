@@ -1,0 +1,19 @@
+<f:switch expression="{settings.renderElement}">
+
+    <f:case value="ajaxPageMedia">
+        <f:cObject typoscriptObjectPath="lib.pageImageSlideUrl" data="{colPos: '3'}"/>
+        <f:comment><f:cObject typoscriptObjectPath="lib.imageSlider" data="{colPos: '3'}"/></f:comment>
+    </f:case>
+    
+    <f:case value="ajaxContent">
+        <div class="{backend_layout}">
+            <f:render section="Main"/>
+        </div>
+    </f:case>
+
+    <f:case value="ajaxMainNavi">
+        <f:render partial="Navigation/MainAjax" arguments="{_all}"/>
+    </f:case>
+
+    <f:case default="TRUE">Unknown render element in ajax interface</f:case>
+</f:switch>

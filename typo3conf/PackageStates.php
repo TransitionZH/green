@@ -246,16 +246,10 @@ return [
             'packagePath' => 'typo3/sysext/viewpage/',
             'suggestions' => [],
         ],
-        'realurl' => [
-            'composerName' => 'dmitryd/typo3-realurl',
+        'gridelements' => [
+            'composerName' => 'GridElementsTeam/Gridelements',
             'state' => 'active',
-            'packagePath' => 'typo3conf/ext/realurl/',
-            'suggestions' => [],
-        ],
-        'realurl_clearcache' => [
-            'composerName' => 'realurl_clearcache',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/realurl_clearcache/',
+            'packagePath' => 'typo3conf/ext/gridelements/',
             'suggestions' => [],
         ],
         'metaseo' => [
@@ -274,6 +268,12 @@ return [
             'composerName' => 'in2code/powermail',
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/powermail/',
+            'suggestions' => [],
+        ],
+        'realurl' => [
+            'composerName' => 'dmitryd/typo3-realurl',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/realurl/',
             'suggestions' => [],
         ],
         'theme_default' => [

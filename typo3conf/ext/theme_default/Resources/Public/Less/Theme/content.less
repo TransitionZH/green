@@ -1,6 +1,16 @@
+@import (reference) "../Bootstrap/bootstrap.less";
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+
 #pageContent {
 	margin-top: 30px;
 	margin-bottom: 70px;
+    .box-shadow(1px 1px 5px rgba(0,0,0,.2));
+    
+    h1 {
+        margin: 10px 0;
+    }
+    
 	article.section:not(.colPos4) {
 		margin-bottom: 60px;
 	}
@@ -97,8 +107,8 @@
     > div {
       height: 100%;
       padding: 20px;
-      border: 1px solid @brand-primary;
-      border-radius: @border-radius-base;
+/*      border: 1px solid @brand-primary;
+      border-radius: @border-radius-base;*/
       .box-shadow();
     }
   }

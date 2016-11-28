@@ -1,43 +1,6 @@
 
 <div class="{backend_layout}">
-    <f:render partial="Navigation/Main" arguments="{_all}"/>
-    <section id="pageMedia" class="clearfix hidden-print">
-      <f:cObject typoscriptObjectPath="lib.imageSlider" data="{colPos: '3'}"/>  
-    </section>
-    <section id="pageService" class="container">
-      <div class="col-md-6 col-xs-12"><div class="row"><f:render partial="Navigation/Breadcrumb" arguments="{_all}"/></div></div>
-      <div class="col-md-6 col-xs-12"><div class="row"><nav id="navService"><f:render partial="Navigation/Service" arguments="{_all}"/></nav></div></div>
-    </section>
+    <f:render partial="Structure/Header" arguments="{_all}"/>
     <f:render section="Main"/>
     <f:render partial="Structure/Footer" arguments="{_all}"/>
-    
 </div>
-
-
-
-
-<f:comment>
-
-
-<div class="body-bg{f:if(condition:settings.navigation.type, then:' body-bg-{settings.navigation.type}')}">
-
-  <f:link.page class="sr-only sr-only-focusable" section="content">
-      {f:translate(key: 'skiptomaincontent', extensionName: 'theme_default')}
-  </f:link.page>
-  <f:render partial="Navigation/Main" arguments="{_all}"/>
-  <f:render partial="Navigation/Breadcrumb" arguments="{_all}"/>
-
-  <div id="content" class="main-section">
-      <!--TYPO3SEARCH_begin-->
-      <section id="p{data.uid}" class="{pageClass}">
-          <f:render section="Main"/>
-      </section>
-      <!--TYPO3SEARCH_end-->
-  </div>
-
-  
-  
-
-</div>
-  
-</f:comment>

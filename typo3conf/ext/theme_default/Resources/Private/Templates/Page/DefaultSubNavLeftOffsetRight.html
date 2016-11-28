@@ -1,0 +1,28 @@
+<f:layout name="{settings.layout}"/>
+<f:section name="Main">
+
+    <div class="container" id="pageContent">
+        <div class="row">
+            
+            <f:if condition="{0: settings.layout} != {0: 'AjaxInterface'}">
+                <div class="col-md-3 subnav-wrap sidebar sidebar-main">
+                    <div class="row">
+                        <f:render partial="Navigation/Subnavigation" arguments="{_all}" />
+                    </div>
+                </div>
+            </f:if>
+            
+            <main class="col-md-6 main-content" role="main">
+                <f:if condition="{settings.showPageTitles}">
+                    <h1>{pageTitle}</h1>
+                </f:if>
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+            </main>
+            
+            <div class="col-md-3 subcontent-wrap">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '2'}"/>
+            </div>
+        </div>
+    </div>
+
+</f:section>

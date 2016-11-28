@@ -84,3 +84,33 @@ lib.dynamicContent {
 }
 lib.dynamicContentSlide =< lib.dynamicContent
 lib.dynamicContentSlide.20.slide = -1
+
+
+##############################################
+#### DYNAMIC TITLE LIB FOR USAGE IN FLUID ####
+##############################################
+#
+#  EXAMPLE
+#  ---------------
+#  <f:cObject typoscriptObjectPath="lib.dynamicTitle" data="{settings.pid}" />
+#
+#################
+lib.dynamicTitle = COA
+lib.dynamicTitle {
+    5 = LOAD_REGISTER
+    5 {
+        pageUid = TEXT
+        pageUid {
+            current = 1
+            ifEmpty.data = TSFE:id
+            wrap = |
+        }
+    }
+    20 = TEXT
+    20 {
+        data = DB:pages:{register:pageUid}:title
+        data.insertData = 1
+        wrap = |
+    }
+    90 = RESTORE_REGISTER
+}

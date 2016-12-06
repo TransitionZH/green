@@ -78,7 +78,8 @@ header#pageHeader {
   position: relative;
   width: 100%;
   border-bottom: 1px solid #eeeeee;
-  padding-top: 20px;
+  /*box-shadow: 0 8px 30px #fff;*/
+  /*padding-top: 20px;*/
   z-index: 1;
   background-color: #fff;
 }
@@ -94,7 +95,7 @@ header#pageHeader .navbar-brand {
   box-sizing: content-box;
 }
 header#pageHeader nav#navMain {
-  margin-top: 70px;
+  margin-top: 72px;
   z-index: 1;
   font-size: 16px;
 }

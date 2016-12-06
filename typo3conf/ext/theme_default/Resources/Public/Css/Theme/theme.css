@@ -9616,7 +9616,8 @@ header#pageHeader {
   position: relative;
   width: 100%;
   border-bottom: 1px solid #eeeeee;
-  padding-top: 20px;
+  /*box-shadow: 0 8px 30px #fff;*/
+  /*padding-top: 20px;*/
   z-index: 1;
   background-color: #fff;
 }
@@ -9632,7 +9633,7 @@ header#pageHeader .navbar-brand {
   box-sizing: content-box;
 }
 header#pageHeader nav#navMain {
-  margin-top: 70px;
+  margin-top: 72px;
   z-index: 1;
   font-size: 16px;
 }
@@ -10050,13 +10051,14 @@ footer#pageFooter {
   width: 100%;
   bottom: 0;
   padding: 8px 0;
+  color: #fff;
   background-color: #eeeeee;
   /*border-top: 1px solid @gray-lighter;*/
 }
 footer#pageFooter address {
   margin: 0;
   font-size: 14px;
-  color: #eeeeee;
+  color: #fff;
 }
 footer#pageFooter address a {
   color: #eeeeee;

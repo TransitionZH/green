@@ -10051,13 +10051,14 @@ footer#pageFooter {
   width: 100%;
   bottom: 0;
   padding: 8px 0;
+  color: #fff;
   background-color: #eeeeee;
   /*border-top: 1px solid @gray-lighter;*/
 }
 footer#pageFooter address {
   margin: 0;
   font-size: 14px;
-  color: #eeeeee;
+  color: #fff;
 }
 footer#pageFooter address a {
   color: #eeeeee;

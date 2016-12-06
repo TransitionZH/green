@@ -25,11 +25,11 @@
 page {
     logo {
         # cat=bootstrap package: basic/110/100; type=string; label=Logo: Leave blank to use website title from template instead
-        file = EXT:theme_default/Resources/Public/Images/logo.png
+        file = EXT:theme_default/Resources/Public/Images/TZ-logo-claim.png
         # cat=bootstrap package: basic/110/110; type=int+; label=Height: The image will not be resized!
-        height = 64
+        height = 84
         # cat=bootstrap package: basic/110/120; type=int+; label=Width: The image will not be resized!
-        width = 357
+        width = 366
         # cat=bootstrap package: basic/110/130; type=string; label=Alternative text: Text of the alt attribute of the logo image (default: "<website title> logo")
         alt = Transition Zürich
     }
@@ -100,7 +100,7 @@ page {
         # cat=bootstrap package: basic/120/100; type=string; label=Description: Enter a short description of the page. It will be displayed in the result lists of most search engines.
         description =
         # cat=bootstrap package: basic/120/110; type=string; label=Author: Enter the page author's name.
-        author =
+        author = Benno Flory, Artemi Egorov - Transition Zürich
         # cat=bootstrap package: basic/120/120; type=string; label=Keywords: Enter keywords for the page separated by commas. You may also use short phrases.
         keywords =
         # cat=bootstrap package: advanced/120/100; type=string; label=viewport
@@ -118,7 +118,7 @@ page {
     tracking {
         google {
             # cat=bootstrap package: basic/180/100; type=string; label=Google: Tracking-ID
-            trackingID = GA-1234567
+            trackingID = 
             # cat=bootstrap package: basic/180/110; type=boolean; label=Google: IP-anonymisation
             anonymizeIp = 0
         }

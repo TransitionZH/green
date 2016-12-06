@@ -13,7 +13,7 @@
                 <source>Default</source>
             </trans-unit>
             <trans-unit id="backend_layout.default_clean">
-                <source>Default, Clean</source>
+                <source>Default, Clean (full width)</source>
             </trans-unit>
             <trans-unit id="backend_layout.default_2_columns">
                 <source>Default, 2 Columns</source>

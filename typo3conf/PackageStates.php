@@ -246,6 +246,12 @@ return [
             'packagePath' => 'typo3/sysext/viewpage/',
             'suggestions' => [],
         ],
+        'extension_builder' => [
+            'composerName' => 'ebt/extension_builder',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/extension_builder/',
+            'suggestions' => [],
+        ],
         'gridelements' => [
             'composerName' => 'GridElementsTeam/Gridelements',
             'state' => 'active',
@@ -280,6 +286,12 @@ return [
             'composerName' => 'theme_default',
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/theme_default/',
+            'suggestions' => [],
+        ],
+        'transition_tools' => [
+            'composerName' => 'transition_tools',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/transition_tools/',
             'suggestions' => [],
         ],
         'adodb' => [

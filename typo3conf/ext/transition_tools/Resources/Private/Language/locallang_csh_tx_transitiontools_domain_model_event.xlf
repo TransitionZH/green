@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-06T23:08:49Z" product-name="transition_tools">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="weblink.description">
+				<source>weblink</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="venue.description">
+				<source>venue</source>
+			</trans-unit>
+			<trans-unit id="dates.description">
+				<source>dates</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

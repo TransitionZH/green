@@ -8,7 +8,7 @@ if (!$enabled) {
 
 $symlinks = array(
     // create only one after the other, otherwise chained links can not be created
-    'typo3_src' => 'typo3_src-7.6.12',
+    'typo3_src' => 'typo3_src-7.6.13',
     'typo3' => 'typo3_src/typo3',
     'index.php' => 'typo3_src/index.php',
 );

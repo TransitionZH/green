@@ -1,0 +1,56 @@
+
+plugin.tx_transitiontools_initiatives {
+	view {
+		templateRootPaths.0 = {$plugin.tx_transitiontools_initiatives.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_transitiontools_initiatives.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_transitiontools_initiatives.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_transitiontools_initiatives.persistence.storagePid}
+	}
+}
+
+plugin.tx_transitiontools_events {
+	view {
+		templateRootPaths.0 = {$plugin.tx_transitiontools_events.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_transitiontools_events.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_transitiontools_events.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_transitiontools_events.persistence.storagePid}
+	}
+}
+
+plugin.tx_transitiontools._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-transition-tools table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-transition-tools table th {
+		font-weight:bold;
+	}
+
+	.tx-transition-tools table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

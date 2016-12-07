@@ -1,0 +1,45 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Initiative</h1>
+
+<f:flashMessages />
+
+<table  class="tx_transitiontools" >
+	<tr>
+		<th><f:translate key="tx_transitiontools_domain_model_initiative.name" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_initiative.claim" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_initiative.description" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_initiative.web_link" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_initiative.logo" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{initiatives}" as="initiative">
+		<tr>
+			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.claim}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.webLink}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.logo.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{initiative : initiative}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{initiative : initiative}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Initiative</f:link.action>
+</f:section>

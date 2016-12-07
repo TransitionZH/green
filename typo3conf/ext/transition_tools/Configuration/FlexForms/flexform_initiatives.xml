@@ -1,0 +1,40 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Display Categories</numIndex>
+										<numIndex index="1">Initiative->categories</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Display Map</numIndex>
+										<numIndex index="1">Initiative->map</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Display List</numIndex>
+										<numIndex index="1">Initiative->list</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">Display Grid</numIndex>
+										<numIndex index="1">Initiative->grid</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

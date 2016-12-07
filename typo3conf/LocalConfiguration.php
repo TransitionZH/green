@@ -15,6 +15,8 @@ return [
     ],
     'EXT' => [
         'extConf' => [
+            'backend' => 'a:3:{s:9:"loginLogo";s:70:"/typo3conf/ext/theme_default/Resources/Public/Images/TZ-logo-claim.png";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";}',
+            'extension_builder' => 'a:3:{s:15:"enableRoundtrip";s:1:"1";s:15:"backupExtension";s:1:"0";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}',
             'gridelements' => 'a:2:{s:20:"additionalStylesheet";s:0:"";s:19:"nestingInListModule";s:1:"0";}',
             'metaseo' => 'a:3:{s:10:"enableBeta";s:0:"";s:23:"enableIntegrationTTNews";s:1:"1";s:29:"sitemap_clearCachePossibility";s:0:"";}',
             'news' => 'a:14:{s:13:"prependAtCopy";s:1:"1";s:6:"tagPid";s:1:"1";s:12:"rteForTeaser";s:1:"0";s:22:"contentElementRelation";s:1:"0";s:13:"manualSorting";s:1:"0";s:19:"categoryRestriction";s:0:"";s:34:"categoryBeGroupTceFormsRestriction";s:1:"0";s:19:"dateTimeNotRequired";s:1:"0";s:11:"archiveDate";s:4:"date";s:24:"showAdministrationModule";s:1:"1";s:35:"hidePageTreeForAdministrationModule";s:1:"0";s:12:"showImporter";s:1:"0";s:18:"storageUidImporter";s:1:"1";s:22:"resourceFolderImporter";s:12:"/news_import";}',
@@ -23,6 +25,7 @@ return [
             'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',
             'saltedpasswords' => 'a:2:{s:3:"BE.";a:4:{s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\PhpassSalt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}s:3:"FE.";a:5:{s:7:"enabled";i:1;s:21:"saltedPWHashingMethod";s:41:"TYPO3\\CMS\\Saltedpasswords\\Salt\\PhpassSalt";s:11:"forceSalted";i:0;s:15:"onlyAuthService";i:0;s:12:"updatePasswd";i:1;}}',
             'theme_default' => 'a:0:{}',
+            'transition_tools' => 'a:0:{}',
         ],
     ],
     'FE' => [

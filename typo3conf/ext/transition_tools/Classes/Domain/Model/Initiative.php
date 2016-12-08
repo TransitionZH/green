@@ -90,6 +90,13 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $events = null;
     
     /**
+     * source
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
+     */
+    protected $source = null;
+    
+    /**
      * __construct
      */
     public function __construct()
@@ -322,6 +329,27 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setEvents(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $events)
     {
         $this->events = $events;
+    }
+    
+    /**
+     * Returns the source
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+    
+    /**
+     * Sets the source
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @return void
+     */
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
+    {
+        $this->source = $source;
     }
 
 }

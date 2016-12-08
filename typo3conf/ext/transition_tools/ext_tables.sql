@@ -55,6 +55,7 @@ CREATE TABLE tx_transitiontools_domain_model_initiative (
 	logo int(11) unsigned NOT NULL default '0',
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	events int(11) unsigned DEFAULT '0' NOT NULL,
+	source int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -101,6 +102,7 @@ CREATE TABLE tx_transitiontools_domain_model_event (
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	dates int(11) unsigned DEFAULT '0' NOT NULL,
 	initiatives int(11) unsigned DEFAULT '0' NOT NULL,
+	source int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -141,6 +143,7 @@ CREATE TABLE tx_transitiontools_domain_model_venue (
 
 	type varchar(255) DEFAULT '' NOT NULL,
 	loc varchar(255) DEFAULT '' NOT NULL,
+	source int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -194,6 +197,7 @@ CREATE TABLE tx_transitiontools_domain_model_date (
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	registrations int(11) unsigned DEFAULT '0' NOT NULL,
 	event int(11) unsigned DEFAULT '0',
+	source int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

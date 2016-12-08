@@ -126,6 +126,13 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $event = null;
     
     /**
+     * source
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
+     */
+    protected $source = null;
+    
+    /**
      * __construct
      */
     public function __construct()
@@ -473,6 +480,27 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setEvent(\TransitionTeam\TransitionTools\Domain\Model\Event $event)
     {
         $this->event = $event;
+    }
+    
+    /**
+     * Returns the source
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+    
+    /**
+     * Sets the source
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @return void
+     */
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
+    {
+        $this->source = $source;
     }
 
 }

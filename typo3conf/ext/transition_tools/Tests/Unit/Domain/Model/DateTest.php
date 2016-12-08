@@ -415,4 +415,30 @@ class DateTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 			$this->subject
 		);
 	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceReturnsInitialValueForSynchRoute()
+	{
+		$this->assertEquals(
+			NULL,
+			$this->subject->getSource()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setSourceForSynchRouteSetsSource()
+	{
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
+		$this->subject->setSource($sourceFixture);
+
+		$this->assertAttributeEquals(
+			$sourceFixture,
+			'source',
+			$this->subject
+		);
+	}
 }

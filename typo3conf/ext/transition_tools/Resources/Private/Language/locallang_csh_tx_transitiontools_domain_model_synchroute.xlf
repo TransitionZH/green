@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-08T23:14:58Z" product-name="transition_tools">
+		<header/>
+		<body>
+			<trans-unit id="caption.description">
+				<source>caption</source>
+			</trans-unit>
+			<trans-unit id="import_route.description">
+				<source>importRoute</source>
+			</trans-unit>
+			<trans-unit id="import_format.description">
+				<source>importFormat</source>
+			</trans-unit>
+			<trans-unit id="import_tstamp.description">
+				<source>importTstamp</source>
+			</trans-unit>
+			<trans-unit id="import_cache_data.description">
+				<source>importCacheData</source>
+			</trans-unit>
+			<trans-unit id="import_cache_lifetime.description">
+				<source>importCacheLifetime</source>
+			</trans-unit>
+			<trans-unit id="export_route.description">
+				<source>exportRoute</source>
+			</trans-unit>
+			<trans-unit id="export_format.description">
+				<source>exportFormat</source>
+			</trans-unit>
+			<trans-unit id="export_tstamp.description">
+				<source>exportTstamp</source>
+			</trans-unit>
+			<trans-unit id="partner_system.description">
+				<source>partnerSystem</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

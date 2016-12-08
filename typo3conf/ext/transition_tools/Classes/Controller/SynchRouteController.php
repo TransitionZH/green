@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Controller;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -27,39 +28,37 @@ namespace TransitionTeam\TransitionTools\Controller;
  ***************************************************************/
 
 /**
- * DataSourceDomainController
+ * SynchRouteController
  */
-class DataSourceDomainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class SynchRouteController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * dataSourceDomainRepository
+     * synchRouteRepository
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Repository\DataSourceDomainRepository
+     * @var \TransitionTeam\TransitionTools\Domain\Repository\SynchRouteRepository
      * @inject
      */
-    protected $dataSourceDomainRepository = NULL;
+    protected $synchRouteRepository = NULL;
     
     /**
-     * action list
+     * action import
      *
      * @return void
      */
-    public function listAction()
+    public function importAction()
     {
-        $dataSourceDomains = $this->dataSourceDomainRepository->findAll();
-        $this->view->assign('dataSourceDomains', $dataSourceDomains);
+        
     }
     
     /**
-     * action show
+     * action export
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\DataSourceDomain $dataSourceDomain
      * @return void
      */
-    public function showAction(\TransitionTeam\TransitionTools\Domain\Model\DataSourceDomain $dataSourceDomain)
+    public function exportAction()
     {
-        $this->view->assign('dataSourceDomain', $dataSourceDomain);
+        
     }
 
 }

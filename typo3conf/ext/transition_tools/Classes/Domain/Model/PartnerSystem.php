@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -29,7 +30,7 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
 /**
  * Data Source Domain
  */
-class DataSourceDomain extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
@@ -49,7 +50,7 @@ class DataSourceDomain extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * routes
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute>
      * @cascade remove
      */
     protected $routes = null;
@@ -119,23 +120,23 @@ class DataSourceDomain extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Adds a DataSourceRoute
+     * Adds a SynchRoute
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute $route
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $route
      * @return void
      */
-    public function addRoute(\TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute $route)
+    public function addRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $route)
     {
         $this->routes->attach($route);
     }
     
     /**
-     * Removes a DataSourceRoute
+     * Removes a SynchRoute
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute $routeToRemove The DataSourceRoute to be removed
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $routeToRemove The SynchRoute to be removed
      * @return void
      */
-    public function removeRoute(\TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute $routeToRemove)
+    public function removeRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $routeToRemove)
     {
         $this->routes->detach($routeToRemove);
     }
@@ -143,7 +144,7 @@ class DataSourceDomain extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the routes
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute> $routes
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $routes
      */
     public function getRoutes()
     {
@@ -153,7 +154,7 @@ class DataSourceDomain extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the routes
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute> $routes
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $routes
      * @return void
      */
     public function setRoutes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $routes)

@@ -1,5 +1,6 @@
 <?php
-namespace TransitionTeam\TransitionTools\Domain\Model;
+namespace TransitionTeam\TransitionTools\Controller;
+
 
 /***************************************************************
  *
@@ -27,65 +28,39 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
  ***************************************************************/
 
 /**
- * DataSourceRoute
+ * PartnerSystemController
  */
-class DataSourceRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class PartnerSystemController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * caption
+     * partnerSystemRepository
      *
-     * @var string
+     * @var \TransitionTeam\TransitionTools\Domain\Repository\PartnerSystemRepository
+     * @inject
      */
-    protected $caption = '';
+    protected $partnerSystemRepository = NULL;
     
     /**
-     * route
+     * action list
      *
-     * @var string
-     */
-    protected $route = '';
-    
-    /**
-     * Returns the caption
-     *
-     * @return string $caption
-     */
-    public function getCaption()
-    {
-        return $this->caption;
-    }
-    
-    /**
-     * Sets the caption
-     *
-     * @param string $caption
      * @return void
      */
-    public function setCaption($caption)
+    public function listAction()
     {
-        $this->caption = $caption;
+        $partnerSystems = $this->partnerSystemRepository->findAll();
+        $this->view->assign('partnerSystems', $partnerSystems);
     }
     
     /**
-     * Returns the route
+     * action show
      *
-     * @return string $route
-     */
-    public function getRoute()
-    {
-        return $this->route;
-    }
-    
-    /**
-     * Sets the route
-     *
-     * @param string $route
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem
      * @return void
      */
-    public function setRoute($route)
+    public function showAction(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem)
     {
-        $this->route = $route;
+        $this->view->assign('partnerSystem', $partnerSystem);
     }
 
 }

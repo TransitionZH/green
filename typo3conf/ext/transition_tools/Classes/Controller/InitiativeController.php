@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Controller;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -126,6 +127,16 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      * @return void
      */
     public function gridAction()
+    {
+        
+    }
+    
+    /**
+     * action categories
+     *
+     * @return void
+     */
+    public function categoriesAction()
     {
         
     }

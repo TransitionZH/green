@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-08T23:14:58Z" product-name="transition_tools">
+		<header/>
+		<body>
+			<trans-unit id="uuid.description">
+				<source>uuid</source>
+			</trans-unit>
+			<trans-unit id="comment.description">
+				<source>comment</source>
+			</trans-unit>
+			<trans-unit id="registration_status.description">
+				<source>registrationStatus</source>
+			</trans-unit>
+			<trans-unit id="fee.description">
+				<source>fee</source>
+			</trans-unit>
+			<trans-unit id="payment_status.description">
+				<source>paymentStatus</source>
+			</trans-unit>
+			<trans-unit id="date.description">
+				<source>date</source>
+			</trans-unit>
+			<trans-unit id="persons.description">
+				<source>persons</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

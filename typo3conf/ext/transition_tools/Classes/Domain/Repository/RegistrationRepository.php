@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Repository;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -27,9 +28,9 @@ namespace TransitionTeam\TransitionTools\Domain\Repository;
  ***************************************************************/
 
 /**
- * The repository for DataSourceRoutes
+ * The repository for Registrations
  */
-class DataSourceRouteRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class RegistrationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
     

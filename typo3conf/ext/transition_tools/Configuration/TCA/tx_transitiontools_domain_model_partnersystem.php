@@ -1,7 +1,7 @@
 <?php
 return array(
 	'ctrl' => array(
-		'title'	=> 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_datasourcedomain',
+		'title'	=> 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_partnersystem',
 		'label' => 'caption',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
@@ -20,7 +20,7 @@ return array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => 'caption,url,routes,',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_datasourcedomain.gif'
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_partnersystem.gif'
 	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, caption, url, routes',
@@ -57,8 +57,8 @@ return array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_transitiontools_domain_model_datasourcedomain',
-				'foreign_table_where' => 'AND tx_transitiontools_domain_model_datasourcedomain.pid=###CURRENT_PID### AND tx_transitiontools_domain_model_datasourcedomain.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_transitiontools_domain_model_partnersystem',
+				'foreign_table_where' => 'AND tx_transitiontools_domain_model_partnersystem.pid=###CURRENT_PID### AND tx_transitiontools_domain_model_partnersystem.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -118,7 +118,7 @@ return array(
 
 		'caption' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_datasourcedomain.caption',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_partnersystem.caption',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -127,7 +127,7 @@ return array(
 		),
 		'url' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_datasourcedomain.url',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_partnersystem.url',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -136,11 +136,11 @@ return array(
 		),
 		'routes' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_datasourcedomain.routes',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_partnersystem.routes',
 			'config' => array(
 				'type' => 'inline',
-				'foreign_table' => 'tx_transitiontools_domain_model_datasourceroute',
-				'foreign_field' => 'datasourcedomain',
+				'foreign_table' => 'tx_transitiontools_domain_model_synchroute',
+				'foreign_field' => 'partnersystem',
 				'maxitems' => 9999,
 				'appearance' => array(
 					'collapseAll' => 0,

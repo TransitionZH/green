@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -27,11 +28,18 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
  ***************************************************************/
 
 /**
- * Transition Initiatives
+ * Transition Initiatives (Openki: Gruppe)
  */
 class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
+    /**
+     * uuid
+     *
+     * @var string
+     */
+    protected $uuid = '';
+    
     /**
      * name
      *
@@ -102,6 +110,27 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->events = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+    
+    /**
+     * Returns the uuid
+     *
+     * @return string $uuid
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
+    }
+    
+    /**
+     * Sets the uuid
+     *
+     * @param string $uuid
+     * @return void
+     */
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
     }
     
     /**

@@ -19,6 +19,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <table  class="tx_transitiontools" >
 	<tr>
+		<th><f:translate key="tx_transitiontools_domain_model_initiative.uuid" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_initiative.name" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_initiative.claim" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_initiative.description" /></th>
@@ -30,6 +31,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 	<f:for each="{initiatives}" as="initiative">
 		<tr>
+			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.uuid}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.name}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.claim}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{initiative : initiative}"> {initiative.description}</f:link.action></td>

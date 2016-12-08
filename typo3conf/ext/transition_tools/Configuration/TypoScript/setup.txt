@@ -21,6 +21,28 @@ plugin.tx_transitiontools_events {
 	}
 }
 
+plugin.tx_transitiontools_registrations {
+	view {
+		templateRootPaths.0 = {$plugin.tx_transitiontools_registrations.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_transitiontools_registrations.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_transitiontools_registrations.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_transitiontools_registrations.persistence.storagePid}
+	}
+}
+
+plugin.tx_transitiontools_synch {
+	view {
+		templateRootPaths.0 = {$plugin.tx_transitiontools_synch.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_transitiontools_synch.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_transitiontools_synch.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_transitiontools_synch.persistence.storagePid}
+	}
+}
+
 plugin.tx_transitiontools._CSS_DEFAULT_STYLE (
 	textarea.f3-form-error {
 		background-color:#FF9F9F;

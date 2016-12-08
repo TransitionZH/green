@@ -25,21 +25,21 @@ namespace TransitionTeam\TransitionTools\Tests\Unit\Controller;
  ***************************************************************/
 
 /**
- * Test case for class TransitionTeam\TransitionTools\Controller\DataSourceDomainController.
+ * Test case for class TransitionTeam\TransitionTools\Controller\PartnerSystemController.
  *
  * @author Benno Flory <benno.flory@gmx.ch>
  */
-class DataSourceDomainControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class PartnerSystemControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
 
 	/**
-	 * @var \TransitionTeam\TransitionTools\Controller\DataSourceDomainController
+	 * @var \TransitionTeam\TransitionTools\Controller\PartnerSystemController
 	 */
 	protected $subject = NULL;
 
 	public function setUp()
 	{
-		$this->subject = $this->getMock('TransitionTeam\\TransitionTools\\Controller\\DataSourceDomainController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+		$this->subject = $this->getMock('TransitionTeam\\TransitionTools\\Controller\\PartnerSystemController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
 	public function tearDown()
@@ -50,17 +50,17 @@ class DataSourceDomainControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function listActionFetchesAllDataSourceDomainsFromRepositoryAndAssignsThemToView()
+	public function listActionFetchesAllPartnerSystemsFromRepositoryAndAssignsThemToView()
 	{
 
-		$allDataSourceDomains = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+		$allPartnerSystems = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
 
-		$dataSourceDomainRepository = $this->getMock('TransitionTeam\\TransitionTools\\Domain\\Repository\\DataSourceDomainRepository', array('findAll'), array(), '', FALSE);
-		$dataSourceDomainRepository->expects($this->once())->method('findAll')->will($this->returnValue($allDataSourceDomains));
-		$this->inject($this->subject, 'dataSourceDomainRepository', $dataSourceDomainRepository);
+		$partnerSystemRepository = $this->getMock('TransitionTeam\\TransitionTools\\Domain\\Repository\\PartnerSystemRepository', array('findAll'), array(), '', FALSE);
+		$partnerSystemRepository->expects($this->once())->method('findAll')->will($this->returnValue($allPartnerSystems));
+		$this->inject($this->subject, 'partnerSystemRepository', $partnerSystemRepository);
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
-		$view->expects($this->once())->method('assign')->with('dataSourceDomains', $allDataSourceDomains);
+		$view->expects($this->once())->method('assign')->with('partnerSystems', $allPartnerSystems);
 		$this->inject($this->subject, 'view', $view);
 
 		$this->subject->listAction();
@@ -69,14 +69,14 @@ class DataSourceDomainControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function showActionAssignsTheGivenDataSourceDomainToView()
+	public function showActionAssignsTheGivenPartnerSystemToView()
 	{
-		$dataSourceDomain = new \TransitionTeam\TransitionTools\Domain\Model\DataSourceDomain();
+		$partnerSystem = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
-		$view->expects($this->once())->method('assign')->with('dataSourceDomain', $dataSourceDomain);
+		$view->expects($this->once())->method('assign')->with('partnerSystem', $partnerSystem);
 
-		$this->subject->showAction($dataSourceDomain);
+		$this->subject->showAction($partnerSystem);
 	}
 }

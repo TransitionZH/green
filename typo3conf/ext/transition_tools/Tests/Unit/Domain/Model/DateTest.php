@@ -54,6 +54,31 @@ class DateTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getUuidReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getUuid()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUuidForStringSetsUuid()
+	{
+		$this->subject->setUuid('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'uuid',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getStartReturnsInitialValueForDateTime()
 	{
 		$this->assertEquals(
@@ -99,6 +124,294 @@ class DateTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		$this->assertAttributeEquals(
 			$dateTimeFixture,
 			'end',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getDescriptionReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getDescription()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setDescriptionForStringSetsDescription()
+	{
+		$this->subject->setDescription('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'description',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getContactReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getContact()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setContactForStringSetsContact()
+	{
+		$this->subject->setContact('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'contact',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getWeblinkReturnsInitialValueForDateTime()
+	{
+		$this->assertEquals(
+			NULL,
+			$this->subject->getWeblink()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setWeblinkForDateTimeSetsWeblink()
+	{
+		$dateTimeFixture = new \DateTime();
+		$this->subject->setWeblink($dateTimeFixture);
+
+		$this->assertAttributeEquals(
+			$dateTimeFixture,
+			'weblink',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getMinRegistrationsReturnsInitialValueForInt()
+	{	}
+
+	/**
+	 * @test
+	 */
+	public function setMinRegistrationsForIntSetsMinRegistrations()
+	{	}
+
+	/**
+	 * @test
+	 */
+	public function getMaxRegistrationsReturnsInitialValueForInt()
+	{	}
+
+	/**
+	 * @test
+	 */
+	public function setMaxRegistrationsForIntSetsMaxRegistrations()
+	{	}
+
+	/**
+	 * @test
+	 */
+	public function getHasWaitingListReturnsInitialValueForBool()
+	{
+		$this->assertSame(
+			FALSE,
+			$this->subject->getHasWaitingList()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setHasWaitingListForBoolSetsHasWaitingList()
+	{
+		$this->subject->setHasWaitingList(TRUE);
+
+		$this->assertAttributeEquals(
+			TRUE,
+			'hasWaitingList',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getFeeReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getFee()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setFeeForStringSetsFee()
+	{
+		$this->subject->setFee('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'fee',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getVenuesReturnsInitialValueForVenue()
+	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->subject->getVenues()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setVenuesForObjectStorageContainingVenueSetsVenues()
+	{
+		$venue = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
+		$objectStorageHoldingExactlyOneVenues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneVenues->attach($venue);
+		$this->subject->setVenues($objectStorageHoldingExactlyOneVenues);
+
+		$this->assertAttributeEquals(
+			$objectStorageHoldingExactlyOneVenues,
+			'venues',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addVenueToObjectStorageHoldingVenues()
+	{
+		$venue = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
+		$venuesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$venuesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($venue));
+		$this->inject($this->subject, 'venues', $venuesObjectStorageMock);
+
+		$this->subject->addVenue($venue);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeVenueFromObjectStorageHoldingVenues()
+	{
+		$venue = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
+		$venuesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$venuesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($venue));
+		$this->inject($this->subject, 'venues', $venuesObjectStorageMock);
+
+		$this->subject->removeVenue($venue);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getRegistrationsReturnsInitialValueForRegistration()
+	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->subject->getRegistrations()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setRegistrationsForObjectStorageContainingRegistrationSetsRegistrations()
+	{
+		$registration = new \TransitionTeam\TransitionTools\Domain\Model\Registration();
+		$objectStorageHoldingExactlyOneRegistrations = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneRegistrations->attach($registration);
+		$this->subject->setRegistrations($objectStorageHoldingExactlyOneRegistrations);
+
+		$this->assertAttributeEquals(
+			$objectStorageHoldingExactlyOneRegistrations,
+			'registrations',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addRegistrationToObjectStorageHoldingRegistrations()
+	{
+		$registration = new \TransitionTeam\TransitionTools\Domain\Model\Registration();
+		$registrationsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$registrationsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($registration));
+		$this->inject($this->subject, 'registrations', $registrationsObjectStorageMock);
+
+		$this->subject->addRegistration($registration);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeRegistrationFromObjectStorageHoldingRegistrations()
+	{
+		$registration = new \TransitionTeam\TransitionTools\Domain\Model\Registration();
+		$registrationsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$registrationsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($registration));
+		$this->inject($this->subject, 'registrations', $registrationsObjectStorageMock);
+
+		$this->subject->removeRegistration($registration);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getEventReturnsInitialValueForEvent()
+	{
+		$this->assertEquals(
+			NULL,
+			$this->subject->getEvent()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setEventForEventSetsEvent()
+	{
+		$eventFixture = new \TransitionTeam\TransitionTools\Domain\Model\Event();
+		$this->subject->setEvent($eventFixture);
+
+		$this->assertAttributeEquals(
+			$eventFixture,
+			'event',
 			$this->subject
 		);
 	}

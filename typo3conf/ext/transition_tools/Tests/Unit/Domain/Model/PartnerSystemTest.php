@@ -27,23 +27,23 @@ namespace TransitionTeam\TransitionTools\Tests\Unit\Domain\Model;
  ***************************************************************/
 
 /**
- * Test case for class \TransitionTeam\TransitionTools\Domain\Model\DataSourceDomain.
+ * Test case for class \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem.
  *
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  * @author Benno Flory <benno.flory@gmx.ch>
  */
-class DataSourceDomainTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class PartnerSystemTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
 	/**
-	 * @var \TransitionTeam\TransitionTools\Domain\Model\DataSourceDomain
+	 * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
 	 */
 	protected $subject = NULL;
 
 	public function setUp()
 	{
-		$this->subject = new \TransitionTeam\TransitionTools\Domain\Model\DataSourceDomain();
+		$this->subject = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
 	}
 
 	public function tearDown()
@@ -104,7 +104,7 @@ class DataSourceDomainTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getRoutesReturnsInitialValueForDataSourceRoute()
+	public function getRoutesReturnsInitialValueForSynchRoute()
 	{
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
@@ -116,9 +116,9 @@ class DataSourceDomainTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function setRoutesForObjectStorageContainingDataSourceRouteSetsRoutes()
+	public function setRoutesForObjectStorageContainingSynchRouteSetsRoutes()
 	{
-		$route = new \TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute();
+		$route = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
 		$objectStorageHoldingExactlyOneRoutes = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneRoutes->attach($route);
 		$this->subject->setRoutes($objectStorageHoldingExactlyOneRoutes);
@@ -135,7 +135,7 @@ class DataSourceDomainTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function addRouteToObjectStorageHoldingRoutes()
 	{
-		$route = new \TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute();
+		$route = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
 		$routesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$routesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($route));
 		$this->inject($this->subject, 'routes', $routesObjectStorageMock);
@@ -148,7 +148,7 @@ class DataSourceDomainTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function removeRouteFromObjectStorageHoldingRoutes()
 	{
-		$route = new \TransitionTeam\TransitionTools\Domain\Model\DataSourceRoute();
+		$route = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
 		$routesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$routesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($route));
 		$this->inject($this->subject, 'routes', $routesObjectStorageMock);

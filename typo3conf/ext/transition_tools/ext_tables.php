@@ -19,10 +19,22 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 	'Events'
 );
 
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'TransitionTeam.' . $_EXTKEY,
+	'Registrations',
+	'Registrations'
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'TransitionTeam.' . $_EXTKEY,
+	'Synch',
+	'Synch'
+);
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Transition Tools');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_datasourcedomain', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_datasourcedomain.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_datasourcedomain');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_partnersystem', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_partnersystem.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_partnersystem');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_initiative', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_initiative.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_initiative');
@@ -39,5 +51,11 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_cateogry', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_cateogry.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_cateogry');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_datasourceroute', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_datasourceroute.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_datasourceroute');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_synchroute', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_synchroute.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_synchroute');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_registration', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_registration.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_registration');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_feusers', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_feusers.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_feusers');

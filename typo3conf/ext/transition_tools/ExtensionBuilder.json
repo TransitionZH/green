@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    51,
-                    399
+                    83,
+                    394
                 ]
             },
             "name": "New Model Object",
@@ -17,7 +17,7 @@
                     "_default4_delete": false,
                     "customActions": []
                 },
-                "name": "DataSourceDomain",
+                "name": "PartnerSystem",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -88,7 +88,8 @@
                     "_default4_delete": false,
                     "customActions": [
                         "map",
-                        "grid"
+                        "grid",
+                        "categories"
                     ]
                 },
                 "name": "Initiative",
@@ -98,7 +99,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": true,
                     "categorizable": false,
-                    "description": "Transition Initiatives",
+                    "description": "Transition Initiatives (Openki: Gruppe)",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -107,6 +108,16 @@
                 },
                 "propertyGroup": {
                     "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "uuid",
+                            "propertyType": "String",
+                            "uid": "343657385502"
+                        },
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
@@ -188,8 +199,8 @@
         {
             "config": {
                 "position": [
-                    676,
-                    40
+                    645,
+                    42
                 ]
             },
             "name": "New Model Object",
@@ -211,7 +222,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": true,
                     "categorizable": false,
-                    "description": "Veranstaltung",
+                    "description": "Veranstaltung (Openki: Kurs)",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -220,6 +231,16 @@
                 },
                 "propertyGroup": {
                     "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "uuid",
+                            "propertyType": "String",
+                            "uid": "32079538049"
+                        },
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
@@ -246,9 +267,9 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "weblink",
+                            "propertyName": "contact",
                             "propertyType": "String",
-                            "uid": "595728369647"
+                            "uid": "1102300631854"
                         },
                         {
                             "allowedFileTypes": "",
@@ -256,9 +277,9 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "location",
+                            "propertyName": "weblink",
                             "propertyType": "String",
-                            "uid": "251039218135"
+                            "uid": "595728369647"
                         }
                     ]
                 },
@@ -269,8 +290,8 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "venue",
-                            "relationType": "manyToOne",
+                            "relationName": "venues",
+                            "relationType": "manyToMany",
                             "relationWire": "[wired]",
                             "uid": "176813204482"
                         },
@@ -280,9 +301,19 @@
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
                             "relationName": "dates",
-                            "relationType": "zeroToOne",
+                            "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "uid": "331076724113"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "initiatives",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "208186625967"
                         }
                     ]
                 }
@@ -291,8 +322,8 @@
         {
             "config": {
                 "position": [
-                    638,
-                    462
+                    910,
+                    407
                 ]
             },
             "name": "New Model Object",
@@ -351,8 +382,8 @@
         {
             "config": {
                 "position": [
-                    971,
-                    40
+                    913,
+                    44
                 ]
             },
             "name": "New Model Object",
@@ -372,7 +403,7 @@
                     "addStarttimeEndtimeFields": true,
                     "aggregateRoot": true,
                     "categorizable": false,
-                    "description": "Termin",
+                    "description": "Termin (Openki: Event)",
                     "mapToTable": "",
                     "parentClass": "",
                     "sorting": false,
@@ -387,8 +418,18 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
+                            "propertyName": "uuid",
+                            "propertyType": "String",
+                            "uid": "478458884725"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
                             "propertyName": "start",
-                            "propertyType": "NativeDateTime",
+                            "propertyType": "DateTime",
                             "uid": "1354178763938"
                         },
                         {
@@ -398,21 +439,122 @@
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
                             "propertyName": "end",
-                            "propertyType": "NativeDateTime",
+                            "propertyType": "DateTime",
                             "uid": "1026274321418"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "String",
+                            "uid": "968750878441"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "contact",
+                            "propertyType": "String",
+                            "uid": "1457483932671"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "weblink",
+                            "propertyType": "NativeDateTime",
+                            "uid": "985920434879"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "minRegistrations",
+                            "propertyType": "Integer",
+                            "uid": "210701857921"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "maxRegistrations",
+                            "propertyType": "Integer",
+                            "uid": "879083356421"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "hasWaitingList",
+                            "propertyType": "Boolean",
+                            "uid": "1400226334744"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "fee",
+                            "propertyType": "String",
+                            "uid": "556405852412"
                         }
                     ]
                 },
                 "relationGroup": {
-                    "relations": []
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "venues",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "350708163615"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "registrations",
+                            "relationType": "zeroToMany",
+                            "relationWire": "[wired]",
+                            "uid": "906434875349"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "event",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "824064713361"
+                        }
+                    ]
                 }
             }
         },
         {
             "config": {
                 "position": [
-                    111,
-                    116
+                    84,
+                    106
                 ]
             },
             "name": "New Model Object",
@@ -461,8 +603,8 @@
         {
             "config": {
                 "position": [
-                    336,
-                    503
+                    369,
+                    402
                 ]
             },
             "name": "New Model Object",
@@ -473,9 +615,12 @@
                     "_default2_new_create": false,
                     "_default3_edit_update": false,
                     "_default4_delete": false,
-                    "customActions": []
+                    "customActions": [
+                        "import",
+                        "export"
+                    ]
                 },
-                "name": "DataSourceRoute",
+                "name": "SynchRoute",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -507,9 +652,383 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "route",
+                            "propertyName": "importRoute",
                             "propertyType": "String",
                             "uid": "433726675988"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "importFormat",
+                            "propertyType": "Select",
+                            "uid": "1443063072731"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "importTstamp",
+                            "propertyType": "DateTime",
+                            "uid": "910230489387"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "importCacheData",
+                            "propertyType": "String",
+                            "uid": "779624889994"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "importCacheLifetime",
+                            "propertyType": "Integer",
+                            "uid": "1248506948180"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "exportRoute",
+                            "propertyType": "String",
+                            "uid": "1357291597956"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "exportFormat",
+                            "propertyType": "Select",
+                            "uid": "301695387097"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "exportTstamp",
+                            "propertyType": "DateTime",
+                            "uid": "654686805083"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "partnerSystem",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "244663962016"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    1186,
+                    43
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Registration",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Anmeldung",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "965378707233"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "uuid",
+                            "propertyType": "String",
+                            "uid": "871649544295"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "comment",
+                            "propertyType": "String",
+                            "uid": "853719685527"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "registrationStatus",
+                            "propertyType": "Select",
+                            "uid": "1285777509592"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "fee",
+                            "propertyType": "String",
+                            "uid": "500819573406"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "paymentStatus",
+                            "propertyType": "Select",
+                            "uid": "300025273093"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "date",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "558424832981"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "persons",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "852289039018"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    1185,
+                    406
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        ""
+                    ]
+                },
+                "name": "FeUsers",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Person mit Adresse etc.",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "787042288147"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "Select",
+                            "uid": "877935518847"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "firstName",
+                            "propertyType": "String",
+                            "uid": "645841588276"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "lastName",
+                            "propertyType": "String",
+                            "uid": "1077135980513"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "address1",
+                            "propertyType": "String",
+                            "uid": "302677987608"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "address2",
+                            "propertyType": "String",
+                            "uid": "194866471312"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "company",
+                            "propertyType": "String",
+                            "uid": "962818892790"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "zip",
+                            "propertyType": "String",
+                            "uid": "151887163907"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "city",
+                            "propertyType": "String",
+                            "uid": "877559472501"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "country",
+                            "propertyType": "Select",
+                            "uid": "1157268729819"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "mail",
+                            "propertyType": "String",
+                            "uid": "1388771710054"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "phoneFix",
+                            "propertyType": "String",
+                            "uid": "254441340694"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "phoneMobile",
+                            "propertyType": "String",
+                            "uid": "1089273860073"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "String",
+                            "uid": "188226340348"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "comment",
+                            "propertyType": "String",
+                            "uid": "126287782959"
                         }
                     ]
                 },
@@ -564,6 +1083,24 @@
                 },
                 "key": "events",
                 "name": "Events"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Registration => list,show,new,create,edit,update,delete",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "registrations",
+                "name": "Registrations"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "SynchRoute => import,export",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "synch",
+                "name": "Synch"
             }
         ],
         "vendorName": "TransitionTeam"
@@ -628,10 +1165,94 @@
                 "terminal": "SOURCES",
                 "uid": "11264615636"
             }
+        },
+        {
+            "src": {
+                "moduleId": 4,
+                "terminal": "relationWire_0",
+                "uid": "350708163615"
+            },
+            "tgt": {
+                "moduleId": 3,
+                "terminal": "SOURCES",
+                "uid": "1430364742433"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 7,
+                "terminal": "relationWire_0",
+                "uid": "558424832981"
+            },
+            "tgt": {
+                "moduleId": 4,
+                "terminal": "SOURCES",
+                "uid": "11264615636"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 4,
+                "terminal": "relationWire_1",
+                "uid": "906434875349"
+            },
+            "tgt": {
+                "moduleId": 7,
+                "terminal": "SOURCES",
+                "uid": "965378707233"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 4,
+                "terminal": "relationWire_2",
+                "uid": "824064713361"
+            },
+            "tgt": {
+                "moduleId": 2,
+                "terminal": "SOURCES",
+                "uid": "1248094951712"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 2,
+                "terminal": "relationWire_2",
+                "uid": "208186625967"
+            },
+            "tgt": {
+                "moduleId": 1,
+                "terminal": "SOURCES",
+                "uid": "677500968539"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 6,
+                "terminal": "relationWire_0",
+                "uid": "244663962016"
+            },
+            "tgt": {
+                "moduleId": 0,
+                "terminal": "SOURCES",
+                "uid": "542826386320"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 7,
+                "terminal": "relationWire_1",
+                "uid": "852289039018"
+            },
+            "tgt": {
+                "moduleId": 8,
+                "terminal": "SOURCES",
+                "uid": "787042288147"
+            }
         }
     ],
     "log": {
-        "last_modified": "2016-12-06 11:08",
+        "last_modified": "2016-12-08 11:14",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

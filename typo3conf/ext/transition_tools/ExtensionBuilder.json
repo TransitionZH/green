@@ -703,6 +703,16 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
+                            "propertyName": "className",
+                            "propertyType": "String",
+                            "uid": "1285264007820"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
                             "propertyName": "importFormat",
                             "propertyType": "Select",
                             "uid": "1443063072731"
@@ -716,6 +726,16 @@
                             "propertyName": "importTstamp",
                             "propertyType": "DateTime",
                             "uid": "910230489387"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "importMapping",
+                            "propertyType": "String",
+                            "uid": "1200803634398"
                         },
                         {
                             "allowedFileTypes": "",
@@ -766,6 +786,16 @@
                             "propertyName": "exportTstamp",
                             "propertyType": "DateTime",
                             "uid": "654686805083"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "exportMapping",
+                            "propertyType": "String",
+                            "uid": "1156484483728"
                         }
                     ]
                 },
@@ -1341,7 +1371,7 @@
         }
     ],
     "log": {
-        "last_modified": "2016-12-08 11:27",
+        "last_modified": "2016-12-08 11:31",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

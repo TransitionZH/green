@@ -279,13 +279,16 @@ CREATE TABLE tx_transitiontools_domain_model_synchroute (
 
 	caption varchar(255) DEFAULT '' NOT NULL,
 	import_route varchar(255) DEFAULT '' NOT NULL,
+	class_name varchar(255) DEFAULT '' NOT NULL,
 	import_format int(11) DEFAULT '0' NOT NULL,
 	import_tstamp int(11) DEFAULT '0' NOT NULL,
+	import_mapping varchar(255) DEFAULT '' NOT NULL,
 	import_cache_data varchar(255) DEFAULT '' NOT NULL,
 	import_cache_lifetime int(11) DEFAULT '0' NOT NULL,
 	export_route varchar(255) DEFAULT '' NOT NULL,
 	export_format int(11) DEFAULT '0' NOT NULL,
 	export_tstamp int(11) DEFAULT '0' NOT NULL,
+	export_mapping varchar(255) DEFAULT '' NOT NULL,
 	partner_system int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

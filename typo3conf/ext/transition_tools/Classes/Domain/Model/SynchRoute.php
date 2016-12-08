@@ -48,6 +48,13 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $importRoute = '';
     
     /**
+     * className
+     *
+     * @var string
+     */
+    protected $className = '';
+    
+    /**
      * importFormat
      *
      * @var int
@@ -60,6 +67,13 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \DateTime
      */
     protected $importTstamp = null;
+    
+    /**
+     * importMapping
+     *
+     * @var string
+     */
+    protected $importMapping = '';
     
     /**
      * importCacheData
@@ -95,6 +109,13 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \DateTime
      */
     protected $exportTstamp = null;
+    
+    /**
+     * exportMapping
+     *
+     * @var string
+     */
+    protected $exportMapping = '';
     
     /**
      * partnerSystem
@@ -146,6 +167,27 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Returns the className
+     *
+     * @return string $className
+     */
+    public function getClassName()
+    {
+        return $this->className;
+    }
+    
+    /**
+     * Sets the className
+     *
+     * @param string $className
+     * @return void
+     */
+    public function setClassName($className)
+    {
+        $this->className = $className;
+    }
+    
+    /**
      * Returns the importFormat
      *
      * @return int $importFormat
@@ -185,6 +227,27 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImportTstamp(\DateTime $importTstamp)
     {
         $this->importTstamp = $importTstamp;
+    }
+    
+    /**
+     * Returns the importMapping
+     *
+     * @return string $importMapping
+     */
+    public function getImportMapping()
+    {
+        return $this->importMapping;
+    }
+    
+    /**
+     * Sets the importMapping
+     *
+     * @param string $importMapping
+     * @return void
+     */
+    public function setImportMapping($importMapping)
+    {
+        $this->importMapping = $importMapping;
     }
     
     /**
@@ -290,6 +353,27 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setExportTstamp(\DateTime $exportTstamp)
     {
         $this->exportTstamp = $exportTstamp;
+    }
+    
+    /**
+     * Returns the exportMapping
+     *
+     * @return string $exportMapping
+     */
+    public function getExportMapping()
+    {
+        return $this->exportMapping;
+    }
+    
+    /**
+     * Sets the exportMapping
+     *
+     * @param string $exportMapping
+     * @return void
+     */
+    public function setExportMapping($exportMapping)
+    {
+        $this->exportMapping = $exportMapping;
     }
     
     /**

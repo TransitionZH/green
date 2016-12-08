@@ -104,6 +104,31 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getClassNameReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getClassName()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setClassNameForStringSetsClassName()
+	{
+		$this->subject->setClassName('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'className',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getImportFormatReturnsInitialValueForInt()
 	{	}
 
@@ -135,6 +160,31 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		$this->assertAttributeEquals(
 			$dateTimeFixture,
 			'importTstamp',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getImportMappingReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getImportMapping()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setImportMappingForStringSetsImportMapping()
+	{
+		$this->subject->setImportMapping('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'importMapping',
 			$this->subject
 		);
 	}
@@ -235,6 +285,31 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		$this->assertAttributeEquals(
 			$dateTimeFixture,
 			'exportTstamp',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getExportMappingReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getExportMapping()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setExportMappingForStringSetsExportMapping()
+	{
+		$this->subject->setExportMapping('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'exportMapping',
 			$this->subject
 		);
 	}

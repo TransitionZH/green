@@ -48,12 +48,12 @@ class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $url = '';
     
     /**
-     * routes
+     * synchRoutes
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute>
      * @cascade remove
      */
-    protected $routes = null;
+    protected $synchRoutes = null;
     
     /**
      * __construct
@@ -74,7 +74,7 @@ class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->routes = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->synchRoutes = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
     
     /**
@@ -122,44 +122,44 @@ class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a SynchRoute
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $route
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRoute
      * @return void
      */
-    public function addRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $route)
+    public function addSynchRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRoute)
     {
-        $this->routes->attach($route);
+        $this->synchRoutes->attach($synchRoute);
     }
     
     /**
      * Removes a SynchRoute
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $routeToRemove The SynchRoute to be removed
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRouteToRemove The SynchRoute to be removed
      * @return void
      */
-    public function removeRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $routeToRemove)
+    public function removeSynchRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRouteToRemove)
     {
-        $this->routes->detach($routeToRemove);
+        $this->synchRoutes->detach($synchRouteToRemove);
     }
     
     /**
-     * Returns the routes
+     * Returns the synchRoutes
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $routes
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $synchRoutes
      */
-    public function getRoutes()
+    public function getSynchRoutes()
     {
-        return $this->routes;
+        return $this->synchRoutes;
     }
     
     /**
-     * Sets the routes
+     * Sets the synchRoutes
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $routes
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $synchRoutes
      * @return void
      */
-    public function setRoutes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $routes)
+    public function setSynchRoutes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $synchRoutes)
     {
-        $this->routes = $routes;
+        $this->synchRoutes = $synchRoutes;
     }
 
 }

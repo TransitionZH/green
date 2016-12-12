@@ -295,7 +295,7 @@ return array(
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_transitiontools_domain_model_synchroute',
+				'foreign_table' => 'tx_transitiontools_domain_model_partnersystem',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),

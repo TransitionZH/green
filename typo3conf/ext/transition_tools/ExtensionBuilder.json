@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    83,
-                    394
+                    685,
+                    422
                 ]
             },
             "name": "New Model Object",
@@ -62,10 +62,10 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "routes",
+                            "relationName": "synchRoutes",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
-                            "uid": "88863479181"
+                            "uid": "903998331186"
                         }
                     ]
                 }
@@ -74,7 +74,7 @@
         {
             "config": {
                 "position": [
-                    365,
+                    160,
                     38
                 ]
             },
@@ -209,8 +209,8 @@
         {
             "config": {
                 "position": [
-                    645,
-                    42
+                    418,
+                    40
                 ]
             },
             "name": "New Model Object",
@@ -320,20 +320,10 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "initiatives",
-                            "relationType": "manyToMany",
-                            "relationWire": "[wired]",
-                            "uid": "208186625967"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
                             "relationName": "source",
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
-                            "uid": "503694972071"
+                            "uid": "85402948329"
                         }
                     ]
                 }
@@ -342,8 +332,8 @@
         {
             "config": {
                 "position": [
-                    910,
-                    407
+                    159,
+                    434
                 ]
             },
             "name": "New Model Object",
@@ -404,7 +394,7 @@
                             "relationName": "source",
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
-                            "uid": "32089404834"
+                            "uid": "706878897459"
                         }
                     ]
                 }
@@ -413,8 +403,8 @@
         {
             "config": {
                 "position": [
-                    913,
-                    44
+                    675,
+                    43
                 ]
             },
             "name": "New Model Object",
@@ -566,26 +556,6 @@
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "uid": "906434875349"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "event",
-                            "relationType": "manyToOne",
-                            "relationWire": "[wired]",
-                            "uid": "824064713361"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "source",
-                            "relationType": "manyToOne",
-                            "relationWire": "[wired]",
-                            "uid": "1195845394241"
                         }
                     ]
                 }
@@ -594,58 +564,8 @@
         {
             "config": {
                 "position": [
-                    84,
-                    106
-                ]
-            },
-            "name": "New Model Object",
-            "value": {
-                "actionGroup": {
-                    "_default0_list": true,
-                    "_default1_show": true,
-                    "_default2_new_create": false,
-                    "_default3_edit_update": false,
-                    "_default4_delete": false,
-                    "customActions": []
-                },
-                "name": "Cateogry",
-                "objectsettings": {
-                    "addDeletedField": true,
-                    "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
-                    "aggregateRoot": true,
-                    "categorizable": false,
-                    "description": "",
-                    "mapToTable": "",
-                    "parentClass": "",
-                    "sorting": false,
-                    "type": "Entity",
-                    "uid": "661467967363"
-                },
-                "propertyGroup": {
-                    "properties": [
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsRequired": false,
-                            "propertyName": "title",
-                            "propertyType": "String",
-                            "uid": "606146124651"
-                        }
-                    ]
-                },
-                "relationGroup": {
-                    "relations": []
-                }
-            }
-        },
-        {
-            "config": {
-                "position": [
-                    369,
-                    402
+                    939,
+                    422
                 ]
             },
             "name": "New Model Object",
@@ -693,9 +613,9 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "importRoute",
+                            "propertyName": "rootClass",
                             "propertyType": "String",
-                            "uid": "433726675988"
+                            "uid": "1285264007820"
                         },
                         {
                             "allowedFileTypes": "",
@@ -703,9 +623,9 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "className",
+                            "propertyName": "importRoute",
                             "propertyType": "String",
-                            "uid": "1285264007820"
+                            "uid": "433726675988"
                         },
                         {
                             "allowedFileTypes": "",
@@ -800,25 +720,14 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": [
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
-                            "relationName": "partnerSystem",
-                            "relationType": "manyToOne",
-                            "relationWire": "[wired]",
-                            "uid": "244663962016"
-                        }
-                    ]
+                    "relations": []
                 }
             }
         },
         {
             "config": {
                 "position": [
-                    1186,
+                    939,
                     43
                 ]
             },
@@ -907,16 +816,6 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "date",
-                            "relationType": "manyToOne",
-                            "relationWire": "[wired]",
-                            "uid": "558424832981"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": true,
-                            "relationDescription": "",
                             "relationName": "persons",
                             "relationType": "manyToMany",
                             "relationWire": "[wired]",
@@ -929,8 +828,8 @@
         {
             "config": {
                 "position": [
-                    1185,
-                    406
+                    1200,
+                    44
                 ]
             },
             "name": "New Model Object",
@@ -1215,18 +1114,6 @@
         },
         {
             "src": {
-                "moduleId": 0,
-                "terminal": "relationWire_0",
-                "uid": "88863479181"
-            },
-            "tgt": {
-                "moduleId": 6,
-                "terminal": "SOURCES",
-                "uid": "1098529906116"
-            }
-        },
-        {
-            "src": {
                 "moduleId": 2,
                 "terminal": "relationWire_1",
                 "uid": "331076724113"
@@ -1251,74 +1138,38 @@
         },
         {
             "src": {
-                "moduleId": 7,
-                "terminal": "relationWire_0",
-                "uid": "558424832981"
-            },
-            "tgt": {
-                "moduleId": 4,
-                "terminal": "SOURCES",
-                "uid": "11264615636"
-            }
-        },
-        {
-            "src": {
                 "moduleId": 4,
                 "terminal": "relationWire_1",
                 "uid": "906434875349"
             },
             "tgt": {
-                "moduleId": 7,
+                "moduleId": 6,
                 "terminal": "SOURCES",
                 "uid": "965378707233"
             }
         },
         {
             "src": {
-                "moduleId": 4,
-                "terminal": "relationWire_2",
-                "uid": "824064713361"
-            },
-            "tgt": {
-                "moduleId": 2,
-                "terminal": "SOURCES",
-                "uid": "1248094951712"
-            }
-        },
-        {
-            "src": {
-                "moduleId": 2,
-                "terminal": "relationWire_2",
-                "uid": "208186625967"
-            },
-            "tgt": {
-                "moduleId": 1,
-                "terminal": "SOURCES",
-                "uid": "677500968539"
-            }
-        },
-        {
-            "src": {
                 "moduleId": 6,
                 "terminal": "relationWire_0",
-                "uid": "244663962016"
-            },
-            "tgt": {
-                "moduleId": 0,
-                "terminal": "SOURCES",
-                "uid": "542826386320"
-            }
-        },
-        {
-            "src": {
-                "moduleId": 7,
-                "terminal": "relationWire_1",
                 "uid": "852289039018"
             },
             "tgt": {
-                "moduleId": 8,
+                "moduleId": 7,
                 "terminal": "SOURCES",
                 "uid": "787042288147"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "903998331186"
+            },
+            "tgt": {
+                "moduleId": 5,
+                "terminal": "SOURCES",
+                "uid": "1098529906116"
             }
         },
         {
@@ -1328,50 +1179,38 @@
                 "uid": "341978365553"
             },
             "tgt": {
-                "moduleId": 6,
+                "moduleId": 0,
                 "terminal": "SOURCES",
-                "uid": "1098529906116"
+                "uid": "542826386320"
             }
         },
         {
             "src": {
                 "moduleId": 2,
-                "terminal": "relationWire_3",
-                "uid": "503694972071"
+                "terminal": "relationWire_2",
+                "uid": "85402948329"
             },
             "tgt": {
-                "moduleId": 6,
+                "moduleId": 0,
                 "terminal": "SOURCES",
-                "uid": "1098529906116"
-            }
-        },
-        {
-            "src": {
-                "moduleId": 4,
-                "terminal": "relationWire_3",
-                "uid": "1195845394241"
-            },
-            "tgt": {
-                "moduleId": 6,
-                "terminal": "SOURCES",
-                "uid": "1098529906116"
+                "uid": "542826386320"
             }
         },
         {
             "src": {
                 "moduleId": 3,
                 "terminal": "relationWire_0",
-                "uid": "32089404834"
+                "uid": "706878897459"
             },
             "tgt": {
-                "moduleId": 6,
+                "moduleId": 0,
                 "terminal": "SOURCES",
-                "uid": "1098529906116"
+                "uid": "542826386320"
             }
         }
     ],
     "log": {
-        "last_modified": "2016-12-08 11:31",
+        "last_modified": "2016-12-12 11:50",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

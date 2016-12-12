@@ -79,6 +79,31 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getRootClassReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getRootClass()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setRootClassForStringSetsRootClass()
+	{
+		$this->subject->setRootClass('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'rootClass',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getImportRouteReturnsInitialValueForString()
 	{
 		$this->assertSame(
@@ -97,31 +122,6 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
 			'importRoute',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getClassNameReturnsInitialValueForString()
-	{
-		$this->assertSame(
-			'',
-			$this->subject->getClassName()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setClassNameForStringSetsClassName()
-	{
-		$this->subject->setClassName('Conceived at T3CON10');
-
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'className',
 			$this->subject
 		);
 	}
@@ -310,32 +310,6 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
 			'exportMapping',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getPartnerSystemReturnsInitialValueForPartnerSystem()
-	{
-		$this->assertEquals(
-			NULL,
-			$this->subject->getPartnerSystem()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setPartnerSystemForPartnerSystemSetsPartnerSystem()
-	{
-		$partnerSystemFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
-		$this->subject->setPartnerSystem($partnerSystemFixture);
-
-		$this->assertAttributeEquals(
-			$partnerSystemFixture,
-			'partnerSystem',
 			$this->subject
 		);
 	}

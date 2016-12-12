@@ -291,63 +291,7 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getInitiativesReturnsInitialValueForInitiative()
-	{
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->assertEquals(
-			$newObjectStorage,
-			$this->subject->getInitiatives()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setInitiativesForObjectStorageContainingInitiativeSetsInitiatives()
-	{
-		$initiative = new \TransitionTeam\TransitionTools\Domain\Model\Initiative();
-		$objectStorageHoldingExactlyOneInitiatives = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneInitiatives->attach($initiative);
-		$this->subject->setInitiatives($objectStorageHoldingExactlyOneInitiatives);
-
-		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneInitiatives,
-			'initiatives',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function addInitiativeToObjectStorageHoldingInitiatives()
-	{
-		$initiative = new \TransitionTeam\TransitionTools\Domain\Model\Initiative();
-		$initiativesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$initiativesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($initiative));
-		$this->inject($this->subject, 'initiatives', $initiativesObjectStorageMock);
-
-		$this->subject->addInitiative($initiative);
-	}
-
-	/**
-	 * @test
-	 */
-	public function removeInitiativeFromObjectStorageHoldingInitiatives()
-	{
-		$initiative = new \TransitionTeam\TransitionTools\Domain\Model\Initiative();
-		$initiativesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$initiativesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($initiative));
-		$this->inject($this->subject, 'initiatives', $initiativesObjectStorageMock);
-
-		$this->subject->removeInitiative($initiative);
-
-	}
-
-	/**
-	 * @test
-	 */
-	public function getSourceReturnsInitialValueForSynchRoute()
+	public function getSourceReturnsInitialValueForPartnerSystem()
 	{
 		$this->assertEquals(
 			NULL,
@@ -358,9 +302,9 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function setSourceForSynchRouteSetsSource()
+	public function setSourceForPartnerSystemSetsSource()
 	{
-		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
 		$this->subject->setSource($sourceFixture);
 
 		$this->assertAttributeEquals(

@@ -69,13 +69,6 @@ class Registration extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $paymentStatus = 0;
     
     /**
-     * date
-     *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\Date
-     */
-    protected $date = null;
-    
-    /**
      * persons
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\FeUsers>
@@ -207,27 +200,6 @@ class Registration extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPaymentStatus($paymentStatus)
     {
         $this->paymentStatus = $paymentStatus;
-    }
-    
-    /**
-     * Returns the date
-     *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\Date $date
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-    
-    /**
-     * Sets the date
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Date $date
-     * @return void
-     */
-    public function setDate(\TransitionTeam\TransitionTools\Domain\Model\Date $date)
-    {
-        $this->date = $date;
     }
     
     /**

@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,name,description,contact,weblink,venues,dates,initiatives,source,',
+		'searchFields' => 'uuid,name,description,contact,weblink,venues,dates,source,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_event.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, description, contact, weblink, venues, dates, initiatives, source',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, description, contact, weblink, venues, dates, source',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, description, contact, weblink, venues, dates, initiatives, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, description, contact, weblink, venues, dates, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -220,54 +220,13 @@ return array(
 			),
 
 		),
-		'initiatives' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_event.initiatives',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectMultipleSideBySide',
-				'foreign_table' => 'tx_transitiontools_domain_model_initiative',
-				'MM' => 'tx_transitiontools_event_initiative_mm',
-				'size' => 10,
-				'autoSizeMax' => 30,
-				'maxitems' => 9999,
-				'multiple' => 0,
-				'wizards' => array(
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => array(
-						'module' => array(
-							'name' => 'wizard_edit',
-						),
-						'type' => 'popup',
-						'title' => 'Edit',
-						'icon' => 'edit2.gif',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-						),
-					'add' => Array(
-						'module' => array(
-							'name' => 'wizard_add',
-						),
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'add.gif',
-						'params' => array(
-							'table' => 'tx_transitiontools_domain_model_initiative',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-						),
-					),
-				),
-			),
-		),
 		'source' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_event.source',
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_transitiontools_domain_model_synchroute',
+				'foreign_table' => 'tx_transitiontools_domain_model_partnersystem',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),

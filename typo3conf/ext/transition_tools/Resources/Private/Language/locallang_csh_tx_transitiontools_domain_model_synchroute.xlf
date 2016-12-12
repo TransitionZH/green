@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-08T23:31:23Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-12T23:50:55Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="caption.description">
 				<source>caption</source>
 			</trans-unit>
+			<trans-unit id="root_class.description">
+				<source>rootClass</source>
+			</trans-unit>
 			<trans-unit id="import_route.description">
 				<source>importRoute</source>
-			</trans-unit>
-			<trans-unit id="class_name.description">
-				<source>className</source>
 			</trans-unit>
 			<trans-unit id="import_format.description">
 				<source>importFormat</source>
@@ -38,9 +38,6 @@
 			</trans-unit>
 			<trans-unit id="export_mapping.description">
 				<source>exportMapping</source>
-			</trans-unit>
-			<trans-unit id="partner_system.description">
-				<source>partnerSystem</source>
 			</trans-unit>
 		</body>
 	</file>

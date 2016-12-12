@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,comment,registration_status,fee,payment_status,date,persons,',
+		'searchFields' => 'uuid,comment,registration_status,fee,payment_status,persons,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_registration.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, comment, registration_status, fee, payment_status, date, persons',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, comment, registration_status, fee, payment_status, persons',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, comment, registration_status, fee, payment_status, date, persons, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, comment, registration_status, fee, payment_status, persons, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -169,17 +169,6 @@ return array(
 				'size' => 1,
 				'maxitems' => 1,
 				'eval' => ''
-			),
-		),
-		'date' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_registration.date',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_transitiontools_domain_model_date',
-				'minitems' => 0,
-				'maxitems' => 1,
 			),
 		),
 		'persons' => array(

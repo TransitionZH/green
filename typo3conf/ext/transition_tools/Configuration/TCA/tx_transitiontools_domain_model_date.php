@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,start,end,description,contact,weblink,min_registrations,max_registrations,has_waiting_list,fee,venues,registrations,event,source,',
+		'searchFields' => 'uuid,start,end,description,contact,weblink,min_registrations,max_registrations,has_waiting_list,fee,venues,registrations,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_date.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations, event, source',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations, event, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -270,28 +270,6 @@ return array(
 				),
 			),
 
-		),
-		'event' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_date.event',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_transitiontools_domain_model_event',
-				'minitems' => 0,
-				'maxitems' => 1,
-			),
-		),
-		'source' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_date.source',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_transitiontools_domain_model_synchroute',
-				'minitems' => 0,
-				'maxitems' => 1,
-			),
 		),
 		
 		'event' => array(

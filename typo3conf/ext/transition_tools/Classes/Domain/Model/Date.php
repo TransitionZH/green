@@ -119,20 +119,6 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $registrations = null;
     
     /**
-     * event
-     *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\Event
-     */
-    protected $event = null;
-    
-    /**
-     * source
-     *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
-     */
-    protected $source = null;
-    
-    /**
      * __construct
      */
     public function __construct()
@@ -459,48 +445,6 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setRegistrations(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $registrations)
     {
         $this->registrations = $registrations;
-    }
-    
-    /**
-     * Returns the event
-     *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\Event $event
-     */
-    public function getEvent()
-    {
-        return $this->event;
-    }
-    
-    /**
-     * Sets the event
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Event $event
-     * @return void
-     */
-    public function setEvent(\TransitionTeam\TransitionTools\Domain\Model\Event $event)
-    {
-        $this->event = $event;
-    }
-    
-    /**
-     * Returns the source
-     *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-    
-    /**
-     * Sets the source
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
-     * @return void
-     */
-    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
-    {
-        $this->source = $source;
     }
 
 }

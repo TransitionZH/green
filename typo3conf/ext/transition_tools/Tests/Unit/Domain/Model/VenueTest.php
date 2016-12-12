@@ -104,7 +104,7 @@ class VenueTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getSourceReturnsInitialValueForSynchRoute()
+	public function getSourceReturnsInitialValueForPartnerSystem()
 	{
 		$this->assertEquals(
 			NULL,
@@ -115,9 +115,9 @@ class VenueTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function setSourceForSynchRouteSetsSource()
+	public function setSourceForPartnerSystemSetsSource()
 	{
-		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
 		$this->subject->setSource($sourceFixture);
 
 		$this->assertAttributeEquals(

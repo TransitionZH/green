@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-08T23:31:23Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-12T23:50:55Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -12,8 +12,8 @@
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem.url">
 				<source>Url</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_partnersystem.routes">
-				<source>Routes</source>
+			<trans-unit id="tx_transitiontools_domain_model_partnersystem.synch_routes">
+				<source>Synch Routes</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative">
 				<source>Initiative</source>
@@ -69,9 +69,6 @@
 			<trans-unit id="tx_transitiontools_domain_model_event.dates">
 				<source>Dates</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_event.initiatives">
-				<source>Initiatives</source>
-			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.source">
 				<source>Source</source>
 			</trans-unit>
@@ -126,29 +123,17 @@
 			<trans-unit id="tx_transitiontools_domain_model_date.registrations">
 				<source>Registrations</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_date.event">
-				<source>Event</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_date.source">
-				<source>Source</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_cateogry">
-				<source>Cateogry</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_cateogry.title">
-				<source>Title</source>
-			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute">
 				<source>Synch Route</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.caption">
 				<source>Caption</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.root_class">
+				<source>Root Class</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_route">
 				<source>Import Route</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.class_name">
-				<source>Class Name</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_format">
 				<source>Import Format</source>
@@ -177,9 +162,6 @@
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_mapping">
 				<source>Export Mapping</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.partner_system">
-				<source>Partner System</source>
-			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration">
 				<source>Registration</source>
 			</trans-unit>
@@ -197,9 +179,6 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration.payment_status">
 				<source>Payment Status</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_registration.date">
-				<source>Date</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration.persons">
 				<source>Persons</source>

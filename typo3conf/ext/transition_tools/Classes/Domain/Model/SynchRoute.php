@@ -41,18 +41,18 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $caption = '';
     
     /**
+     * rootClass
+     *
+     * @var string
+     */
+    protected $rootClass = '';
+    
+    /**
      * importRoute
      *
      * @var string
      */
     protected $importRoute = '';
-    
-    /**
-     * className
-     *
-     * @var string
-     */
-    protected $className = '';
     
     /**
      * importFormat
@@ -118,13 +118,6 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $exportMapping = '';
     
     /**
-     * partnerSystem
-     *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
-     */
-    protected $partnerSystem = null;
-    
-    /**
      * Returns the caption
      *
      * @return string $caption
@@ -146,6 +139,27 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Returns the rootClass
+     *
+     * @return string $rootClass
+     */
+    public function getRootClass()
+    {
+        return $this->rootClass;
+    }
+    
+    /**
+     * Sets the rootClass
+     *
+     * @param string $rootClass
+     * @return void
+     */
+    public function setRootClass($rootClass)
+    {
+        $this->rootClass = $rootClass;
+    }
+    
+    /**
      * Returns the importRoute
      *
      * @return string $importRoute
@@ -164,27 +178,6 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImportRoute($importRoute)
     {
         $this->importRoute = $importRoute;
-    }
-    
-    /**
-     * Returns the className
-     *
-     * @return string $className
-     */
-    public function getClassName()
-    {
-        return $this->className;
-    }
-    
-    /**
-     * Sets the className
-     *
-     * @param string $className
-     * @return void
-     */
-    public function setClassName($className)
-    {
-        $this->className = $className;
     }
     
     /**
@@ -374,27 +367,6 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setExportMapping($exportMapping)
     {
         $this->exportMapping = $exportMapping;
-    }
-    
-    /**
-     * Returns the partnerSystem
-     *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem
-     */
-    public function getPartnerSystem()
-    {
-        return $this->partnerSystem;
-    }
-    
-    /**
-     * Sets the partnerSystem
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem
-     * @return void
-     */
-    public function setPartnerSystem(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem)
-    {
-        $this->partnerSystem = $partnerSystem;
     }
 
 }

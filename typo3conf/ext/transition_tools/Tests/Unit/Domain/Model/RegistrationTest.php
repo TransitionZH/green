@@ -153,32 +153,6 @@ class RegistrationTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getDateReturnsInitialValueForDate()
-	{
-		$this->assertEquals(
-			NULL,
-			$this->subject->getDate()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setDateForDateSetsDate()
-	{
-		$dateFixture = new \TransitionTeam\TransitionTools\Domain\Model\Date();
-		$this->subject->setDate($dateFixture);
-
-		$this->assertAttributeEquals(
-			$dateFixture,
-			'date',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
 	public function getPersonsReturnsInitialValueForFeUsers()
 	{
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();

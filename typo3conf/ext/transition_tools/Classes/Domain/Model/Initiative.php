@@ -92,7 +92,7 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * source
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
+     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
      */
     protected $source = null;
     
@@ -334,7 +334,7 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the source
      *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
      */
     public function getSource()
     {
@@ -344,10 +344,10 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the source
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
      * @return void
      */
-    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
     {
         $this->source = $source;
     }

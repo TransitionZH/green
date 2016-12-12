@@ -48,9 +48,6 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_date', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_date.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_date');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_cateogry', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_cateogry.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_cateogry');
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_synchroute', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_synchroute.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_synchroute');
 

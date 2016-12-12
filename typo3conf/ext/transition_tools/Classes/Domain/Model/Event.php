@@ -84,16 +84,9 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $dates = null;
     
     /**
-     * initiatives
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Initiative>
-     */
-    protected $initiatives = null;
-    
-    /**
      * source
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
+     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
      */
     protected $source = null;
     
@@ -118,7 +111,6 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->dates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->initiatives = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
     
     /**
@@ -313,52 +305,9 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Adds a Initiative
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative
-     * @return void
-     */
-    public function addInitiative(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative)
-    {
-        $this->initiatives->attach($initiative);
-    }
-    
-    /**
-     * Removes a Initiative
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $initiativeToRemove The Initiative to be removed
-     * @return void
-     */
-    public function removeInitiative(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiativeToRemove)
-    {
-        $this->initiatives->detach($initiativeToRemove);
-    }
-    
-    /**
-     * Returns the initiatives
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Initiative> $initiatives
-     */
-    public function getInitiatives()
-    {
-        return $this->initiatives;
-    }
-    
-    /**
-     * Sets the initiatives
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Initiative> $initiatives
-     * @return void
-     */
-    public function setInitiatives(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $initiatives)
-    {
-        $this->initiatives = $initiatives;
-    }
-    
-    /**
      * Returns the source
      *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
      */
     public function getSource()
     {
@@ -368,10 +317,10 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the source
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
      * @return void
      */
-    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
     {
         $this->source = $source;
     }

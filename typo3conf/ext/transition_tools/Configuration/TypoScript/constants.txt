@@ -7,10 +7,6 @@ plugin.tx_transitiontools_initiatives {
 		partialRootPath = EXT:transition_tools/Resources/Private/Partials/
 		# cat=plugin.tx_transitiontools_initiatives/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:transition_tools/Resources/Private/Layouts/
-
-        cssRootPath = EXT:transition_tools/Resources/Public/StyleSheets/Css/
-        jsRootPath = EXT:transition_tools/Resources/Public/JavaScript/
-        locallangFile = EXT:transition_tools/Resources/Private/Language/locallang.xlf
 	}
 	persistence {
 		# cat=plugin.tx_transitiontools_initiatives//a; type=string; label=Default storage PID
@@ -26,10 +22,6 @@ plugin.tx_transitiontools_events {
 		partialRootPath = EXT:transition_tools/Resources/Private/Partials/
 		# cat=plugin.tx_transitiontools_initiatives/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:transition_tools/Resources/Private/Layouts/
-
-        cssRootPath = EXT:transition_tools/Resources/Public/StyleSheets/Css/
-        jsRootPath = EXT:transition_tools/Resources/Public/JavaScript/
-        locallangFile = EXT:transition_tools/Resources/Private/Language/locallang.xlf
 	}
 	persistence {
 		# cat=plugin.tx_transitiontools_events//a; type=string; label=Default storage PID

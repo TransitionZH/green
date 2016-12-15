@@ -1,0 +1,19 @@
+/* Categories overview */
+.c-category-list > .c-category-list__item {
+    min-height: 100px;
+}
+.c-category__icon {
+    width: 100px;
+    height: 100px;
+    background-image: url(http://placehold.it/100x100);
+}
+.c-category-list__item > ul {
+    font-size: 80%;
+    position: absolute;
+    left: 100px;
+    top: 30px;
+    display: none;
+}
+.c-category-list__item:hover > ul {
+    display: block
+}

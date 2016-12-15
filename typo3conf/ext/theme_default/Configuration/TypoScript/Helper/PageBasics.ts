@@ -433,7 +433,7 @@ page {
       # Make height of set of elements equal - http://brm.io/jquery-match-height/
       matchheight = EXT:theme_default/Resources/Public/JavaScript/Libs/jquery.matchheight.min.js
       # Slick slider
-      slick = EXT:theme_default/Resources/Public/JavaScript/Libs/slick.min.js
+#      slick = EXT:theme_default/Resources/Public/JavaScript/Libs/slick.min.js
       # Add swipe support for boostrap components - http://hammerjs.github.io/
       hammerjs = EXT:theme_default/Resources/Public/JavaScript/Libs/hammer.min.js
       # Custom scripts for this theme

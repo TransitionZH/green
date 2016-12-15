@@ -54,3 +54,12 @@ plugin.tx_transitiontools._CSS_DEFAULT_STYLE (
 	}
 
 )
+
+page {
+	includeCSS {
+		transitionToolsMainCss = {$plugin.tx_transitiontools.view.cssRootPath}main.css
+	}
+	includeJSFooter {
+		transitionToolsMainJs = {$plugin.tx_transitiontools.view.cssRootPath}main.js
+	}
+}

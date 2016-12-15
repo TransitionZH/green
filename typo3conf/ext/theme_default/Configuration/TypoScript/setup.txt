@@ -28,6 +28,11 @@
     <INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme_default/Configuration/TypoScript/Extension/News/Styles/Twb/setup.ts">
 [global]
 
+#### DEV SETTINGS
+#[globalString = IENV:HTTP_HOST = *dev.transition-zuerich.ch]
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:theme_default/Configuration/TypoScript/Helper/PageBasicsDev.ts">
+#[global]
+
 
 ####################################
 ##### BOOSTRAP PACKAGE SETTINGS ####

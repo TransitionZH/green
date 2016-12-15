@@ -19,20 +19,22 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <table  class="tx_transitiontools" >
 	<tr>
+		<th><f:translate key="tx_transitiontools_domain_model_event.uuid" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_event.name" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_event.description" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_event.contact" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_event.weblink" /></th>
-		<th><f:translate key="tx_transitiontools_domain_model_event.location" /></th>
 		<th> </th>
 		<th> </th>
 	</tr>
 
 	<f:for each="{events}" as="event">
 		<tr>
+			<td><f:link.action action="show" arguments="{event : event}"> {event.uuid}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.name}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{event : event}"> {event.contact}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.weblink}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{event : event}"> {event.location}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{event : event}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{event : event}">Delete</f:link.action></td>
 		</tr>

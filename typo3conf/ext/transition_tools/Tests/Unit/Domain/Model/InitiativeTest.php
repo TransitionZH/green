@@ -54,6 +54,31 @@ class InitiativeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getUuidReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getUuid()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUuidForStringSetsUuid()
+	{
+		$this->subject->setUuid('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'uuid',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getNameReturnsInitialValueForString()
 	{
 		$this->assertSame(
@@ -287,5 +312,31 @@ class InitiativeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
 		$this->subject->removeEvent($event);
 
+	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceReturnsInitialValueForPartnerSystem()
+	{
+		$this->assertEquals(
+			NULL,
+			$this->subject->getSource()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setSourceForPartnerSystemSetsSource()
+	{
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
+		$this->subject->setSource($sourceFixture);
+
+		$this->assertAttributeEquals(
+			$sourceFixture,
+			'source',
+			$this->subject
+		);
 	}
 }

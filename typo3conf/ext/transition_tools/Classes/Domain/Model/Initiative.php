@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -27,11 +28,18 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
  ***************************************************************/
 
 /**
- * Transition Initiatives
+ * Transition Initiatives (Openki: Gruppe)
  */
 class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
+    /**
+     * uuid
+     *
+     * @var string
+     */
+    protected $uuid = '';
+    
     /**
      * name
      *
@@ -82,6 +90,13 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $events = null;
     
     /**
+     * source
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     */
+    protected $source = null;
+    
+    /**
      * __construct
      */
     public function __construct()
@@ -102,6 +117,27 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->events = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+    
+    /**
+     * Returns the uuid
+     *
+     * @return string $uuid
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
+    }
+    
+    /**
+     * Sets the uuid
+     *
+     * @param string $uuid
+     * @return void
+     */
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
     }
     
     /**
@@ -293,6 +329,27 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setEvents(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $events)
     {
         $this->events = $events;
+    }
+    
+    /**
+     * Returns the source
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+    
+    /**
+     * Sets the source
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @return void
+     */
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
+    {
+        $this->source = $source;
     }
 
 }

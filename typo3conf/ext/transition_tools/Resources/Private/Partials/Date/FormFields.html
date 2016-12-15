@@ -1,4 +1,8 @@
 
+<label for="uuid">
+	<f:translate key="tx_transitiontools_domain_model_date.uuid" />
+</label><br />
+	<f:form.textfield property="uuid" /><br />
 <label for="start">
 	<f:translate key="tx_transitiontools_domain_model_date.start" />
 </label><br />
@@ -7,3 +11,31 @@
 	<f:translate key="tx_transitiontools_domain_model_date.end" />
 </label><br />
 	<f:form.textfield property="end"  value="{date.end->f:format.date()}" /><br />
+<label for="description">
+	<f:translate key="tx_transitiontools_domain_model_date.description" />
+</label><br />
+	<f:form.textfield property="description" /><br />
+<label for="contact">
+	<f:translate key="tx_transitiontools_domain_model_date.contact" />
+</label><br />
+	<f:form.textfield property="contact" /><br />
+<label for="weblink">
+	<f:translate key="tx_transitiontools_domain_model_date.weblink" />
+</label><br />
+	<f:form.textfield property="weblink"  value="{date.weblink->f:format.date()}" /><br />
+<label for="minRegistrations">
+	<f:translate key="tx_transitiontools_domain_model_date.min_registrations" />
+</label><br />
+	<f:form.textfield property="minRegistrations" /><br />
+<label for="maxRegistrations">
+	<f:translate key="tx_transitiontools_domain_model_date.max_registrations" />
+</label><br />
+	<f:form.textfield property="maxRegistrations" /><br />
+<label for="hasWaitingList">
+	<f:translate key="tx_transitiontools_domain_model_date.has_waiting_list" />
+</label><br />
+	<f:form.checkbox property="hasWaitingList" value="1" /><br />
+<label for="fee">
+	<f:translate key="tx_transitiontools_domain_model_date.fee" />
+</label><br />
+	<f:form.textfield property="fee" /><br />

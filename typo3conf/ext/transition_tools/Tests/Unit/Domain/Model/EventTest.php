@@ -54,6 +54,31 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getUuidReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getUuid()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setUuidForStringSetsUuid()
+	{
+		$this->subject->setUuid('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'uuid',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getNameReturnsInitialValueForString()
 	{
 		$this->assertSame(
@@ -104,6 +129,31 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getContactReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getContact()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setContactForStringSetsContact()
+	{
+		$this->subject->setContact('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'contact',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getWeblinkReturnsInitialValueForString()
 	{
 		$this->assertSame(
@@ -129,52 +179,57 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getLocationReturnsInitialValueForString()
+	public function getVenuesReturnsInitialValueForVenue()
 	{
-		$this->assertSame(
-			'',
-			$this->subject->getLocation()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setLocationForStringSetsLocation()
-	{
-		$this->subject->setLocation('Conceived at T3CON10');
-
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'location',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getVenueReturnsInitialValueForVenue()
-	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
-			NULL,
-			$this->subject->getVenue()
+			$newObjectStorage,
+			$this->subject->getVenues()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setVenueForVenueSetsVenue()
+	public function setVenuesForObjectStorageContainingVenueSetsVenues()
 	{
-		$venueFixture = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
-		$this->subject->setVenue($venueFixture);
+		$venue = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
+		$objectStorageHoldingExactlyOneVenues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneVenues->attach($venue);
+		$this->subject->setVenues($objectStorageHoldingExactlyOneVenues);
 
 		$this->assertAttributeEquals(
-			$venueFixture,
-			'venue',
+			$objectStorageHoldingExactlyOneVenues,
+			'venues',
 			$this->subject
 		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addVenueToObjectStorageHoldingVenues()
+	{
+		$venue = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
+		$venuesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$venuesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($venue));
+		$this->inject($this->subject, 'venues', $venuesObjectStorageMock);
+
+		$this->subject->addVenue($venue);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeVenueFromObjectStorageHoldingVenues()
+	{
+		$venue = new \TransitionTeam\TransitionTools\Domain\Model\Venue();
+		$venuesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$venuesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($venue));
+		$this->inject($this->subject, 'venues', $venuesObjectStorageMock);
+
+		$this->subject->removeVenue($venue);
+
 	}
 
 	/**
@@ -182,8 +237,9 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function getDatesReturnsInitialValueForDate()
 	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
-			NULL,
+			$newObjectStorage,
 			$this->subject->getDates()
 		);
 	}
@@ -191,14 +247,69 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function setDatesForDateSetsDates()
+	public function setDatesForObjectStorageContainingDateSetsDates()
 	{
-		$datesFixture = new \TransitionTeam\TransitionTools\Domain\Model\Date();
-		$this->subject->setDates($datesFixture);
+		$date = new \TransitionTeam\TransitionTools\Domain\Model\Date();
+		$objectStorageHoldingExactlyOneDates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneDates->attach($date);
+		$this->subject->setDates($objectStorageHoldingExactlyOneDates);
 
 		$this->assertAttributeEquals(
-			$datesFixture,
+			$objectStorageHoldingExactlyOneDates,
 			'dates',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addDateToObjectStorageHoldingDates()
+	{
+		$date = new \TransitionTeam\TransitionTools\Domain\Model\Date();
+		$datesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$datesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($date));
+		$this->inject($this->subject, 'dates', $datesObjectStorageMock);
+
+		$this->subject->addDate($date);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeDateFromObjectStorageHoldingDates()
+	{
+		$date = new \TransitionTeam\TransitionTools\Domain\Model\Date();
+		$datesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$datesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($date));
+		$this->inject($this->subject, 'dates', $datesObjectStorageMock);
+
+		$this->subject->removeDate($date);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceReturnsInitialValueForPartnerSystem()
+	{
+		$this->assertEquals(
+			NULL,
+			$this->subject->getSource()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setSourceForPartnerSystemSetsSource()
+	{
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
+		$this->subject->setSource($sourceFixture);
+
+		$this->assertAttributeEquals(
+			$sourceFixture,
+			'source',
 			$this->subject
 		);
 	}

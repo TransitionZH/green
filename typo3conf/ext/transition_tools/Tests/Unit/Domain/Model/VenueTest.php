@@ -100,4 +100,30 @@ class VenueTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 			$this->subject
 		);
 	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceReturnsInitialValueForPartnerSystem()
+	{
+		$this->assertEquals(
+			NULL,
+			$this->subject->getSource()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setSourceForPartnerSystemSetsSource()
+	{
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
+		$this->subject->setSource($sourceFixture);
+
+		$this->assertAttributeEquals(
+			$sourceFixture,
+			'source',
+			$this->subject
+		);
+	}
 }

@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -47,6 +48,13 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $loc = '';
     
     /**
+     * source
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     */
+    protected $source = null;
+    
+    /**
      * Returns the type
      *
      * @return string $type
@@ -86,6 +94,27 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setLoc($loc)
     {
         $this->loc = $loc;
+    }
+    
+    /**
+     * Returns the source
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+    
+    /**
+     * Sets the source
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @return void
+     */
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
+    {
+        $this->source = $source;
     }
 
 }

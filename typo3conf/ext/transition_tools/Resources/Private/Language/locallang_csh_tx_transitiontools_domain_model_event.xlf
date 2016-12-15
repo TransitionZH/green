@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-06T23:08:49Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-12T23:50:55Z" product-name="transition_tools">
 		<header/>
 		<body>
+			<trans-unit id="uuid.description">
+				<source>uuid</source>
+			</trans-unit>
 			<trans-unit id="name.description">
 				<source>name</source>
 			</trans-unit>
 			<trans-unit id="description.description">
 				<source>description</source>
 			</trans-unit>
+			<trans-unit id="contact.description">
+				<source>contact</source>
+			</trans-unit>
 			<trans-unit id="weblink.description">
 				<source>weblink</source>
 			</trans-unit>
-			<trans-unit id="location.description">
-				<source>location</source>
-			</trans-unit>
-			<trans-unit id="venue.description">
-				<source>venue</source>
+			<trans-unit id="venues.description">
+				<source>venues</source>
 			</trans-unit>
 			<trans-unit id="dates.description">
 				<source>dates</source>
+			</trans-unit>
+			<trans-unit id="source.description">
+				<source>source</source>
 			</trans-unit>
 		</body>
 	</file>

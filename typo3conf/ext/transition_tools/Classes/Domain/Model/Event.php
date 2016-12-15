@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -27,11 +28,18 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
  ***************************************************************/
 
 /**
- * Veranstaltung
+ * Veranstaltung (Openki: Kurs)
  */
 class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
+    /**
+     * uuid
+     *
+     * @var string
+     */
+    protected $uuid = '';
+    
     /**
      * name
      *
@@ -47,6 +55,13 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $description = '';
     
     /**
+     * contact
+     *
+     * @var string
+     */
+    protected $contact = '';
+    
+    /**
      * weblink
      *
      * @var string
@@ -54,25 +69,70 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $weblink = '';
     
     /**
-     * location
+     * venues
      *
-     * @var string
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Venue>
      */
-    protected $location = '';
-    
-    /**
-     * venue
-     *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\Venue
-     */
-    protected $venue = null;
+    protected $venues = null;
     
     /**
      * dates
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\Date
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Date>
+     * @cascade remove
      */
     protected $dates = null;
+    
+    /**
+     * source
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     */
+    protected $source = null;
+    
+    /**
+     * __construct
+     */
+    public function __construct()
+    {
+        //Do not remove the next line: It would break the functionality
+        $this->initStorageObjects();
+    }
+    
+    /**
+     * Initializes all ObjectStorage properties
+     * Do not modify this method!
+     * It will be rewritten on each save in the extension builder
+     * You may modify the constructor of this class instead
+     *
+     * @return void
+     */
+    protected function initStorageObjects()
+    {
+        $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->dates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+    
+    /**
+     * Returns the uuid
+     *
+     * @return string $uuid
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
+    }
+    
+    /**
+     * Sets the uuid
+     *
+     * @param string $uuid
+     * @return void
+     */
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
+    }
     
     /**
      * Returns the name
@@ -117,6 +177,27 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Returns the contact
+     *
+     * @return string $contact
+     */
+    public function getContact()
+    {
+        return $this->contact;
+    }
+    
+    /**
+     * Sets the contact
+     *
+     * @param string $contact
+     * @return void
+     */
+    public function setContact($contact)
+    {
+        $this->contact = $contact;
+    }
+    
+    /**
      * Returns the weblink
      *
      * @return string $weblink
@@ -138,51 +219,74 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Returns the location
-     *
-     * @return string $location
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-    
-    /**
-     * Sets the location
-     *
-     * @param string $location
-     * @return void
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-    }
-    
-    /**
-     * Returns the venue
-     *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\Venue $venue
-     */
-    public function getVenue()
-    {
-        return $this->venue;
-    }
-    
-    /**
-     * Sets the venue
+     * Adds a Venue
      *
      * @param \TransitionTeam\TransitionTools\Domain\Model\Venue $venue
      * @return void
      */
-    public function setVenue(\TransitionTeam\TransitionTools\Domain\Model\Venue $venue)
+    public function addVenue(\TransitionTeam\TransitionTools\Domain\Model\Venue $venue)
     {
-        $this->venue = $venue;
+        $this->venues->attach($venue);
+    }
+    
+    /**
+     * Removes a Venue
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Venue $venueToRemove The Venue to be removed
+     * @return void
+     */
+    public function removeVenue(\TransitionTeam\TransitionTools\Domain\Model\Venue $venueToRemove)
+    {
+        $this->venues->detach($venueToRemove);
+    }
+    
+    /**
+     * Returns the venues
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Venue> $venues
+     */
+    public function getVenues()
+    {
+        return $this->venues;
+    }
+    
+    /**
+     * Sets the venues
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Venue> $venues
+     * @return void
+     */
+    public function setVenues(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $venues)
+    {
+        $this->venues = $venues;
+    }
+    
+    /**
+     * Adds a Date
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Date $date
+     * @return void
+     */
+    public function addDate(\TransitionTeam\TransitionTools\Domain\Model\Date $date)
+    {
+        $this->dates->attach($date);
+    }
+    
+    /**
+     * Removes a Date
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Date $dateToRemove The Date to be removed
+     * @return void
+     */
+    public function removeDate(\TransitionTeam\TransitionTools\Domain\Model\Date $dateToRemove)
+    {
+        $this->dates->detach($dateToRemove);
     }
     
     /**
      * Returns the dates
      *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\Date $dates
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Date> $dates
      */
     public function getDates()
     {
@@ -192,12 +296,33 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the dates
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Date $dates
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Date> $dates
      * @return void
      */
-    public function setDates(\TransitionTeam\TransitionTools\Domain\Model\Date $dates)
+    public function setDates(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $dates)
     {
         $this->dates = $dates;
+    }
+    
+    /**
+     * Returns the source
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+    
+    /**
+     * Sets the source
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @return void
+     */
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
+    {
+        $this->source = $source;
     }
 
 }

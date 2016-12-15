@@ -12,12 +12,14 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'DataSourceDomain' => '',
+		'PartnerSystem' => '',
 		'Initiative' => 'create, update, ',
 		'Event' => 'create, update, ',
 		'Venue' => '',
 		'Date' => 'create, update',
-		'Cateogry' => '',
+		'SynchRoute' => '',
+		'Registration' => 'create, update, delete',
+		'FeUsers' => '',
 		
 	)
 );
@@ -31,12 +33,56 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'DataSourceDomain' => '',
+		'PartnerSystem' => '',
 		'Initiative' => 'create, update, ',
 		'Event' => 'create, update, ',
 		'Venue' => '',
 		'Date' => 'create, update',
-		'Cateogry' => '',
+		'SynchRoute' => '',
+		'Registration' => 'create, update, delete',
+		'FeUsers' => '',
+		
+	)
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'TransitionTeam.' . $_EXTKEY,
+	'Registrations',
+	array(
+		'Registration' => 'list, show, new, create, edit, update, delete',
+		
+	),
+	// non-cacheable actions
+	array(
+		'PartnerSystem' => '',
+		'Initiative' => 'create, update, ',
+		'Event' => 'create, update, ',
+		'Venue' => '',
+		'Date' => 'create, update',
+		'SynchRoute' => '',
+		'Registration' => 'create, update, delete',
+		'FeUsers' => '',
+		
+	)
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'TransitionTeam.' . $_EXTKEY,
+	'Synch',
+	array(
+		'SynchRoute' => 'import, export',
+		
+	),
+	// non-cacheable actions
+	array(
+		'PartnerSystem' => '',
+		'Initiative' => 'create, update, ',
+		'Event' => 'create, update, ',
+		'Venue' => '',
+		'Date' => 'create, update',
+		'SynchRoute' => '',
+		'Registration' => 'create, update, delete',
+		'FeUsers' => '',
 		
 	)
 );

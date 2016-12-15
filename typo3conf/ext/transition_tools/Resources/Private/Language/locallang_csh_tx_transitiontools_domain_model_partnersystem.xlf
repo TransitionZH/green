@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-12T23:50:55Z" product-name="transition_tools">
+		<header/>
+		<body>
+			<trans-unit id="caption.description">
+				<source>caption</source>
+			</trans-unit>
+			<trans-unit id="url.description">
+				<source>url</source>
+			</trans-unit>
+			<trans-unit id="synch_routes.description">
+				<source>synchRoutes</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

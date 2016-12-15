@@ -56,6 +56,7 @@ CREATE TABLE tx_transitiontools_domain_model_initiative (
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	events int(11) unsigned DEFAULT '0' NOT NULL,
 	source int(11) unsigned DEFAULT '0',
+	categories int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -102,6 +103,7 @@ CREATE TABLE tx_transitiontools_domain_model_event (
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	dates int(11) unsigned DEFAULT '0' NOT NULL,
 	source int(11) unsigned DEFAULT '0',
+	categories int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -465,4 +467,11 @@ CREATE TABLE tx_transitiontools_registration_feusers_mm (
 
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Modifying pages sys_category
+#
+CREATE TABLE sys_category (
+    css varchar(50) DEFAULT '' NOT NULL,
 );

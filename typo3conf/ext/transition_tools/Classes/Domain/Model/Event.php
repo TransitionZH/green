@@ -91,6 +91,13 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $source = null;
     
     /**
+     * categories
+     *
+     * @var
+     */
+    protected $categories = null;
+    
+    /**
      * __construct
      */
     public function __construct()
@@ -323,6 +330,27 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
     {
         $this->source = $source;
+    }
+    
+    /**
+     * Returns the categories
+     *
+     * @return  $categories
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+    
+    /**
+     * Sets the categories
+     *
+     * @param string $categories
+     * @return void
+     */
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
     }
 
 }

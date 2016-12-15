@@ -45,6 +45,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_initiative.source">
 				<source>Source</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.categories">
+				<source>Categories</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event">
 				<source>Event</source>
 			</trans-unit>
@@ -71,6 +74,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.source">
 				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_event.categories">
+				<source>Categories</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue">
 				<source>Venue</source>

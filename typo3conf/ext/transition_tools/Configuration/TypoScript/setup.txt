@@ -76,3 +76,20 @@ plugin.tx_transitiontools._CSS_DEFAULT_STYLE (
 	}
 
 )
+
+# Mapping sys table category
+#plugin.tx_transitiontools {
+#config.tx_extbase {
+#    persistence {
+#        classes{
+#            TransitionTeam\TransitionTools\Domain\Model\Category {
+#                mapping {
+#                    tableName = sys_category
+#                    columns {
+#
+#                    }
+#                }
+#            }
+#        }
+#    }
+#}

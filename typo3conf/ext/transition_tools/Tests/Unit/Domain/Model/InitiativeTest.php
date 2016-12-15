@@ -339,4 +339,16 @@ class InitiativeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 			$this->subject
 		);
 	}
+
+	/**
+	 * @test
+	 */
+	public function getCategoriesReturnsInitialValueFor()
+	{	}
+
+	/**
+	 * @test
+	 */
+	public function setCategoriesForSetsCategories()
+	{	}
 }

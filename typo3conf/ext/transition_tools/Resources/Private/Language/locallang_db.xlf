@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-12T23:50:55Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-13T00:12:50Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -45,6 +45,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_initiative.source">
 				<source>Source</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.categories">
+				<source>Categories</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event">
 				<source>Event</source>
 			</trans-unit>
@@ -71,6 +74,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.source">
 				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_event.categories">
+				<source>Categories</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue">
 				<source>Venue</source>
@@ -227,6 +233,36 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_feusers.comment">
 				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="sys_categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="sys_category.style">
+				<source>Category style</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css">
+				<source>Category CSS class</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.">
+				<source>Violett</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.violet">
+				<source>Violet</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.brown">
+				<source>Brown</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.turquoise">
+				<source>Turquoise</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.red">
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.green">
+				<source>Green</source>
+			</trans-unit>
+			<trans-unit id="sys_category.css.blue">
+				<source>Blue</source>
 			</trans-unit>
 		</body>
 	</file>

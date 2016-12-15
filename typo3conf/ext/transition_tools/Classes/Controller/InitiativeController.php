@@ -40,6 +40,14 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      * @inject
      */
     protected $initiativeRepository = NULL;
+
+    /**
+     * categoryRepository
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository = NULL;
     
     /**
      * action list
@@ -138,7 +146,29 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function categoriesAction()
     {
-        
+//        $collection = \TYPO3\CMS\Frontend\Category\Collection\CategoryCollection::load(
+//            1, TRUE, 'tx_transitiontools_domain_model_initiative', 'categories'
+//        );
+//        if ($collection->count() > 0) {
+//            // Add items to the collection of records for the current table
+//            foreach ($collection as $item) {
+//                $tableRecords[$item['uid']] = $item;
+//                // Keep track of all categories a given item belongs to
+//                if (!isset($categoriesPerRecord[$item['uid']])) {
+//                    $categoriesPerRecord[$item['uid']] = array();
+//                }
+//                $categoriesPerRecord[$item['uid']][] = $aCategory;
+//            }
+//        }
+//        var_dump($collection);
+//        var_dump($categoriesPerRecord);
+//        $categories = $this->initiativeRepository->findAll();
+//        $categoryRepository = new TransitionTeam\TransitionTools\Domain\Repository\CategoryRepository();
+        $categories = $this->categoryRepository->findAll();
+        var_dump($categories->toArray());
+        die();
+//        $categories = $this->categoryRepository->findTopCategories();
+        $this->view->assign('categories', $categories);
     }
 
 }

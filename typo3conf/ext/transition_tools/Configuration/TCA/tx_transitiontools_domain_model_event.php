@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,name,description,contact,weblink,venues,dates,source,',
+		'searchFields' => 'uuid,name,description,contact,weblink,venues,dates,source,categories,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_event.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, description, contact, weblink, venues, dates, source',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, description, contact, weblink, venues, dates, source, categories',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, description, contact, weblink, venues, dates, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, description, contact, weblink, venues, categories, source, dates, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -231,6 +231,46 @@ return array(
 				'maxitems' => 1,
 			),
 		),
-		
+//		'categories' => array(
+//			'exclude' => 1,
+//			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_event.categories',
+//			'config' => array(
+//				'type' => 'select',
+//				'renderType' => 'selectSingle',
+//				'foreign_table' => '',
+//				'minitems' => 0,
+//				'maxitems' => 1,
+//			),
+//		),
+        'categories' => array(
+            'exclude' => 1,
+            'l10n_mode' => 'mergeIfNotBlank',
+            'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_event.categories',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectTree',
+                'treeConfig' => array(
+//                    'dataProvider' => \GeorgRinger\News\TreeProvider\DatabaseTreeDataProvider::class,
+                    'parentField' => 'parent',
+                    'appearance' => array(
+                        'showHeader' => true,
+                        'expandAll' => true,
+                        'maxLevels' => 99,
+                    ),
+                ),
+                'MM' => 'sys_category_record_mm',
+                'MM_match_fields' => array(
+                    'fieldname' => 'categories',
+                    'tablenames' => 'tx_transitiontools_domain_model_event',
+                ),
+                'MM_opposite_field' => 'items',
+                'foreign_table' => 'sys_category',
+                'foreign_table_where' => ' AND (sys_category.sys_language_uid = 0 OR sys_category.l10n_parent = 0) ORDER BY sys_category.sorting',
+                'size' => 10,
+                'minitems' => 0,
+                'maxitems' => 99,
+            )
+        ),
+
 	),
 );

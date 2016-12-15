@@ -201,6 +201,16 @@
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "341978365553"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "categories",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "1436772535888"
                         }
                     ]
                 }
@@ -324,6 +334,16 @@
                             "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "85402948329"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "categories",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "1094833424608"
                         }
                     ]
                 }
@@ -1210,7 +1230,7 @@
         }
     ],
     "log": {
-        "last_modified": "2016-12-12 11:50",
+        "last_modified": "2016-12-13 12:12",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

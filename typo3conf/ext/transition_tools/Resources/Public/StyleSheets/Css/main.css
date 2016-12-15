@@ -1,17 +1,25 @@
 /* Categories overview */
 .c-category-list > .c-category-list__item {
-    min-height: 100px;
+    min-height: 180px;
+    display: block;
+}
+.c-category__label {
+    display: block;
 }
 .c-category__icon {
+    display: block;
     width: 100px;
     height: 100px;
-    background-image: url(http://placehold.it/100x100);
+}
+.c-category-list__item > a {
+    width: 100%;
+} 
+.c-category-list__item > img, 
+.c-category-list__item > ul {
+    float: left;
 }
 .c-category-list__item > ul {
     font-size: 80%;
-    position: absolute;
-    left: 100px;
-    top: 30px;
     display: none;
 }
 .c-category-list__item:hover > ul {

@@ -1,15 +1,11 @@
-.category-heading {
+.category-heading:hover {
+	cursor: pointer;
+}
+
+.category-heading-centered {
 	line-height: 95px; // Img height - bottom margin of heading
 }
 
 .subcategories {
 	display: none;
-}
-
-.category:hover .category-heading {
-	line-height: normal;
-}
-
-.category:hover .subcategories {
-	display: block;
 }

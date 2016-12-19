@@ -1,2 +1,14 @@
-@import 'bootstrap-variables';
-@import 'bootstrap/assets/stylesheets/bootstrap';
+// Main stylesheet imports
+// ==================================================
+
+// Bootstrap Framework
+@import 'bootstrap';
+
+// Variables
+@import 'variables';
+
+// Main layout
+@import 'layout';
+
+// UI Components
+@import 'components';

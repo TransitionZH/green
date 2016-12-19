@@ -1,0 +1,11 @@
+footer {
+	background-color: $brand-primary;
+	height: $footer-height;
+	position: relative;
+}
+
+@media (min-width: $grid-float-breakpoint) {
+	.navbar-default > .container {
+		padding-left: 0;
+	}
+}

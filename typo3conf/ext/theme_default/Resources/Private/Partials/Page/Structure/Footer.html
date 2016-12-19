@@ -1,14 +1,9 @@
-<footer class="footerWrapper" id="pageFooter">
-  <div class="container">
-    <div class="row">
-      <f:if condition="{showFooter}">
-        <address id="pageAddress" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-          <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: data.uid, colPos: '10'}"/>
-        </address>
-      </f:if>
-      <f:if condition="{showMeta}">
-        <nav id="navInfo" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-print"><f:render partial="Navigation/Infolinks" arguments="{_all}"/></nav>
-      </f:if>
-    </div>
-  </div>
+<footer class="navbar-default footer">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="http://www.transition-zuerich.ch/">
+				Transition Zürich
+			</a>
+		</div>
+	</div>
 </footer>

@@ -55,7 +55,7 @@
 					<div class="form-group">
 						<input type="text" class="form-control">
 					</div>
-					<button type="submit" class="btn btn-primary">
+					<button type="submit" class="btn btn-default">
 						Suchen
 					</button>
 				</form>
@@ -63,40 +63,3 @@
         </f:if>
     </div>
 </nav>
-
-<f:comment>
-    <!-- Original from boilerplate / bootstrap (from initializr.com) -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:toggleNavigation')}</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <f:if condition="{settings.logo.file}">
-                    <f:then>
-                        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-image">
-                            <img src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
-                        </f:link.page>
-                    </f:then>
-                    <f:else>
-                        <f:link.page pageUid="{rootPage}" class="navbar-brand">{siteTitle}</f:link.page>
-                    </f:else>
-                </f:if>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <form class="navbar-form navbar-right" role="form" action="/">
-                    <div class="form-group">
-                        <input type="text" placeholder="{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:email')}" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:password')}" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:signIn')}</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-</f:comment>

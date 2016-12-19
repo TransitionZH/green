@@ -406,10 +406,8 @@ page {
 #        googleFont = https://fonts.googleapis.com/css?family=Merriweather:300,400,400italic,700|Oxygen:400,300,700
 #        googleFont.external = 1
 
-        # bootstrap will be included in the themes.less file
-        # for standalone usage just uncomment the following line
-        # bootstrap = EXT:theme_default/Resources/Public/Less/Bootstrap/bootstrap.less
-        theme = EXT:theme_default/Resources/Public/Css/Theme/theme.css
+        # bootstrap will be included in the main.scss file
+        theme = EXT:theme_default/Resources/Public/Css/main.css
     }
 
     includeJSLibs {

@@ -1,2 +1,20 @@
-@import 'bootstrap-variables';
-@import 'bootstrap/assets/stylesheets/bootstrap';
+// Main stylesheet imports
+// ==================================================
+
+// Bootstrap Framework
+@import 'bootstrap';
+
+// Font Awesome
+@import 'font-awesome';
+
+// Variables
+@import 'variables';
+
+// Mixins
+@import 'mixins';
+
+// Main layout
+@import 'layout';
+
+// UI Components
+@import 'components';

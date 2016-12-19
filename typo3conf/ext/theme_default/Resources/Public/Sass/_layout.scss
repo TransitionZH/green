@@ -1,0 +1,21 @@
+body,
+html {
+	height: 100%;
+}
+
+#wrap {
+	margin: 0 auto (0 - $footer-height);
+	min-height: 100%;
+}
+
+#outer {
+	padding-top: $navbar-height;
+}
+
+#push {
+	height: $footer-height;
+}
+
+#cookie-bar {
+	display: none;
+}

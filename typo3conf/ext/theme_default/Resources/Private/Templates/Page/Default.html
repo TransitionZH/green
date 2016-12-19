@@ -1,11 +1,10 @@
 <f:layout name="Default"/>
 <f:section name="Main">
-
-  <section id="pagePath" class="container">
-    <f:format.raw>{path}</f:format.raw>
-  </section>
-
-  <main id="pageContent" class="container">
-    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
-  </main>
+	<div id="outer">
+		<main id="maincontent">
+			<div class="container">
+				<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+			</div>
+		</main>
+	</div>
 </f:section>

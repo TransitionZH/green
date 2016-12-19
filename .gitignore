@@ -19,6 +19,7 @@
 /index.php
 # Ignore temp directory.
 /typo3temp/
+# Ignore config file for 'remote-sync' atom plugin
 .remote-sync.json
-/typo3conf/ext/theme_default/Resources/node_modules/
-/typo3conf/ext/theme_default/Resources/package.json
+# Ignore compiled css
+/typo3conf/ext/theme_default/Resources/Public/Css/main.css

@@ -21,7 +21,7 @@ footer {
 }
 
 @media (min-width: $grid-float-breakpoint) {
-	.navbar-default > .container {
+	.navbar-fixed-top > .container {
 		padding-left: 0;
 	}
 }

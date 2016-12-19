@@ -69,10 +69,24 @@ $(document).ready(function() {
 	});
 
 	$('.category').click(function() {
-			var categoryBody = $(this).children('.media-body');
+			var category = $(this);
+			var categoryID = category.attr('id');
+			var categoryBody = category.children('.media-body');
+			var otherCategories = $('.category:not(#' + categoryID + ')');
+			var otherBodies = otherCategories.children('.media-body');
+			var subcategories = categoryBody.children('.subcategories');
 
 			categoryBody.children('.category-heading').toggleClass('category-heading-centered');
-			categoryBody.children('.subcategories').toggle();
+			subcategories.toggle();
+			otherBodies.children('.category-heading').addClass('category-heading-centered');
+			otherBodies.children('.subcategories').hide();
+
+			category.fadeTo('fast', 1);
+			if (!subcategories.is(':hidden')) {
+				otherCategories.fadeTo('fast', 0.5);
+			} else {
+				otherCategories.fadeTo('fast', 1);
+			}
 		}
 	);
 

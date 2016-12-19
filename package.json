@@ -1,0 +1,16 @@
+{
+  "name": "green",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "./bin/build-css",
+	"watch-css": "./bin/watch-css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.0.0",
+    "nodemon": "^1.11.0"
+  }
+}

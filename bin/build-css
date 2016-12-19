@@ -1,0 +1,1 @@
+node-sass --include-path scss typo3conf/ext/theme_default/Resources/Public/Sass/main.scss typo3conf/ext/theme_default/Resources/Public/Css/main.css

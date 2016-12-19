@@ -20,6 +20,4 @@
 # Ignore temp directory.
 /typo3temp/
 .remote-sync.json
-/typo3conf/ext/theme_default/Resources/node_modules/
-/typo3conf/ext/theme_default/Resources/package.json
 /typo3conf/ext/theme_default/Resources/Public/Css

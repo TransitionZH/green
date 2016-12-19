@@ -1,11 +1,54 @@
-.category-heading:hover {
-	cursor: pointer;
+.category > .media-left img {
+	width: 100px;
+}
+
+.category-heading {
+	color: $brand-primary;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .category-heading-centered {
+	color: $text-color;
 	line-height: 95px; // Img height - bottom margin of heading
 }
 
 .subcategories {
+	@include list-unstyled;
 	display: none;
+}
+
+.subcategories > li {
+	padding-left: 15px;
+	text-indent: -10px;
+
+	&::before {
+		content: '• ';
+	}
+}
+
+.subcategories > li > a {
+	color: $text-color;
+
+	&:hover {
+		color: $brand-primary;
+		text-decoration: none;
+	}
+}
+
+$category-colors: (
+	food: #c937b7,
+	housing-mobility: #c96836,
+	shopping: #36b7c9,
+	economy-politics: #c93736,
+	info-network: #b7c935,
+	environment-energy-waste: #355bc9
+);
+
+@each $category, $category-color in $category-colors {
+	.category-#{$category} .subcategories > li::before {
+		color: $category-color;
+	}
 }

@@ -77,14 +77,15 @@ $(document).ready(function() {
 			var subcategories = categoryBody.children('.subcategories');
 
 			categoryBody.children('.category-heading').toggleClass('category-heading-centered');
-			subcategories.toggle();
+			otherBodies.children('.subcategories').hide(200);
 			otherBodies.children('.category-heading').addClass('category-heading-centered');
-			otherBodies.children('.subcategories').hide();
 
 			category.fadeTo('fast', 1);
-			if (!subcategories.is(':hidden')) {
+			if (subcategories.is(':hidden')) {
+				subcategories.show(200);
 				otherCategories.fadeTo('fast', 0.5);
 			} else {
+				subcategories.hide(0);
 				otherCategories.fadeTo('fast', 1);
 			}
 		}

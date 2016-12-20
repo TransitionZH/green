@@ -1,27 +1,27 @@
 footer {
-	height: $footer-height;
-	position: relative;
+    height: $footer-height;
+    position: relative;
 }
 
 .footer-address {
-	box-sizing: border-box;
-	color: #fff;
-	height: 100%;
-	margin-bottom: 0;
-	padding: 5px 0 0;
+    box-sizing: border-box;
+    color: #fff;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 5px 0 0;
 }
 
 .footer-address a {
-	color: #fff;
-	text-decoration: underline;
+    color: #fff;
+    text-decoration: underline;
 }
 
 .footer-address p {
-	margin: 0;
+    margin: 0;
 }
 
 @media (min-width: $grid-float-breakpoint) {
-	.navbar-fixed-top > .container {
-		padding-left: 0;
-	}
+    .navbar-fixed-top > .container {
+        padding-left: 0;
+    }
 }

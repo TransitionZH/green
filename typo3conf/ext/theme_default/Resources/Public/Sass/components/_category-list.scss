@@ -1,45 +1,45 @@
 .category > .media-left img {
-	width: 100px;
+    width: 100px;
 }
 
 .category-heading {
-	color: $brand-primary;
+    color: $brand-primary;
 
-	&:hover {
-		cursor: pointer;
-	}
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .category-heading-centered {
-	color: $text-color;
-	line-height: 95px; // Img height - bottom margin of heading
+    color: $text-color;
+    line-height: 95px; // Img height - bottom margin of heading
 }
 
 .subcategories {
-	@include list-unstyled;
-	display: none;
+    @include list-unstyled;
+    display: none;
 }
 
 .subcategories > li {
-	padding-left: 15px;
-	text-indent: -10px;
+    padding-left: 15px;
+    text-indent: -10px;
 
-	&::before {
-		content: '• ';
-	}
+    &::before {
+        content: '• ';
+    }
 }
 
 .subcategories > li > a {
-	color: $text-color;
+    color: $text-color;
 
-	&:hover {
-		color: $brand-primary;
-		text-decoration: none;
-	}
+    &:hover {
+        color: $brand-primary;
+        text-decoration: none;
+    }
 }
 
 @each $category, $category-color in $category-colors {
-	.category-#{$category} .subcategories > li::before {
-		color: $category-color;
-	}
+    .category-#{$category} .subcategories > li::before {
+        color: $category-color;
+    }
 }

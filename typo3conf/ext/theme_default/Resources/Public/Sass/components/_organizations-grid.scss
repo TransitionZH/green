@@ -1,0 +1,16 @@
+$organizations-grid-vertical-padding: 30px;
+
+.organizations-grid {
+    @include make-row;
+    margin-top: -($organizations-grid-vertical-padding);
+}
+
+.organizations-grid-organization {
+    @include make-sm-column(3);
+    padding-top: $organizations-grid-vertical-padding;
+}
+
+.organizations-grid-organization > img {
+    display: block;
+    margin: 0 auto;
+}

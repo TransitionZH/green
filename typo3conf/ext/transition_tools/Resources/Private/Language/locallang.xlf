@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-12T23:50:55Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-23T00:07:01Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -9,11 +9,11 @@
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem.caption">
 				<source>Caption</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_partnersystem.description">
+				<source>Description</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem.url">
 				<source>Url</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_partnersystem.synch_routes">
-				<source>Synch Routes</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative">
 				<source>Initiative</source>
@@ -42,6 +42,12 @@
 			<trans-unit id="tx_transitiontools_domain_model_initiative.events">
 				<source>Events</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.related_initiatives">
+				<source>Related Initiatives</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.source">
 				<source>Source</source>
 			</trans-unit>
@@ -68,6 +74,12 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.dates">
 				<source>Dates</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_event.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_event.related_events">
+				<source>Related Events</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.source">
 				<source>Source</source>
@@ -123,14 +135,26 @@
 			<trans-unit id="tx_transitiontools_domain_model_date.registrations">
 				<source>Registrations</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_date.related_dates">
+				<source>Related Dates</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_date.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_date.source">
+				<source>Source</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute">
 				<source>Synch Route</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.caption">
 				<source>Caption</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.root_class">
-				<source>Root Class</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.class_name">
+				<source>Class Name</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_route">
 				<source>Import Route</source>
@@ -161,6 +185,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_mapping">
 				<source>Export Mapping</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.partner_system">
+				<source>Partner System</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration">
 				<source>Registration</source>
@@ -227,6 +254,33 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_feusers.comment">
 				<source>Comment</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.uuid">
+				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.is_top_category">
+				<source>Is Top Category</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.subcategories">
+				<source>Subcategories</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.related_categories">
+				<source>Related Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.source">
+				<source>Source</source>
 			</trans-unit>
 		</body>
 	</file>

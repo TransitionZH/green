@@ -317,7 +317,119 @@ class InitiativeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getSourceReturnsInitialValueForPartnerSystem()
+	public function getCategoriesReturnsInitialValueForCategory()
+	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->subject->getCategories()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setCategoriesForObjectStorageContainingCategorySetsCategories()
+	{
+		$category = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$objectStorageHoldingExactlyOneCategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneCategories->attach($category);
+		$this->subject->setCategories($objectStorageHoldingExactlyOneCategories);
+
+		$this->assertAttributeEquals(
+			$objectStorageHoldingExactlyOneCategories,
+			'categories',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addCategoryToObjectStorageHoldingCategories()
+	{
+		$category = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$categoriesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$categoriesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($category));
+		$this->inject($this->subject, 'categories', $categoriesObjectStorageMock);
+
+		$this->subject->addCategory($category);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeCategoryFromObjectStorageHoldingCategories()
+	{
+		$category = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$categoriesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$categoriesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($category));
+		$this->inject($this->subject, 'categories', $categoriesObjectStorageMock);
+
+		$this->subject->removeCategory($category);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getRelatedInitiativesReturnsInitialValueForInitiative()
+	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->subject->getRelatedInitiatives()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setRelatedInitiativesForObjectStorageContainingInitiativeSetsRelatedInitiatives()
+	{
+		$relatedInitiative = new \TransitionTeam\TransitionTools\Domain\Model\Initiative();
+		$objectStorageHoldingExactlyOneRelatedInitiatives = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneRelatedInitiatives->attach($relatedInitiative);
+		$this->subject->setRelatedInitiatives($objectStorageHoldingExactlyOneRelatedInitiatives);
+
+		$this->assertAttributeEquals(
+			$objectStorageHoldingExactlyOneRelatedInitiatives,
+			'relatedInitiatives',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addRelatedInitiativeToObjectStorageHoldingRelatedInitiatives()
+	{
+		$relatedInitiative = new \TransitionTeam\TransitionTools\Domain\Model\Initiative();
+		$relatedInitiativesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$relatedInitiativesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($relatedInitiative));
+		$this->inject($this->subject, 'relatedInitiatives', $relatedInitiativesObjectStorageMock);
+
+		$this->subject->addRelatedInitiative($relatedInitiative);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeRelatedInitiativeFromObjectStorageHoldingRelatedInitiatives()
+	{
+		$relatedInitiative = new \TransitionTeam\TransitionTools\Domain\Model\Initiative();
+		$relatedInitiativesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$relatedInitiativesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($relatedInitiative));
+		$this->inject($this->subject, 'relatedInitiatives', $relatedInitiativesObjectStorageMock);
+
+		$this->subject->removeRelatedInitiative($relatedInitiative);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceReturnsInitialValueForSynchRoute()
 	{
 		$this->assertEquals(
 			NULL,
@@ -328,9 +440,9 @@ class InitiativeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function setSourceForPartnerSystemSetsSource()
+	public function setSourceForSynchRouteSetsSource()
 	{
-		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
 		$this->subject->setSource($sourceFixture);
 
 		$this->assertAttributeEquals(

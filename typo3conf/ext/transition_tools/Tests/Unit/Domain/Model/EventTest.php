@@ -291,7 +291,119 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getSourceReturnsInitialValueForPartnerSystem()
+	public function getCategoriesReturnsInitialValueForCategory()
+	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->subject->getCategories()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setCategoriesForObjectStorageContainingCategorySetsCategories()
+	{
+		$category = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$objectStorageHoldingExactlyOneCategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneCategories->attach($category);
+		$this->subject->setCategories($objectStorageHoldingExactlyOneCategories);
+
+		$this->assertAttributeEquals(
+			$objectStorageHoldingExactlyOneCategories,
+			'categories',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addCategoryToObjectStorageHoldingCategories()
+	{
+		$category = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$categoriesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$categoriesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($category));
+		$this->inject($this->subject, 'categories', $categoriesObjectStorageMock);
+
+		$this->subject->addCategory($category);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeCategoryFromObjectStorageHoldingCategories()
+	{
+		$category = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$categoriesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$categoriesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($category));
+		$this->inject($this->subject, 'categories', $categoriesObjectStorageMock);
+
+		$this->subject->removeCategory($category);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getRelatedEventsReturnsInitialValueForEvent()
+	{
+		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->assertEquals(
+			$newObjectStorage,
+			$this->subject->getRelatedEvents()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setRelatedEventsForObjectStorageContainingEventSetsRelatedEvents()
+	{
+		$relatedEvent = new \TransitionTeam\TransitionTools\Domain\Model\Event();
+		$objectStorageHoldingExactlyOneRelatedEvents = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$objectStorageHoldingExactlyOneRelatedEvents->attach($relatedEvent);
+		$this->subject->setRelatedEvents($objectStorageHoldingExactlyOneRelatedEvents);
+
+		$this->assertAttributeEquals(
+			$objectStorageHoldingExactlyOneRelatedEvents,
+			'relatedEvents',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function addRelatedEventToObjectStorageHoldingRelatedEvents()
+	{
+		$relatedEvent = new \TransitionTeam\TransitionTools\Domain\Model\Event();
+		$relatedEventsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
+		$relatedEventsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($relatedEvent));
+		$this->inject($this->subject, 'relatedEvents', $relatedEventsObjectStorageMock);
+
+		$this->subject->addRelatedEvent($relatedEvent);
+	}
+
+	/**
+	 * @test
+	 */
+	public function removeRelatedEventFromObjectStorageHoldingRelatedEvents()
+	{
+		$relatedEvent = new \TransitionTeam\TransitionTools\Domain\Model\Event();
+		$relatedEventsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
+		$relatedEventsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($relatedEvent));
+		$this->inject($this->subject, 'relatedEvents', $relatedEventsObjectStorageMock);
+
+		$this->subject->removeRelatedEvent($relatedEvent);
+
+	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceReturnsInitialValueForSynchRoute()
 	{
 		$this->assertEquals(
 			NULL,
@@ -302,9 +414,9 @@ class EventTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function setSourceForPartnerSystemSetsSource()
+	public function setSourceForSynchRouteSetsSource()
 	{
-		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem();
+		$sourceFixture = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
 		$this->subject->setSource($sourceFixture);
 
 		$this->assertAttributeEquals(

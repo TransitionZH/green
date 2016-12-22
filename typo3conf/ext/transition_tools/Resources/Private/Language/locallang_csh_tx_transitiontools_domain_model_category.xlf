@@ -6,29 +6,23 @@
 			<trans-unit id="uuid.description">
 				<source>uuid</source>
 			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
 			<trans-unit id="name.description">
 				<source>name</source>
 			</trans-unit>
-			<trans-unit id="description.description">
-				<source>description</source>
+			<trans-unit id="is_top_category.description">
+				<source>isTopCategory</source>
 			</trans-unit>
-			<trans-unit id="contact.description">
-				<source>contact</source>
+			<trans-unit id="image.description">
+				<source>image</source>
 			</trans-unit>
-			<trans-unit id="weblink.description">
-				<source>weblink</source>
+			<trans-unit id="subcategories.description">
+				<source>subcategories</source>
 			</trans-unit>
-			<trans-unit id="venues.description">
-				<source>venues</source>
-			</trans-unit>
-			<trans-unit id="dates.description">
-				<source>dates</source>
-			</trans-unit>
-			<trans-unit id="categories.description">
-				<source>categories</source>
-			</trans-unit>
-			<trans-unit id="related_events.description">
-				<source>relatedEvents</source>
+			<trans-unit id="related_categories.description">
+				<source>relatedCategories</source>
 			</trans-unit>
 			<trans-unit id="source.description">
 				<source>source</source>

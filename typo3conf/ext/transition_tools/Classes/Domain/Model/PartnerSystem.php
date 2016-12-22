@@ -41,41 +41,18 @@ class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $caption = '';
     
     /**
+     * description
+     *
+     * @var string
+     */
+    protected $description = '';
+    
+    /**
      * url
      *
      * @var string
      */
     protected $url = '';
-    
-    /**
-     * synchRoutes
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute>
-     * @cascade remove
-     */
-    protected $synchRoutes = null;
-    
-    /**
-     * __construct
-     */
-    public function __construct()
-    {
-        //Do not remove the next line: It would break the functionality
-        $this->initStorageObjects();
-    }
-    
-    /**
-     * Initializes all ObjectStorage properties
-     * Do not modify this method!
-     * It will be rewritten on each save in the extension builder
-     * You may modify the constructor of this class instead
-     *
-     * @return void
-     */
-    protected function initStorageObjects()
-    {
-        $this->synchRoutes = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
     
     /**
      * Returns the caption
@@ -99,6 +76,27 @@ class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Returns the description
+     *
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+    
+    /**
+     * Sets the description
+     *
+     * @param string $description
+     * @return void
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+    
+    /**
      * Returns the url
      *
      * @return string $url
@@ -117,49 +115,6 @@ class PartnerSystem extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setUrl($url)
     {
         $this->url = $url;
-    }
-    
-    /**
-     * Adds a SynchRoute
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRoute
-     * @return void
-     */
-    public function addSynchRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRoute)
-    {
-        $this->synchRoutes->attach($synchRoute);
-    }
-    
-    /**
-     * Removes a SynchRoute
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRouteToRemove The SynchRoute to be removed
-     * @return void
-     */
-    public function removeSynchRoute(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $synchRouteToRemove)
-    {
-        $this->synchRoutes->detach($synchRouteToRemove);
-    }
-    
-    /**
-     * Returns the synchRoutes
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $synchRoutes
-     */
-    public function getSynchRoutes()
-    {
-        return $this->synchRoutes;
-    }
-    
-    /**
-     * Sets the synchRoutes
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\SynchRoute> $synchRoutes
-     * @return void
-     */
-    public function setSynchRoutes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $synchRoutes)
-    {
-        $this->synchRoutes = $synchRoutes;
     }
 
 }

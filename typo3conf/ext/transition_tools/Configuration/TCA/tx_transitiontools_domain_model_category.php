@@ -1,7 +1,7 @@
 <?php
 return array(
 	'ctrl' => array(
-		'title'	=> 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative',
+		'title'	=> 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category',
 		'label' => 'uuid',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,name,claim,description,web_link,logo,venues,events,categories,related_initiatives,source,',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_initiative.gif'
+		'searchFields' => 'uuid,title,name,is_top_category,image,subcategories,related_categories,source,',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_category.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, claim, description, web_link, logo, venues, events, categories, related_initiatives, source',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, title, name, is_top_category, image, subcategories, related_categories, source',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, claim, description, web_link, logo, venues, events, categories, related_initiatives, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, title, name, is_top_category, image, subcategories, related_categories, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -57,8 +57,8 @@ return array(
 				'items' => array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_transitiontools_domain_model_initiative',
-				'foreign_table_where' => 'AND tx_transitiontools_domain_model_initiative.pid=###CURRENT_PID### AND tx_transitiontools_domain_model_initiative.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_transitiontools_domain_model_category',
+				'foreign_table_where' => 'AND tx_transitiontools_domain_model_category.pid=###CURRENT_PID### AND tx_transitiontools_domain_model_category.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -118,7 +118,16 @@ return array(
 
 		'uuid' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.uuid',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.uuid',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'title' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -127,45 +136,26 @@ return array(
 		),
 		'name' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.name',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
-		'claim' => array(
+		'is_top_category' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.claim',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.is_top_category',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
+				'type' => 'check',
+				'default' => 0
+			)
 		),
-		'description' => array(
+		'image' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.description',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'web_link' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.web_link',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'logo' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.logo',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.image',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-				'logo',
+				'image',
 				array(
 					'appearance' => array(
 						'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
@@ -207,96 +197,14 @@ return array(
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
-		'venues' => array(
+		'subcategories' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.venues',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectMultipleSideBySide',
-				'foreign_table' => 'tx_transitiontools_domain_model_venue',
-				'MM' => 'tx_transitiontools_initiative_venue_mm',
-				'size' => 10,
-				'autoSizeMax' => 30,
-				'maxitems' => 9999,
-				'multiple' => 0,
-				'wizards' => array(
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => array(
-						'module' => array(
-							'name' => 'wizard_edit',
-						),
-						'type' => 'popup',
-						'title' => 'Edit',
-						'icon' => 'edit2.gif',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-						),
-					'add' => Array(
-						'module' => array(
-							'name' => 'wizard_add',
-						),
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'add.gif',
-						'params' => array(
-							'table' => 'tx_transitiontools_domain_model_venue',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-						),
-					),
-				),
-			),
-		),
-		'events' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.events',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectMultipleSideBySide',
-				'foreign_table' => 'tx_transitiontools_domain_model_event',
-				'MM' => 'tx_transitiontools_initiative_event_mm',
-				'size' => 10,
-				'autoSizeMax' => 30,
-				'maxitems' => 9999,
-				'multiple' => 0,
-				'wizards' => array(
-					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => array(
-						'module' => array(
-							'name' => 'wizard_edit',
-						),
-						'type' => 'popup',
-						'title' => 'Edit',
-						'icon' => 'edit2.gif',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-						),
-					'add' => Array(
-						'module' => array(
-							'name' => 'wizard_add',
-						),
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'add.gif',
-						'params' => array(
-							'table' => 'tx_transitiontools_domain_model_event',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-						),
-					),
-				),
-			),
-		),
-		'categories' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.categories',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.subcategories',
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectMultipleSideBySide',
 				'foreign_table' => 'tx_transitiontools_domain_model_category',
-				'MM' => 'tx_transitiontools_initiative_category_mm',
+				'MM' => 'tx_transitiontools_category_category_mm',
 				'size' => 10,
 				'autoSizeMax' => 30,
 				'maxitems' => 9999,
@@ -330,14 +238,14 @@ return array(
 				),
 			),
 		),
-		'related_initiatives' => array(
+		'related_categories' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.related_initiatives',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.related_categories',
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectMultipleSideBySide',
-				'foreign_table' => 'tx_transitiontools_domain_model_initiative',
-				'MM' => 'tx_transitiontools_initiative_initiative_mm',
+				'foreign_table' => 'tx_transitiontools_domain_model_category',
+				'MM' => 'tx_transitiontools_category_relatedcategories_category_mm',
 				'size' => 10,
 				'autoSizeMax' => 30,
 				'maxitems' => 9999,
@@ -363,7 +271,7 @@ return array(
 						'title' => 'Create new',
 						'icon' => 'add.gif',
 						'params' => array(
-							'table' => 'tx_transitiontools_domain_model_initiative',
+							'table' => 'tx_transitiontools_domain_model_category',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
 						),
@@ -373,7 +281,7 @@ return array(
 		),
 		'source' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.source',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.source',
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',

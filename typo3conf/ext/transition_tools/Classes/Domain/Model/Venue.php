@@ -50,7 +50,7 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * source
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
      */
     protected $source = null;
     
@@ -99,7 +99,7 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the source
      *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
      */
     public function getSource()
     {
@@ -109,10 +109,10 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the source
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
      * @return void
      */
-    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
     {
         $this->source = $source;
     }

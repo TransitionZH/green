@@ -56,3 +56,6 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_feusers', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_feusers.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_feusers');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_transitiontools_domain_model_category', 'EXT:transition_tools/Resources/Private/Language/locallang_csh_tx_transitiontools_domain_model_category.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_transitiontools_domain_model_category');

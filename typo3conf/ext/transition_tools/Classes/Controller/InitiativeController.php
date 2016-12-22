@@ -112,16 +112,6 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     }
     
     /**
-     * action categories
-     *
-     * @return void
-     */
-    public function categoriesAction()
-    {
-        
-    }
-    
-    /**
      * action map
      *
      * @return void
@@ -138,6 +128,17 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function gridAction()
     {
-
+        
     }
+    
+    /**
+     * action categories
+     *
+     * @return void
+     */
+    public function categoriesAction()
+    {
+        
+    }
+
 }

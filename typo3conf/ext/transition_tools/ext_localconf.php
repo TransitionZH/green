@@ -20,6 +20,7 @@ if (!defined('TYPO3_MODE')) {
 		'SynchRoute' => '',
 		'Registration' => 'create, update, delete',
 		'FeUsers' => '',
+		'Category' => '',
 		
 	)
 );
@@ -41,6 +42,7 @@ if (!defined('TYPO3_MODE')) {
 		'SynchRoute' => '',
 		'Registration' => 'create, update, delete',
 		'FeUsers' => '',
+		'Category' => '',
 		
 	)
 );
@@ -62,6 +64,7 @@ if (!defined('TYPO3_MODE')) {
 		'SynchRoute' => '',
 		'Registration' => 'create, update, delete',
 		'FeUsers' => '',
+		'Category' => '',
 		
 	)
 );
@@ -83,6 +86,7 @@ if (!defined('TYPO3_MODE')) {
 		'SynchRoute' => '',
 		'Registration' => 'create, update, delete',
 		'FeUsers' => '',
+		'Category' => '',
 		
 	)
 );

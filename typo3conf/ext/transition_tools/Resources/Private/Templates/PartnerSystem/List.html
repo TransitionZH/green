@@ -20,6 +20,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <table  class="tx_transitiontools" >
 	<tr>
 		<th><f:translate key="tx_transitiontools_domain_model_partnersystem.caption" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_partnersystem.description" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_partnersystem.url" /></th>
 		<th> </th>
 		<th> </th>
@@ -28,6 +29,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:for each="{partnerSystems}" as="partnerSystem">
 		<tr>
 			<td><f:link.action action="show" arguments="{partnerSystem : partnerSystem}"> {partnerSystem.caption}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{partnerSystem : partnerSystem}"> {partnerSystem.description}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{partnerSystem : partnerSystem}"> {partnerSystem.url}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{partnerSystem : partnerSystem}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{partnerSystem : partnerSystem}">Delete</f:link.action></td>

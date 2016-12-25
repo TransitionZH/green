@@ -79,6 +79,31 @@ class PartnerSystemTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getDescriptionReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getDescription()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setDescriptionForStringSetsDescription()
+	{
+		$this->subject->setDescription('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'description',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getUrlReturnsInitialValueForString()
 	{
 		$this->assertSame(
@@ -99,61 +124,5 @@ class PartnerSystemTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 			'url',
 			$this->subject
 		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getSynchRoutesReturnsInitialValueForSynchRoute()
-	{
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->assertEquals(
-			$newObjectStorage,
-			$this->subject->getSynchRoutes()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setSynchRoutesForObjectStorageContainingSynchRouteSetsSynchRoutes()
-	{
-		$synchRoute = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
-		$objectStorageHoldingExactlyOneSynchRoutes = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneSynchRoutes->attach($synchRoute);
-		$this->subject->setSynchRoutes($objectStorageHoldingExactlyOneSynchRoutes);
-
-		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneSynchRoutes,
-			'synchRoutes',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function addSynchRouteToObjectStorageHoldingSynchRoutes()
-	{
-		$synchRoute = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
-		$synchRoutesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$synchRoutesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($synchRoute));
-		$this->inject($this->subject, 'synchRoutes', $synchRoutesObjectStorageMock);
-
-		$this->subject->addSynchRoute($synchRoute);
-	}
-
-	/**
-	 * @test
-	 */
-	public function removeSynchRouteFromObjectStorageHoldingSynchRoutes()
-	{
-		$synchRoute = new \TransitionTeam\TransitionTools\Domain\Model\SynchRoute();
-		$synchRoutesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$synchRoutesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($synchRoute));
-		$this->inject($this->subject, 'synchRoutes', $synchRoutesObjectStorageMock);
-
-		$this->subject->removeSynchRoute($synchRoute);
-
 	}
 }

@@ -90,9 +90,23 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $events = null;
     
     /**
+     * categories
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category>
+     */
+    protected $categories = null;
+    
+    /**
+     * relatedInitiatives
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Initiative>
+     */
+    protected $relatedInitiatives = null;
+    
+    /**
      * source
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
      */
     protected $source = null;
     
@@ -117,6 +131,8 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->events = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relatedInitiatives = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
     
     /**
@@ -332,9 +348,95 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Adds a Category
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+     * @return void
+     */
+    public function addCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category)
+    {
+        $this->categories->attach($category);
+    }
+    
+    /**
+     * Removes a Category
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $categoryToRemove)
+    {
+        $this->categories->detach($categoryToRemove);
+    }
+    
+    /**
+     * Returns the categories
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $categories
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+    
+    /**
+     * Sets the categories
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $categories
+     * @return void
+     */
+    public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories)
+    {
+        $this->categories = $categories;
+    }
+    
+    /**
+     * Adds a Initiative
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $relatedInitiative
+     * @return void
+     */
+    public function addRelatedInitiative(\TransitionTeam\TransitionTools\Domain\Model\Initiative $relatedInitiative)
+    {
+        $this->relatedInitiatives->attach($relatedInitiative);
+    }
+    
+    /**
+     * Removes a Initiative
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $relatedInitiativeToRemove The Initiative to be removed
+     * @return void
+     */
+    public function removeRelatedInitiative(\TransitionTeam\TransitionTools\Domain\Model\Initiative $relatedInitiativeToRemove)
+    {
+        $this->relatedInitiatives->detach($relatedInitiativeToRemove);
+    }
+    
+    /**
+     * Returns the relatedInitiatives
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Initiative> $relatedInitiatives
+     */
+    public function getRelatedInitiatives()
+    {
+        return $this->relatedInitiatives;
+    }
+    
+    /**
+     * Sets the relatedInitiatives
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Initiative> $relatedInitiatives
+     * @return void
+     */
+    public function setRelatedInitiatives(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $relatedInitiatives)
+    {
+        $this->relatedInitiatives = $relatedInitiatives;
+    }
+    
+    /**
      * Returns the source
      *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
      */
     public function getSource()
     {
@@ -344,10 +446,10 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the source
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
      * @return void
      */
-    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
     {
         $this->source = $source;
     }

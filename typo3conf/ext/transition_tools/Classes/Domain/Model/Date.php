@@ -119,6 +119,27 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $registrations = null;
     
     /**
+     * relatedDates
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Date>
+     */
+    protected $relatedDates = null;
+    
+    /**
+     * categories
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category>
+     */
+    protected $categories = null;
+    
+    /**
+     * source
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
+     */
+    protected $source = null;
+    
+    /**
      * __construct
      */
     public function __construct()
@@ -139,6 +160,8 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->registrations = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relatedDates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
     
     /**
@@ -445,6 +468,113 @@ class Date extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setRegistrations(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $registrations)
     {
         $this->registrations = $registrations;
+    }
+    
+    /**
+     * Adds a Date
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Date $relatedDate
+     * @return void
+     */
+    public function addRelatedDate(\TransitionTeam\TransitionTools\Domain\Model\Date $relatedDate)
+    {
+        $this->relatedDates->attach($relatedDate);
+    }
+    
+    /**
+     * Removes a Date
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Date $relatedDateToRemove The Date to be removed
+     * @return void
+     */
+    public function removeRelatedDate(\TransitionTeam\TransitionTools\Domain\Model\Date $relatedDateToRemove)
+    {
+        $this->relatedDates->detach($relatedDateToRemove);
+    }
+    
+    /**
+     * Returns the relatedDates
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Date> $relatedDates
+     */
+    public function getRelatedDates()
+    {
+        return $this->relatedDates;
+    }
+    
+    /**
+     * Sets the relatedDates
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Date> $relatedDates
+     * @return void
+     */
+    public function setRelatedDates(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $relatedDates)
+    {
+        $this->relatedDates = $relatedDates;
+    }
+    
+    /**
+     * Adds a Category
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+     * @return void
+     */
+    public function addCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category)
+    {
+        $this->categories->attach($category);
+    }
+    
+    /**
+     * Removes a Category
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $categoryToRemove)
+    {
+        $this->categories->detach($categoryToRemove);
+    }
+    
+    /**
+     * Returns the categories
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $categories
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+    
+    /**
+     * Sets the categories
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $categories
+     * @return void
+     */
+    public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories)
+    {
+        $this->categories = $categories;
+    }
+    
+    /**
+     * Returns the source
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+    
+    /**
+     * Sets the source
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
+     * @return void
+     */
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
+    {
+        $this->source = $source;
     }
 
 }

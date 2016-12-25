@@ -84,9 +84,23 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $dates = null;
     
     /**
+     * categories
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category>
+     */
+    protected $categories = null;
+    
+    /**
+     * relatedEvents
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Event>
+     */
+    protected $relatedEvents = null;
+    
+    /**
      * source
      *
-     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     * @var \TransitionTeam\TransitionTools\Domain\Model\SynchRoute
      */
     protected $source = null;
     
@@ -111,6 +125,8 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->venues = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->dates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->relatedEvents = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
     
     /**
@@ -305,9 +321,95 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Adds a Category
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+     * @return void
+     */
+    public function addCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category)
+    {
+        $this->categories->attach($category);
+    }
+    
+    /**
+     * Removes a Category
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $categoryToRemove)
+    {
+        $this->categories->detach($categoryToRemove);
+    }
+    
+    /**
+     * Returns the categories
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $categories
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+    
+    /**
+     * Sets the categories
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $categories
+     * @return void
+     */
+    public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories)
+    {
+        $this->categories = $categories;
+    }
+    
+    /**
+     * Adds a Event
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Event $relatedEvent
+     * @return void
+     */
+    public function addRelatedEvent(\TransitionTeam\TransitionTools\Domain\Model\Event $relatedEvent)
+    {
+        $this->relatedEvents->attach($relatedEvent);
+    }
+    
+    /**
+     * Removes a Event
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Event $relatedEventToRemove The Event to be removed
+     * @return void
+     */
+    public function removeRelatedEvent(\TransitionTeam\TransitionTools\Domain\Model\Event $relatedEventToRemove)
+    {
+        $this->relatedEvents->detach($relatedEventToRemove);
+    }
+    
+    /**
+     * Returns the relatedEvents
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Event> $relatedEvents
+     */
+    public function getRelatedEvents()
+    {
+        return $this->relatedEvents;
+    }
+    
+    /**
+     * Sets the relatedEvents
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Event> $relatedEvents
+     * @return void
+     */
+    public function setRelatedEvents(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $relatedEvents)
+    {
+        $this->relatedEvents = $relatedEvents;
+    }
+    
+    /**
      * Returns the source
      *
-     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @return \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
      */
     public function getSource()
     {
@@ -317,10 +419,10 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the source
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source
+     * @param \TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source
      * @return void
      */
-    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $source)
+    public function setSource(\TransitionTeam\TransitionTools\Domain\Model\SynchRoute $source)
     {
         $this->source = $source;
     }

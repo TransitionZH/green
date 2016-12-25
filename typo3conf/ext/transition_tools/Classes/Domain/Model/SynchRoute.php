@@ -41,11 +41,18 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $caption = '';
     
     /**
-     * rootClass
+     * description
      *
      * @var string
      */
-    protected $rootClass = '';
+    protected $description = '';
+    
+    /**
+     * className
+     *
+     * @var string
+     */
+    protected $className = '';
     
     /**
      * importRoute
@@ -118,6 +125,13 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $exportMapping = '';
     
     /**
+     * partnerSystem
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem
+     */
+    protected $partnerSystem = null;
+    
+    /**
      * Returns the caption
      *
      * @return string $caption
@@ -139,24 +153,45 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Returns the rootClass
+     * Returns the description
      *
-     * @return string $rootClass
+     * @return string $description
      */
-    public function getRootClass()
+    public function getDescription()
     {
-        return $this->rootClass;
+        return $this->description;
     }
     
     /**
-     * Sets the rootClass
+     * Sets the description
      *
-     * @param string $rootClass
+     * @param string $description
      * @return void
      */
-    public function setRootClass($rootClass)
+    public function setDescription($description)
     {
-        $this->rootClass = $rootClass;
+        $this->description = $description;
+    }
+    
+    /**
+     * Returns the className
+     *
+     * @return string $className
+     */
+    public function getClassName()
+    {
+        return $this->className;
+    }
+    
+    /**
+     * Sets the className
+     *
+     * @param string $className
+     * @return void
+     */
+    public function setClassName($className)
+    {
+        $this->className = $className;
     }
     
     /**
@@ -367,6 +402,27 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setExportMapping($exportMapping)
     {
         $this->exportMapping = $exportMapping;
+    }
+    
+    /**
+     * Returns the partnerSystem
+     *
+     * @return \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem
+     */
+    public function getPartnerSystem()
+    {
+        return $this->partnerSystem;
+    }
+    
+    /**
+     * Sets the partnerSystem
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem
+     * @return void
+     */
+    public function setPartnerSystem(\TransitionTeam\TransitionTools\Domain\Model\PartnerSystem $partnerSystem)
+    {
+        $this->partnerSystem = $partnerSystem;
     }
 
 }

@@ -16,11 +16,11 @@ plugin.tx_transitiontools_initiatives {
 
 plugin.tx_transitiontools_events {
 	view {
-		# cat=plugin.tx_transitiontools_initiatives/file; type=string; label=Path to template root (FE)
+		# cat=plugin.tx_transitiontools_events/file; type=string; label=Path to template root (FE)
 		templateRootPath = EXT:transition_tools/Resources/Private/Templates/
-		# cat=plugin.tx_transitiontools_initiatives/file; type=string; label=Path to template partials (FE)
+		# cat=plugin.tx_transitiontools_events/file; type=string; label=Path to template partials (FE)
 		partialRootPath = EXT:transition_tools/Resources/Private/Partials/
-		# cat=plugin.tx_transitiontools_initiatives/file; type=string; label=Path to template layouts (FE)
+		# cat=plugin.tx_transitiontools_events/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:transition_tools/Resources/Private/Layouts/
 	}
 	persistence {

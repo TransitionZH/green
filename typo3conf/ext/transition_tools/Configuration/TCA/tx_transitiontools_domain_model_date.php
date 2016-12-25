@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,start,end,description,contact,weblink,min_registrations,max_registrations,has_waiting_list,fee,venues,registrations,',
+		'searchFields' => 'uuid,start,end,description,contact,weblink,min_registrations,max_registrations,has_waiting_list,fee,venues,registrations,related_dates,categories,source,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_date.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations, related_dates, categories, source',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, start, end, description, contact, weblink, min_registrations, max_registrations, has_waiting_list, fee, venues, registrations, related_dates, categories, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -270,6 +270,99 @@ return array(
 				),
 			),
 
+		),
+		'related_dates' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_date.related_dates',
+			'config' => array(
+				'type' => 'select',
+				'renderType' => 'selectMultipleSideBySide',
+				'foreign_table' => 'tx_transitiontools_domain_model_date',
+				'MM' => 'tx_transitiontools_date_date_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
+						'type' => 'popup',
+						'title' => 'Edit',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'module' => array(
+							'name' => 'wizard_add',
+						),
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_transitiontools_domain_model_date',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+						),
+					),
+				),
+			),
+		),
+		'categories' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_date.categories',
+			'config' => array(
+				'type' => 'select',
+				'renderType' => 'selectMultipleSideBySide',
+				'foreign_table' => 'tx_transitiontools_domain_model_category',
+				'MM' => 'tx_transitiontools_date_category_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
+						'type' => 'popup',
+						'title' => 'Edit',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'module' => array(
+							'name' => 'wizard_add',
+						),
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_transitiontools_domain_model_category',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+						),
+					),
+				),
+			),
+		),
+		'source' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_date.source',
+			'config' => array(
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'foreign_table' => 'tx_transitiontools_domain_model_synchroute',
+				'minitems' => 0,
+				'maxitems' => 1,
+			),
 		),
 		
 		'event' => array(

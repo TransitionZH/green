@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,name,claim,description,web_link,logo,venues,events,source,',
+		'searchFields' => 'uuid,name,claim,description,web_link,logo,venues,events,categories,related_initiatives,source,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_initiative.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, claim, description, web_link, logo, venues, events, source',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, claim, description, web_link, logo, venues, events, categories, related_initiatives, source',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, claim, description, web_link, logo, venues, events, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, claim, description, web_link, logo, venues, events, categories, related_initiatives, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -289,13 +289,95 @@ return array(
 				),
 			),
 		),
+		'categories' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.categories',
+			'config' => array(
+				'type' => 'select',
+				'renderType' => 'selectMultipleSideBySide',
+				'foreign_table' => 'tx_transitiontools_domain_model_category',
+				'MM' => 'tx_transitiontools_initiative_category_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
+						'type' => 'popup',
+						'title' => 'Edit',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'module' => array(
+							'name' => 'wizard_add',
+						),
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_transitiontools_domain_model_category',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+						),
+					),
+				),
+			),
+		),
+		'related_initiatives' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.related_initiatives',
+			'config' => array(
+				'type' => 'select',
+				'renderType' => 'selectMultipleSideBySide',
+				'foreign_table' => 'tx_transitiontools_domain_model_initiative',
+				'MM' => 'tx_transitiontools_initiative_initiative_mm',
+				'size' => 10,
+				'autoSizeMax' => 30,
+				'maxitems' => 9999,
+				'multiple' => 0,
+				'wizards' => array(
+					'_PADDING' => 1,
+					'_VERTICAL' => 1,
+					'edit' => array(
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
+						'type' => 'popup',
+						'title' => 'Edit',
+						'icon' => 'edit2.gif',
+						'popup_onlyOpenIfSelected' => 1,
+						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+						),
+					'add' => Array(
+						'module' => array(
+							'name' => 'wizard_add',
+						),
+						'type' => 'script',
+						'title' => 'Create new',
+						'icon' => 'add.gif',
+						'params' => array(
+							'table' => 'tx_transitiontools_domain_model_initiative',
+							'pid' => '###CURRENT_PID###',
+							'setValue' => 'prepend'
+						),
+					),
+				),
+			),
+		),
 		'source' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.source',
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_transitiontools_domain_model_partnersystem',
+				'foreign_table' => 'tx_transitiontools_domain_model_synchroute',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),

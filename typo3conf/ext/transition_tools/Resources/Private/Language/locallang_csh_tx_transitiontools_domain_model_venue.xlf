@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-23T00:07:01Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T14:17:35Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="type.description">
 				<source>type</source>
 			</trans-unit>
-			<trans-unit id="loc.description">
-				<source>loc</source>
+			<trans-unit id="loc_latitude.description">
+				<source>locLatitude</source>
+			</trans-unit>
+			<trans-unit id="loc_longitute.description">
+				<source>locLongitute</source>
 			</trans-unit>
 			<trans-unit id="source.description">
 				<source>source</source>

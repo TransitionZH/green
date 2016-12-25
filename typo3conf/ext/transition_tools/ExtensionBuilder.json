@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     1201,
-                    446
+                    445
                 ]
             },
             "name": "New Model Object",
@@ -74,7 +74,7 @@
             "config": {
                 "position": [
                     160,
-                    38
+                    37
                 ]
             },
             "name": "New Model Object",
@@ -229,7 +229,7 @@
             "config": {
                 "position": [
                     418,
-                    40
+                    39
                 ]
             },
             "name": "New Model Object",
@@ -372,7 +372,7 @@
             "config": {
                 "position": [
                     419,
-                    447
+                    446
                 ]
             },
             "name": "New Model Object",
@@ -417,9 +417,19 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "loc",
-                            "propertyType": "String",
+                            "propertyName": "locLatitude",
+                            "propertyType": "Float",
                             "uid": "996199328249"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "locLongitute",
+                            "propertyType": "Float",
+                            "uid": "1425372478556"
                         }
                     ]
                 },
@@ -443,7 +453,7 @@
             "config": {
                 "position": [
                     675,
-                    43
+                    42
                 ]
             },
             "name": "New Model Object",
@@ -634,7 +644,7 @@
             "config": {
                 "position": [
                     940,
-                    446
+                    445
                 ]
             },
             "name": "New Model Object",
@@ -818,7 +828,7 @@
             "config": {
                 "position": [
                     939,
-                    43
+                    42
                 ]
             },
             "name": "New Model Object",
@@ -919,7 +929,7 @@
             "config": {
                 "position": [
                     1200,
-                    44
+                    43
                 ]
             },
             "name": "New Model Object",
@@ -1101,7 +1111,7 @@
             "config": {
                 "position": [
                     158,
-                    445
+                    444
                 ]
             },
             "name": "New Model Object",
@@ -1541,7 +1551,7 @@
         }
     ],
     "log": {
-        "last_modified": "2016-12-23 12:07",
+        "last_modified": "2016-12-25 02:17",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

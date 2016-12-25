@@ -145,7 +145,8 @@ CREATE TABLE tx_transitiontools_domain_model_venue (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	type varchar(255) DEFAULT '' NOT NULL,
-	loc varchar(255) DEFAULT '' NOT NULL,
+	loc_latitude double(11,2) DEFAULT '0.00' NOT NULL,
+	loc_longitute double(11,2) DEFAULT '0.00' NOT NULL,
 	source int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

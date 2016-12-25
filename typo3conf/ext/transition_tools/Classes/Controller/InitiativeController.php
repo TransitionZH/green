@@ -42,6 +42,14 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     protected $initiativeRepository = NULL;
     
     /**
+     * categoryRepository
+     *
+     * @var \TransitionTeam\TransitionTools\Domain\Repository\CategoryRepository
+     * @inject
+     */
+    protected $categoryRepository = NULL;
+
+    /**
      * action list
      *
      * @return void
@@ -138,7 +146,8 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function categoriesAction()
     {
-        
+        $topCategories = $this->categoryRepository->findByIsTopCategory(true)->toArray();
+        $this->view->assign('categories', $topCategories);
     }
 
 }

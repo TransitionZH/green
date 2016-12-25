@@ -41,11 +41,18 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $type = '';
     
     /**
-     * loc
+     * locLatitude
      *
-     * @var string
+     * @var float
      */
-    protected $loc = '';
+    protected $locLatitude = 0.0;
+    
+    /**
+     * locLongitute
+     *
+     * @var float
+     */
+    protected $locLongitute = 0.0;
     
     /**
      * source
@@ -76,24 +83,45 @@ class Venue extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Returns the loc
+     * Returns the locLatitude
      *
-     * @return string $loc
+     * @return float $locLatitude
      */
-    public function getLoc()
+    public function getLocLatitude()
     {
-        return $this->loc;
+        return $this->locLatitude;
     }
     
     /**
-     * Sets the loc
+     * Sets the locLatitude
      *
-     * @param string $loc
+     * @param float $locLatitude
      * @return void
      */
-    public function setLoc($loc)
+    public function setLocLatitude($locLatitude)
     {
-        $this->loc = $loc;
+        $this->locLatitude = $locLatitude;
+    }
+    
+    /**
+     * Returns the locLongitute
+     *
+     * @return float $locLongitute
+     */
+    public function getLocLongitute()
+    {
+        return $this->locLongitute;
+    }
+    
+    /**
+     * Sets the locLongitute
+     *
+     * @param float $locLongitute
+     * @return void
+     */
+    public function setLocLongitute($locLongitute)
+    {
+        $this->locLongitute = $locLongitute;
     }
     
     /**

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-23T00:07:01Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T14:17:35Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -90,8 +90,11 @@
 			<trans-unit id="tx_transitiontools_domain_model_venue.type">
 				<source>Type</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_venue.loc">
-				<source>Loc</source>
+			<trans-unit id="tx_transitiontools_domain_model_venue.loc_latitude">
+				<source>Loc Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_venue.loc_longitute">
+				<source>Loc Longitute</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue.source">
 				<source>Source</source>

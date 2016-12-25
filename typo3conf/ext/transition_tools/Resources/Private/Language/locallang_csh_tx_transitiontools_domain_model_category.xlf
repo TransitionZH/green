@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T14:17:35Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T14:42:49Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="uuid.description">
@@ -18,8 +18,8 @@
 			<trans-unit id="image.description">
 				<source>image</source>
 			</trans-unit>
-			<trans-unit id="subcategories.description">
-				<source>subcategories</source>
+			<trans-unit id="parent_category.description">
+				<source>parentCategory</source>
 			</trans-unit>
 			<trans-unit id="related_categories.description">
 				<source>relatedCategories</source>

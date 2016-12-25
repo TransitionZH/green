@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     1201,
-                    445
+                    444
                 ]
             },
             "name": "New Model Object",
@@ -74,7 +74,7 @@
             "config": {
                 "position": [
                     160,
-                    37
+                    36
                 ]
             },
             "name": "New Model Object",
@@ -229,7 +229,7 @@
             "config": {
                 "position": [
                     418,
-                    39
+                    38
                 ]
             },
             "name": "New Model Object",
@@ -372,7 +372,7 @@
             "config": {
                 "position": [
                     419,
-                    446
+                    445
                 ]
             },
             "name": "New Model Object",
@@ -453,7 +453,7 @@
             "config": {
                 "position": [
                     675,
-                    42
+                    41
                 ]
             },
             "name": "New Model Object",
@@ -644,7 +644,7 @@
             "config": {
                 "position": [
                     940,
-                    445
+                    444
                 ]
             },
             "name": "New Model Object",
@@ -828,7 +828,7 @@
             "config": {
                 "position": [
                     939,
-                    42
+                    41
                 ]
             },
             "name": "New Model Object",
@@ -929,7 +929,7 @@
             "config": {
                 "position": [
                     1200,
-                    43
+                    42
                 ]
             },
             "name": "New Model Object",
@@ -1111,7 +1111,7 @@
             "config": {
                 "position": [
                     158,
-                    444
+                    443
                 ]
             },
             "name": "New Model Object",
@@ -1199,8 +1199,8 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "subcategories",
-                            "relationType": "manyToMany",
+                            "relationName": "parentCategory",
+                            "relationType": "manyToOne",
                             "relationWire": "[wired]",
                             "uid": "1018623286031"
                         },
@@ -1551,7 +1551,7 @@
         }
     ],
     "log": {
-        "last_modified": "2016-12-25 02:17",
+        "last_modified": "2016-12-25 02:42",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

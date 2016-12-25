@@ -69,11 +69,11 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $image = null;
     
     /**
-     * subcategories
+     * parentCategory
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category>
+     * @var \TransitionTeam\TransitionTools\Domain\Model\Category
      */
-    protected $subcategories = null;
+    protected $parentCategory = null;
     
     /**
      * relatedCategories
@@ -108,7 +108,6 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->subcategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->relatedCategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
     
@@ -228,46 +227,24 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Adds a Category
+     * Returns the parentCategory
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $subcategory
-     * @return void
+     * @return \TransitionTeam\TransitionTools\Domain\Model\Category $parentCategory
      */
-    public function addSubcategory(\TransitionTeam\TransitionTools\Domain\Model\Category $subcategory)
+    public function getParentCategory()
     {
-        $this->subcategories->attach($subcategory);
+        return $this->parentCategory;
     }
     
     /**
-     * Removes a Category
+     * Sets the parentCategory
      *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $subcategoryToRemove The Category to be removed
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $parentCategory
      * @return void
      */
-    public function removeSubcategory(\TransitionTeam\TransitionTools\Domain\Model\Category $subcategoryToRemove)
+    public function setParentCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $parentCategory)
     {
-        $this->subcategories->detach($subcategoryToRemove);
-    }
-    
-    /**
-     * Returns the subcategories
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $subcategories
-     */
-    public function getSubcategories()
-    {
-        return $this->subcategories;
-    }
-    
-    /**
-     * Sets the subcategories
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TransitionTeam\TransitionTools\Domain\Model\Category> $subcategories
-     * @return void
-     */
-    public function setSubcategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $subcategories)
-    {
-        $this->subcategories = $subcategories;
+        $this->parentCategory = $parentCategory;
     }
     
     /**

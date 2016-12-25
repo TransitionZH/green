@@ -396,7 +396,7 @@ CREATE TABLE tx_transitiontools_domain_model_category (
 	name varchar(255) DEFAULT '' NOT NULL,
 	is_top_category tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
-	subcategories int(11) unsigned DEFAULT '0' NOT NULL,
+	parent_category int(11) unsigned DEFAULT '0',
 	related_categories int(11) unsigned DEFAULT '0' NOT NULL,
 	source int(11) unsigned DEFAULT '0',
 
@@ -581,19 +581,6 @@ CREATE TABLE tx_transitiontools_date_category_mm (
 # Table structure for table 'tx_transitiontools_registration_feusers_mm'
 #
 CREATE TABLE tx_transitiontools_registration_feusers_mm (
-	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-
-	KEY uid_local (uid_local),
-	KEY uid_foreign (uid_foreign)
-);
-
-#
-# Table structure for table 'tx_transitiontools_category_category_mm'
-#
-CREATE TABLE tx_transitiontools_category_category_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

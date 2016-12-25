@@ -180,57 +180,27 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getSubcategoriesReturnsInitialValueForCategory()
+	public function getParentCategoryReturnsInitialValueForCategory()
 	{
-		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
-			$newObjectStorage,
-			$this->subject->getSubcategories()
+			NULL,
+			$this->subject->getParentCategory()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setSubcategoriesForObjectStorageContainingCategorySetsSubcategories()
+	public function setParentCategoryForCategorySetsParentCategory()
 	{
-		$subcategory = new \TransitionTeam\TransitionTools\Domain\Model\Category();
-		$objectStorageHoldingExactlyOneSubcategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$objectStorageHoldingExactlyOneSubcategories->attach($subcategory);
-		$this->subject->setSubcategories($objectStorageHoldingExactlyOneSubcategories);
+		$parentCategoryFixture = new \TransitionTeam\TransitionTools\Domain\Model\Category();
+		$this->subject->setParentCategory($parentCategoryFixture);
 
 		$this->assertAttributeEquals(
-			$objectStorageHoldingExactlyOneSubcategories,
-			'subcategories',
+			$parentCategoryFixture,
+			'parentCategory',
 			$this->subject
 		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function addSubcategoryToObjectStorageHoldingSubcategories()
-	{
-		$subcategory = new \TransitionTeam\TransitionTools\Domain\Model\Category();
-		$subcategoriesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
-		$subcategoriesObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($subcategory));
-		$this->inject($this->subject, 'subcategories', $subcategoriesObjectStorageMock);
-
-		$this->subject->addSubcategory($subcategory);
-	}
-
-	/**
-	 * @test
-	 */
-	public function removeSubcategoryFromObjectStorageHoldingSubcategories()
-	{
-		$subcategory = new \TransitionTeam\TransitionTools\Domain\Model\Category();
-		$subcategoriesObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
-		$subcategoriesObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($subcategory));
-		$this->inject($this->subject, 'subcategories', $subcategoriesObjectStorageMock);
-
-		$this->subject->removeSubcategory($subcategory);
-
 	}
 
 	/**

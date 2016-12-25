@@ -6,7 +6,7 @@
     <f:for each="{categoryTree}" as="topCategory">
         <div class="media category category-{topCategory.item.name} {topCategory.item.css}" id="{topCategory.item.name}">
             <div class="media-left">
-                <a href="List.html?category={topCategory.item.name}">
+                <a href="liste?category={topCategory.item.name}">
                     <f:image
                         image="{topCategory.item.image}"
                         alt="{topCategory.item.image.originalResource.title}"
@@ -20,7 +20,7 @@
                 </h4>
                 <ul class="subcategories">
                 <f:for each="{topCategory.subCategories}" as="subCategory">
-                    <li><a href="List.html?category={subCategory.name}">{subCategory.title}</a></li>
+                    <li><a href="liste?category={subCategory.name}">{subCategory.title}</a></li>
                 </f:for>
                 </ul>
             </div>

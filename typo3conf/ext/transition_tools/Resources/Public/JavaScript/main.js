@@ -6,11 +6,23 @@ $(document).ready(function() {
     console.log('JS is working');
 });
 
-if ($('#mapid').length > 0) {
-    var mymap = L.map('mapid').setView([47.3773697, -8.3966319], 11);
 
-    L.tileLayer('http://a.tile.openstreetmap.org/${z}/${x}/${y}.png', {
-        attribution: 'bla',
+/*
+ Map
+*/
+if ($('#mapid').length > 0) {
+    /* create leaflet map object */
+    var mymap = L.map('mapid').setView([47.38, 8.60], 11);
+
+    /* load tiles from open street map */
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Maps data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
         maxZoom: 18
     }).addTo(mymap);
+
+    /* create a random marker */
+    var marker = L.marker([47.38, 8.60]).addTo(mymap);
+
+    /* add a random popup to the marker */
+    marker.bindPopup('<div class="media organization"><a class="media-left" href=""><img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image"></a><div class="media-body" style="color:#000"><h4 class="media-heading">Beispielorganisation</h4>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.<div class="clearfix"></div><div class="organization-links"><a href="#">Website</a></div></div></div>')
 }

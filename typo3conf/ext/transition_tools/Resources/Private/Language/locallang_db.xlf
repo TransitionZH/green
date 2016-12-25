@@ -276,6 +276,27 @@
 			<trans-unit id="tx_transitiontools_domain_model_category.image">
 				<source>Image</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css">
+				<source>CSS class</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css.violet">
+				<source>Violet</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css.brown">
+				<source>Brown</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css.turquoise">
+				<source>Turquoise</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css.red">
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css.green">
+				<source>Green</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css.blue">
+				<source>Blue</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.parent_category">
 				<source>Parent Category</source>
 			</trans-unit>

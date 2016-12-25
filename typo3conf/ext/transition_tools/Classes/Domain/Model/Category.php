@@ -71,9 +71,9 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * css
      *
-     * @var int
+     * @var string
      */
-    protected $css = 0;
+    protected $css = '';
     
     /**
      * parentCategory
@@ -236,7 +236,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the css
      *
-     * @return int $css
+     * @return string $css
      */
     public function getCss()
     {
@@ -246,7 +246,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the css
      *
-     * @param int $css
+     * @param string $css
      * @return void
      */
     public function setCss($css)

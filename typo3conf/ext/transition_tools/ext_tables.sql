@@ -396,7 +396,7 @@ CREATE TABLE tx_transitiontools_domain_model_category (
 	name varchar(255) DEFAULT '' NOT NULL,
 	is_top_category tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
-	css int(11) DEFAULT '0' NOT NULL,
+	css varchar(100) DEFAULT '0' NOT NULL,
 	parent_category int(11) unsigned DEFAULT '0',
 	related_categories int(11) unsigned DEFAULT '0' NOT NULL,
 	source int(11) unsigned DEFAULT '0',

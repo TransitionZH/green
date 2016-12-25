@@ -205,13 +205,20 @@ return array(
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
-				'items' => array(
-					array('-- Label --', 0),
-				),
-				'size' => 1,
-				'maxitems' => 1,
-				'eval' => ''
-			),
+                'items' => array(
+                    array('--', 'none'),
+                    array('LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.css.violet', 'category-violet'),
+                    array('LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.css.brown', 'category-brown'),
+                    array('LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.css.turquoise', 'category-turquoise'),
+                    array('LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.css.red', 'category-red'),
+                    array('LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.css.green', 'category-green'),
+                    array('LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_category.css.blue', 'category-blue'),
+                ),
+                'size' => 1,
+				'minitems' => 0,
+                'maxitems' => 1,
+                'eval' => 'required'
+            ),
 		),
 		'parent_category' => array(
 			'exclude' => 1,
@@ -219,6 +226,9 @@ return array(
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
+                'items' => array(
+                    array('', 0),
+                ),
 				'foreign_table' => 'tx_transitiontools_domain_model_category',
 				'minitems' => 0,
 				'maxitems' => 1,

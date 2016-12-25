@@ -180,6 +180,18 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getCssReturnsInitialValueForInt()
+	{	}
+
+	/**
+	 * @test
+	 */
+	public function setCssForIntSetsCss()
+	{	}
+
+	/**
+	 * @test
+	 */
 	public function getParentCategoryReturnsInitialValueForCategory()
 	{
 		$this->assertEquals(

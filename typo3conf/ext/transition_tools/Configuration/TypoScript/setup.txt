@@ -79,9 +79,13 @@ plugin.tx_transitiontools._CSS_DEFAULT_STYLE (
 
 page {
 	includeCSS {
+	  transitionToolsLeafletCss = https://unpkg.com/leaflet@1.0.2/dist/leaflet.css
+		transitionToolsLeafletMarkersCss = EXT:transition_tools/Resources/Public/StyleSheets/Css/leaflet.awesome-markers.css
 		transitionToolsMainCss = EXT:transition_tools/Resources/Public/StyleSheets/Css/main.css
 	}
 	includeJSFooter {
+		transitionToolsLeafletJs = https://unpkg.com/leaflet@1.0.2/dist/leaflet.js
+		transitionToolsLeafletMarkersJs = EXT:transition_tools/Resources/Public/JavaScript/leaflet.awesome-markers.js
 		transitionToolsMainJs = EXT:transition_tools/Resources/Public/JavaScript/main.js
 	}
 }

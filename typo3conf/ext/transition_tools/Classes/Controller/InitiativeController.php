@@ -146,9 +146,10 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function categoriesAction()
     {
-        $topCategories = $this->categoryRepository->findByIsTopCategory(true)->toArray();
-        $this->view->assign('categories', $topCategories);
-        /* For import filter: match main AND subcategory */
+        $categoryTree = $this->categoryRepository->findTree();
+        $this->view->assign('categoryTree', $categoryTree);
+        
+        /* TODO: For import filter: match main AND subcategory */
     }
 
 }

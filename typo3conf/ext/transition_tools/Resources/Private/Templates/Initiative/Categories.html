@@ -2,123 +2,29 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-    <div class="media category category-food" id="food">
-        <div class="media-left">
-            <a href="List.html?category=Nahrungsmittel">
-                <img src="fileadmin/user_upload/categories/1_food.png">
-            </a>
+    
+    <f:for each="{categoryTree}" as="topCategory">
+        <div class="media category category-{topCategory.item.name} {topCategory.item.css}" id="{topCategory.item.name}">
+            <div class="media-left">
+                <a href="List.html?category={topCategory.item.name}">
+                    <f:image
+                        image="{topCategory.item.image}"
+                        alt="{topCategory.item.image.originalResource.title}"
+                        treatIdAsReference="TRUE"
+                    />
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading category-heading category-heading-centered">
+                    {topCategory.item.title}
+                </h4>
+                <ul class="subcategories">
+                <f:for each="{topCategory.subCategories}" as="subCategory">
+                    <li><a href="List.html?category={subCategory.name}">{subCategory.title}</a></li>
+                </f:for>
+                </ul>
+            </div>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading category-heading category-heading-centered">
-                Nahrungsmittel
-            </h4>
-            <ul class="subcategories">
-                <li><a href="List.html?category=">Restaurant, Café, Bar</a></li>
-                <li><a href="List.html?category=">Märkte</a></li>
-                <li><a href="List.html?category=">Gartenprojekte</a></li>
-                <li><a href="List.html?category=">Versand und Importe</a></li>
-                <li><a href="List.html?category=">Foodwaste</a></li>
-                <li><a href="List.html?category=">Selbstgemacht, Produzent, Kochveranstaltung</a></li>
-                <li><a href="List.html?category=">Landwirtschaft</a></li>
-                <li><a href="List.html?category=">Infos</a></li>
-                <li><a href="List.html?category=">Laden, Hofladen</a></li>
-                <li><a href="List.html?category=">Cooperativen, CSA</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="media category category-housing-mobility" id="housingMobility">
-        <div class="media-left">
-            <a href="List.html?category=">
-                <img src="fileadmin/user_upload/categories/2_housing_mobility.png">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading category-heading category-heading-centered">
-                Wohnen und Mobilität
-            </h4>
-            <ul class="subcategories">
-                <li><a href="List.html?category=">Wohnen</a></li>
-                <li><a href="List.html?category=">Velo</a></li>
-                <li><a href="List.html?category=">Carsharing</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="media category category-shopping" id="shopping">
-        <div class="media-left">
-            <a href="List.html?category=">
-                <img src="fileadmin/user_upload/categories/3_shopping.png">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading category-heading category-heading-centered">
-                Verantwortlicher Einkauf
-            </h4>
-            <ul class="subcategories">
-                <li><a href="List.html?category=">Kleider</a></li>
-                <li><a href="List.html?category=">Schuhe</a></li>
-                <li><a href="List.html?category=">Accesoires</a></li>
-                <li><a href="List.html?category=">Kosmetik</a></li>
-                <li><a href="List.html?category=">Bücher, Druck</a></li>
-                <li><a href="List.html?category=">Haushalt</a></li>
-                <li><a href="List.html?category=">Reparieren, second-hand</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="media category category-economy-politics" id="economyPolitics">
-        <div class="media-left">
-            <a href="List.html?category=">
-                <img src="fileadmin/user_upload/categories/4_economy_politics.png">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading category-heading category-heading-centered">
-                Wirtschaft und Politik
-            </h4>
-            <ul class="subcategories">
-                <li><a href="List.html?category=">Komplementaire Währungen</a></li>
-                <li><a href="List.html?category=">Tausch-Netze</a></li>
-                <li><a href="List.html?category=">Leihen, Verschenken</a></li>
-                <li><a href="List.html?category=">Stadt Zürich</a></li>
-                <li><a href="List.html?category=">Finanzdiensleister, Crowdfunding</a></li>
-                <li><a href="List.html?category=">Politik</a></li>
-                <li><a href="List.html?category=">Stiftungen</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="media category category-info-network" id="infoNetwork">
-        <div class="media-left">
-            <a href="List.html?category=">
-                <img src="fileadmin/user_upload/categories/5_info_network.png">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading category-heading category-heading-centered">
-                Information und Netzwerk
-            </h4>
-            <ul class="subcategories">
-                <li><a href="List.html?category=">Veranstalter</a></li>
-                <li><a href="List.html?category=">Medien, Wissen</a></li>
-                <li><a href="List.html?category=">Netzwerke</a></li>
-                <li><a href="List.html?category=">NGOs</a></li>
-                <li><a href="List.html?category=">Bildung</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="media category category-environment-energy-waste" id="environmentEnergyWaste">
-        <div class="media-left">
-            <a href="List.html?category=">
-                <img src="fileadmin/user_upload/categories/6_environment_energy_waste.png">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading category-heading category-heading-centered">
-                Umwelt, Energie und Abfall
-            </h4>
-            <ul class="subcategories">
-                <li><a href="List.html?category=">Energie</a></li>
-                <li><a href="List.html?category=">Umwelt</a></li>
-                <li><a href="List.html?category=">Abfall/Recycling</a></li>
-            </ul>
-        </div>
-    </div>
+    </f:for>
+
 </f:section>

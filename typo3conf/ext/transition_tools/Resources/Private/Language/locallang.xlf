@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T14:42:49Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T15:24:27Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -275,6 +275,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.image">
 				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.css">
+				<source>Css</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.parent_category">
 				<source>Parent Category</source>

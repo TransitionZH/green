@@ -24,6 +24,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<th><f:translate key="tx_transitiontools_domain_model_category.name" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_category.is_top_category" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_category.image" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_category.css" /></th>
 		<th> </th>
 		<th> </th>
 	</tr>
@@ -35,6 +36,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{category : category}"> {category.name}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{category : category}"> {category.isTopCategory}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{category : category}"> {category.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{category : category}"> {category.css}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{category : category}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{category : category}">Delete</f:link.action></td>
 		</tr>

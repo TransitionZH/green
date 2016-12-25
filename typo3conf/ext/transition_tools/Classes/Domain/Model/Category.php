@@ -69,6 +69,13 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $image = null;
     
     /**
+     * css
+     *
+     * @var string
+     */
+    protected $css = '';
+    
+    /**
      * parentCategory
      *
      * @var \TransitionTeam\TransitionTools\Domain\Model\Category
@@ -224,6 +231,27 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+    }
+    
+    /**
+     * Returns the css
+     *
+     * @return string $css
+     */
+    public function getCss()
+    {
+        return $this->css;
+    }
+    
+    /**
+     * Sets the css
+     *
+     * @param string $css
+     * @return void
+     */
+    public function setCss($css)
+    {
+        $this->css = $css;
     }
     
     /**

@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     1201,
-                    444
+                    443
                 ]
             },
             "name": "New Model Object",
@@ -74,7 +74,7 @@
             "config": {
                 "position": [
                     160,
-                    36
+                    35
                 ]
             },
             "name": "New Model Object",
@@ -229,7 +229,7 @@
             "config": {
                 "position": [
                     418,
-                    38
+                    37
                 ]
             },
             "name": "New Model Object",
@@ -372,7 +372,7 @@
             "config": {
                 "position": [
                     419,
-                    445
+                    444
                 ]
             },
             "name": "New Model Object",
@@ -453,7 +453,7 @@
             "config": {
                 "position": [
                     675,
-                    41
+                    40
                 ]
             },
             "name": "New Model Object",
@@ -644,7 +644,7 @@
             "config": {
                 "position": [
                     940,
-                    444
+                    443
                 ]
             },
             "name": "New Model Object",
@@ -828,7 +828,7 @@
             "config": {
                 "position": [
                     939,
-                    41
+                    40
                 ]
             },
             "name": "New Model Object",
@@ -929,7 +929,7 @@
             "config": {
                 "position": [
                     1200,
-                    42
+                    41
                 ]
             },
             "name": "New Model Object",
@@ -1111,7 +1111,7 @@
             "config": {
                 "position": [
                     158,
-                    443
+                    442
                 ]
             },
             "name": "New Model Object",
@@ -1189,6 +1189,16 @@
                             "propertyName": "image",
                             "propertyType": "Image",
                             "uid": "1179162572763"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "css",
+                            "propertyType": "Select",
+                            "uid": "1252334920981"
                         }
                     ]
                 },
@@ -1551,7 +1561,7 @@
         }
     ],
     "log": {
-        "last_modified": "2016-12-25 02:42",
+        "last_modified": "2016-12-25 03:24",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

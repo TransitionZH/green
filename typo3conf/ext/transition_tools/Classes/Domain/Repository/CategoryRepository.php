@@ -66,5 +66,5 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         
         return $categoryTree;
     }
-    
+
 }

@@ -306,6 +306,25 @@
 			<trans-unit id="tx_transitiontools_domain_model_category.source">
 				<source>Source</source>
 			</trans-unit>
+            
+			<trans-unit id="flexform_initiatives.actions">
+				<source>Select function</source>
+			</trans-unit>
+			<trans-unit id="flexform_initiatives.action.listCategories">
+				<source>List Categories</source>
+			</trans-unit>
+			<trans-unit id="flexform_initiatives.action.projectsMap">
+				<source>Show projects on map</source>
+			</trans-unit>
+			<trans-unit id="flexform_initiatives.action.projectsList">
+				<source>Show projects as list</source>
+			</trans-unit>
+			<trans-unit id="flexform_initiatives.action.projectsGrid">
+				<source>Show projects as grid</source>
+			</trans-unit>
+			<trans-unit id="flexform_initiatives.settings.projectListPid">
+				<source>Project list page</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

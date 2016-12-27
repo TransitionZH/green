@@ -8214,9 +8214,10 @@ html {
   color: #355bc9; }
 
 .initiative {
+  border-radius: 4px;
   color: #fff;
   max-width: 700px;
-  padding: 5px;
+  padding: 10px;
   position: relative; }
 
 .initiative-food {
@@ -8278,6 +8279,24 @@ html {
 
 .initiative-list-heading {
   margin-top: 0; }
+
+.initiative-list-heading > img {
+  height: 40px;
+  margin-right: 5px;
+  width: 40px; }
+
+.initiative-list-parent-category::after {
+  content: "/";
+  color: #777777;
+  font-style: italic;
+  position: relative; }
+
+.initiative-list-parent-category > a {
+  color: #777777;
+  font-style: italic; }
+  .initiative-list-parent-category > a:hover, .initiative-list-parent-category > a:focus {
+    color: #25cc37;
+    text-decoration: none; }
 
 footer {
   height: 50px;

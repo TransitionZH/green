@@ -1,9 +1,10 @@
 $initiative-text-color: #fff;
 
 .initiative {
+	border-radius: 4px;
     color: $initiative-text-color;
     max-width: 700px;
-    padding: 5px;
+    padding: 10px;
     position: relative;
 }
 

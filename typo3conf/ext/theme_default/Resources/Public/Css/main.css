@@ -8167,6 +8167,8 @@ html {
 
 .category > .media-left img {
   width: 100px; }
+  .category > .media-left img:hover {
+    cursor: pointer; }
 
 .category-heading {
   color: #25cc37; }

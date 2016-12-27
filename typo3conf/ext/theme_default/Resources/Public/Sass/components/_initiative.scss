@@ -6,6 +6,11 @@ $initiative-text-color: #fff;
     max-width: 700px;
     padding: 10px;
     position: relative;
+	transition: box-shadow .3s;
+
+	&:hover {
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+	}
 }
 
 @each $category, $category-color in $category-colors {

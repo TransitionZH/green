@@ -8276,6 +8276,9 @@ html {
   display: block;
   margin: 0 auto; }
 
+.initiative-list-heading {
+  margin-top: 0; }
+
 footer {
   height: 50px;
   position: relative; }

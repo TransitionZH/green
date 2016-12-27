@@ -45,7 +45,7 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	 * return categories as a tree array, matching the given category as root
 	 *
      * @param string $name
-	 * @return \TransitionTeam\TransitionTools\Domain\Category $category
+	 * @return \TransitionTeam\TransitionTools\Domain\Model\Category $category
 	 */
 
     public function findOneByCategoryName($name) {
@@ -61,11 +61,11 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	/**
 	 * return categories as a tree array, matching the given category as root
 	 *
-     * @param \TransitionTeam\TransitionTools\Domain\Category $category - optional
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
 	 * @return array
 	 */
 
-    public function findTree(\TransitionTeam\TransitionTools\Domain\Category $category = null) {
+    public function findTree(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null) {
         $categoryTree = [];
         
         // Find top categories

@@ -57,34 +57,21 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function listAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
+        $category = null;
         $initiatives = null;
         if ($category) {
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
         }
-//        elseif ($this->request->hasArgument('category')) {
-//            $category = $this->request->getArgument('category');
-//            $initiatives = $this->initiativeRepository->findByCategory($cateogry);
-//        }
-        elseif ($categoryName = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('category')) {
-//            $category = $this->categoryRepository->findByName($categoryName);
-//            $category = $this->categoryRepository->findOneByCategoryName('Nahrungsmittel');
-//            var_dump($categoryName);
-//            var_dump($category);
-//            die;
-//            if ($category) {
-//                $initiatives = $this->initiativeRepository->findByCategory($category);
-//            }
-            // set dummy category with existing initiatives in Openki
-            $category = [
-                'title' => 'Ausbildung',
-                'name' => 'education',
-                'parentCategory' => [
-                    'title' => 'Ausbildung',
-                    'name' => 'education',
-                ],
-            ];
-            $categoryCssClass = 'category-'.$categoryName;
-            $initiatives = $this->initiativeRepository->findByCategoryName($category['name']);
+        elseif ($categoryGET = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('category')) {
+            if (array_key_exists('uid', $categoryGET)) {
+                $category = $this->categoryRepository->findByUid($categoryGET['uid']);
+            }
+            if ($category) {
+                $initiatives = $this->initiativeRepository->findByCategory($category);
+            }
+            else {
+                $initiatives = null;
+            }
         }
         else {
             $category = null;
@@ -93,22 +80,22 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         
         $this->view->assignMultiple([
             'category' => $category,
-            'topCategory' => ['name' => $categoryName],
+            'topCategory' => ($category->getParentCategory())?$category->getParentCategory():$category,
             'initiatives' => $initiatives,
         ]);
     }
-    
-    /**
-     * action show
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative
-     * @return void
-     */
-    public function showAction(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative)
-    {
-        $this->view->assign('initiative', $initiative);
-    }
-    
+//    
+//    /**
+//     * action show
+//     *
+//     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative
+//     * @return void
+//     */
+//    public function showAction(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative)
+//    {
+//        $this->view->assign('initiative', $initiative);
+//    }
+//    
     /**
      * action new
      *
@@ -164,7 +151,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function mapAction()
     {
-        $initiatives = $this->initiativeRepository->findByCategoryName('education');
+        $initiatives = $this->initiativeRepository->findByCategory('education');
         $this->view->assign('initiatives', json_encode($initiatives));
     }
     

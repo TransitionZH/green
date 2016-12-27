@@ -72,32 +72,41 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
 	 * @return array
 	 */
-    public function findByCategory(\TransitionTeam\TransitionTools\Domain\Category $category = null) {
+    public function findByCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null) {
         $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH," . $category->getName();
-        $initiativesJson = file_get_contents($openkiRoute);
-        echo "<pre>" . $initiativesJson . "</pre>";
-        die;
-    }
-    
-	/**
-	 * return initiatives from openki, matching the given category
-	 *
-     * @param string $categoryName - optional
-	 * @return array
-	 */
-    public function findByCategoryName($categoryName = '') {
-        $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH," . $categoryName;
+        if ($category->getParentCategory()) {
+            $openkiRoute .= ','.$category->getParentCategory()->getName();
+        }
         $initiativesJson = file_get_contents($openkiRoute);
         $initiativesRaw = json_decode($initiativesJson);
         $initiatives = [];
         foreach($initiativesRaw as $initiativeRaw) {
-            /* @var \TransitionTeam\TransitionTools\Domain\Initiative $initiative */
             $initiative = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Initiative');
             $initiative->initFromOpenki($initiativeRaw);
             $initiatives[] = $initiative;
         }
         return $initiatives;
     }
-    
+//    
+//	/**
+//	 * return initiatives from openki, matching the given category
+//	 *
+//     * @param string $categoryName - optional
+//	 * @return array
+//	 */
+//    public function findByCategoryName($categoryName = '') {
+//        $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH," . $categoryName;
+//        $initiativesJson = file_get_contents($openkiRoute);
+//        $initiativesRaw = json_decode($initiativesJson);
+//        $initiatives = [];
+//        foreach($initiativesRaw as $initiativeRaw) {
+//            /* @var \TransitionTeam\TransitionTools\Domain\Initiative $initiative */
+//            $initiative = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Initiative');
+//            $initiative->initFromOpenki($initiativeRaw);
+//            $initiatives[] = $initiative;
+//        }
+//        return $initiatives;
+//    }
+//    
     
 }

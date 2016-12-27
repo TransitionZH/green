@@ -136,6 +136,36 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * underscore to camelcase
+     */
+    public function underscoreToUpperCamelcase($underscoreString) {
+        $parts = explode('_', $underscoreString);
+        $ucParts = array_map(function($part) { return ucfirst($part); }, $parts);
+        return implode('', $ucParts);
+    }
+    
+    /**
+     * Initializes the object with stdObject data from Openki
+     *
+     * @param \stdClass $initiativeFromOpenki
+     * @return void
+     */
+    public function initFromOpenki(\stdClass $initiativeFromOpenki)
+    {
+        $propertiesMap = [
+            'name' => 'name',
+            'claim' => 'claim',
+            'description' => 'description',
+        ];
+        foreach($propertiesMap as $openkiProperty => $property) {
+            if (property_exists($initiativeFromOpenki, $openkiProperty)) {
+                $setter = 'set' . $this->underscoreToUpperCamelcase($property);
+                $this->$setter($initiativeFromOpenki->$property);
+            }
+        }
+    }
+    
+    /**
      * Returns the uuid
      *
      * @return string $uuid

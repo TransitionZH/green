@@ -9,31 +9,52 @@
 				<el>
 					<switchableControllerActions>
 						<TCEforms>
-							<label>Select function</label>
+							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.actions</label>
+                            <onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<items>
 									<numIndex index="0">
-										<numIndex index="0">Display Categories</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.categoriesList</numIndex>
 										<numIndex index="1">Initiative->categories</numIndex>
 									</numIndex>
 									<numIndex index="1">
-										<numIndex index="0">Display Map</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesMap</numIndex>
 										<numIndex index="1">Initiative->map</numIndex>
 									</numIndex>
 									<numIndex index="2">
-										<numIndex index="0">Display List</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesList</numIndex>
 										<numIndex index="1">Initiative->list</numIndex>
 									</numIndex>
 									<numIndex index="3">
-										<numIndex index="0">Display Grid</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesGrid</numIndex>
 										<numIndex index="1">Initiative->grid</numIndex>
 									</numIndex>
 								</items>
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
-				</el>
+
+					<settings.projectListPid>
+						<TCEforms>
+							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.settings.initiativesListPid</label>
+                            <displayCond><![CDATA[FIELD:switchableControllerActions:=:Initiative->categories]]></displayCond>
+							<config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <minitems>0</minitems>
+                                <maxitems>1</maxitems>
+                                <wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.projectListPid>
+                </el>
 			</ROOT>
 		</sDEF>
 	</sheets>

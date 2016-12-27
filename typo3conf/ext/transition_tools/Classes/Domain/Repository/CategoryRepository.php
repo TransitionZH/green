@@ -32,9 +32,34 @@ namespace TransitionTeam\TransitionTools\Domain\Repository;
  */
 class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    /**
+     * initializeObject: setRespectStoragePage = false
+     */
+    public function initializeObject() {
+            $defaultQuerySettings = $this->objectManager->get('TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings');
+            $defaultQuerySettings->setRespectStoragePage(false);
+            $this->setDefaultQuerySettings($defaultQuerySettings);
+    }
+    
+	/**
+	 * return categories as a tree array, matching the given category as root
+	 *
+     * @param string $name
+	 * @return \TransitionTeam\TransitionTools\Domain\Category $category
+	 */
+
+    public function findOneByCategoryName($name) {
+            $query = $this->createQuery();
+            $query->matching($query->equals('name', $name));
+//            $category = $query->execute()->getFirst();
+            $category = $query->execute();
+            var_dump($category);
+            die;
+            return $category;
+    }
 
 	/**
-	 * return orders matching the given code and dealer
+	 * return categories as a tree array, matching the given category as root
 	 *
      * @param \TransitionTeam\TransitionTools\Domain\Category $category - optional
 	 * @return array
@@ -49,7 +74,6 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         }
         else {
             $query = $this->createQuery();
-            $query->getQuerySettings()->setRespectStoragePage(false);
             $query->matching($query->equals('isTopCategory', true));
             $topCategories = $query->execute()->toArray();
         }

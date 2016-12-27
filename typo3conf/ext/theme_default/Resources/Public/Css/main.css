@@ -8156,6 +8156,8 @@ html {
 
 #maincontent {
   margin: 25px 0; }
+  #maincontent-clean {
+    margin: 0; }
 
 #push {
   height: 50px; }

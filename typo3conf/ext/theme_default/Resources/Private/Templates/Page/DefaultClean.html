@@ -1,8 +1,10 @@
 <f:layout name="Default"/>
 <f:section name="Main">
 
-  <div class="mainWrapper">
-    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+  <div id="outer">
+	  <main id="maincontent maincontent-clean">
+			<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}"/>
+	  </main>
   </div>
 
 </f:section>

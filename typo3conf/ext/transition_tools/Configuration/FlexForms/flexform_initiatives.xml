@@ -15,19 +15,19 @@
 								<type>select</type>
 								<items>
 									<numIndex index="0">
-										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.listCategories</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.categoriesList</numIndex>
 										<numIndex index="1">Initiative->categories</numIndex>
 									</numIndex>
 									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.projectsMap</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesMap</numIndex>
 										<numIndex index="1">Initiative->map</numIndex>
 									</numIndex>
 									<numIndex index="2">
-										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.projectsList</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesList</numIndex>
 										<numIndex index="1">Initiative->list</numIndex>
 									</numIndex>
 									<numIndex index="3">
-										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.projectsGrid</numIndex>
+										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesGrid</numIndex>
 										<numIndex index="1">Initiative->grid</numIndex>
 									</numIndex>
 								</items>
@@ -37,7 +37,7 @@
 
 					<settings.projectListPid>
 						<TCEforms>
-							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.settings.projectListPid</label>
+							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.settings.initiativesListPid</label>
                             <displayCond><![CDATA[FIELD:switchableControllerActions:=:Initiative->categories]]></displayCond>
 							<config>
                                 <type>group</type>

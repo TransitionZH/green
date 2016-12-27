@@ -56,7 +56,25 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function listAction()
     {
-        $initiatives = $this->initiativeRepository->findAll();
+        $initiatives = null;
+        if ($this->request->hasArgument('category')) {
+            $initiatives = $this->initiativeRepository->findByCategory($cateogry);
+        }
+        elseif ($categoryName = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('category')) {
+//            $category = $this->categoryRepository->findByName($categoryName);
+//            $category = $this->categoryRepository->findOneByCategoryName('Nahrungsmittel');
+//            var_dump($categoryName);
+//            var_dump($category);
+//            die;
+//            if ($category) {
+//                $initiatives = $this->initiativeRepository->findByCategory($category);
+//            }
+            $initiatives = $this->initiativeRepository->findByCategoryName($categoryName);
+        }
+        else {
+            $initiatives = $this->initiativeRepository->findAll();
+        }
+        
         $this->view->assign('initiatives', $initiatives);
     }
     

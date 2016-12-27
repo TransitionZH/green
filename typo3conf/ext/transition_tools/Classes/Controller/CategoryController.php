@@ -32,24 +32,24 @@ namespace TransitionTeam\TransitionTools\Controller;
  */
 class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
-    /**
-     * categoryRepository
-     *
-     * @var \TransitionTeam\TransitionTools\Domain\Repository\CategoryRepository
-     * @inject
-     */
-    protected $categoryRepository = NULL;
-    
-    /**
-     * action list
-     *
-     * @return void
-     */
-    public function listAction()
-    {
-        $categories = $this->categoryRepository->findAll();
-        $this->view->assign('categories', $categories);
-    }
+//
+//    /**
+//     * categoryRepository
+//     *
+//     * @var \TransitionTeam\TransitionTools\Domain\Repository\CategoryRepository
+//     * @inject
+//     */
+//    protected $categoryRepository = NULL;
+//    
+//    /**
+//     * action list
+//     *
+//     * @return void
+//     */
+//    public function listAction()
+//    {
+//        $categories = $this->categoryRepository->findAll();
+//        $this->view->assign('categories', $categories);
+//    }
 
 }

@@ -310,20 +310,20 @@
 			<trans-unit id="flexform_initiatives.actions">
 				<source>Select function</source>
 			</trans-unit>
-			<trans-unit id="flexform_initiatives.action.listCategories">
+			<trans-unit id="flexform_initiatives.action.categoriesList">
 				<source>List Categories</source>
 			</trans-unit>
-			<trans-unit id="flexform_initiatives.action.projectsMap">
-				<source>Show projects on map</source>
+			<trans-unit id="flexform_initiatives.action.initiativesMap">
+				<source>Show initiatives on map</source>
 			</trans-unit>
-			<trans-unit id="flexform_initiatives.action.projectsList">
-				<source>Show projects as list</source>
+			<trans-unit id="flexform_initiatives.action.initiativesList">
+				<source>Show initiatives as list</source>
 			</trans-unit>
-			<trans-unit id="flexform_initiatives.action.projectsGrid">
-				<source>Show projects as grid</source>
+			<trans-unit id="flexform_initiatives.action.initiativesGrid">
+				<source>Show initiatives as grid</source>
 			</trans-unit>
-			<trans-unit id="flexform_initiatives.settings.projectListPid">
-				<source>Project list page</source>
+			<trans-unit id="flexform_initiatives.settings.initiativesListPid">
+				<source>Initiatives list page</source>
 			</trans-unit>
 		</body>
 	</file>

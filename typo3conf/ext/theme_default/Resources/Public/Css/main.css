@@ -8177,6 +8177,17 @@ html {
   color: #333333;
   line-height: 95px; }
 
+.category-heading-list-link a {
+  color: #777777;
+  font-style: italic;
+  padding-left: 5px; }
+  .category-heading-list-link a:hover, .category-heading-list-link a:focus {
+    color: #25cc37;
+    text-decoration: none; }
+
+.category-heading-centered > .category-heading-list-link {
+  display: none; }
+
 .subcategories {
   list-style: none;
   margin-bottom: 0;

@@ -61,10 +61,10 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         if ($category) {
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
         }
-        elseif ($this->request->hasArgument('category')) {
-            $category = $this->request->getArgument('category');
-            $initiatives = $this->initiativeRepository->findByCategory($cateogry);
-        }
+//        elseif ($this->request->hasArgument('category')) {
+//            $category = $this->request->getArgument('category');
+//            $initiatives = $this->initiativeRepository->findByCategory($cateogry);
+//        }
         elseif ($categoryName = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('category')) {
 //            $category = $this->categoryRepository->findByName($categoryName);
 //            $category = $this->categoryRepository->findOneByCategoryName('Nahrungsmittel');
@@ -83,6 +83,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     'name' => 'education',
                 ],
             ];
+            $categoryCssClass = 'category-'.$categoryName;
             $initiatives = $this->initiativeRepository->findByCategoryName($category['name']);
         }
         else {
@@ -92,6 +93,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         
         $this->view->assignMultiple([
             'category' => $category,
+            'categoryCssClass' => $categoryCssClass,
             'initiatives' => $initiatives,
         ]);
     }
@@ -162,7 +164,8 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function mapAction()
     {
-        
+        $initiatives = $this->initiativeRepository->findByCategoryName('education');
+        $this->view->assign('initiatives', json_encode($initiatives));
     }
     
     /**

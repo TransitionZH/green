@@ -427,7 +427,7 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": true,
                             "propertyIsRequired": false,
-                            "propertyName": "locLongitute",
+                            "propertyName": "locLongitude",
                             "propertyType": "Float",
                             "uid": "1425372478556"
                         }

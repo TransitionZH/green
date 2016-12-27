@@ -9,8 +9,8 @@
 			<trans-unit id="loc_latitude.description">
 				<source>locLatitude</source>
 			</trans-unit>
-			<trans-unit id="loc_longitute.description">
-				<source>locLongitute</source>
+			<trans-unit id="loc_longitude.description">
+				<source>locLongitude</source>
 			</trans-unit>
 			<trans-unit id="source.description">
 				<source>source</source>

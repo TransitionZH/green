@@ -156,11 +156,28 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
             'name' => 'name',
             'claim' => 'claim',
             'description' => 'description',
+            'venue' => 'venue',
         ];
+        
+        // Loop and map all properties
         foreach($propertiesMap as $openkiProperty => $property) {
             if (property_exists($initiativeFromOpenki, $openkiProperty)) {
-                $setter = 'set' . $this->underscoreToUpperCamelcase($property);
-                $this->$setter($initiativeFromOpenki->$property);
+                
+                // Set special cases first
+                if ($property == 'venue') {
+                    if (property_exists($initiativeFromOpenki->venue, 'loc')) {
+                        $venue = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Venue');
+                        $venue->setLocLongitude($initiativeFromOpenki->venue->loc->coordinates[0]);
+                        $venue->setLocLatitude($initiativeFromOpenki->venue->loc->coordinates[1]);
+                        $this->addVenue($venue);
+                    }
+                }
+                
+                // Then set the standard properties
+                else {
+                    $setter = 'set' . $this->underscoreToUpperCamelcase($property);
+                    $this->$setter($initiativeFromOpenki->$property);
+                }
             }
         }
     }

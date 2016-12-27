@@ -62,23 +62,21 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
 	 * @return array
 	 */
-    public function findAll() {
+    public function getFromOpenki(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null) {
+        // Build route
         $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH";
-    }
-    
-	/**
-	 * return initiatives from openki, matching the given category
-	 *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
-	 * @return array
-	 */
-    public function findByCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null) {
-        $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH," . $category->getName();
-        if ($category->getParentCategory()) {
-            $openkiRoute .= ','.$category->getParentCategory()->getName();
+        if ($category) {
+            $openkiRoute .= ','.$category->getName();
+            if ($category->getParentCategory()) {
+                $openkiRoute .= ','.$category->getParentCategory()->getName();
+            }
         }
+
+        // Get data
         $initiativesJson = file_get_contents($openkiRoute);
         $initiativesRaw = json_decode($initiativesJson);
+        
+        // Map to TransitionTeam\TransitionTools\Domain\Model\Initiative
         $initiatives = [];
         foreach($initiativesRaw as $initiativeRaw) {
             $initiative = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Initiative');
@@ -86,6 +84,26 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $initiatives[] = $initiative;
         }
         return $initiatives;
+    }
+        
+	/**
+	 * return all initiatives, get them from openki
+	 *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
+	 * @return array
+	 */
+    public function findAll() {
+        return $this->getFromOpenki();
+    }
+    
+	/**
+	 * return initiatives from openki, matching the given category
+	 *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+	 * @return array
+	 */
+    public function findByCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category) {
+        return $this->getFromOpenki($category);
     }
 //    
 //	/**

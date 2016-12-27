@@ -93,8 +93,8 @@
 			<trans-unit id="tx_transitiontools_domain_model_venue.loc_latitude">
 				<source>Loc Latitude</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_venue.loc_longitute">
-				<source>Loc Longitute</source>
+			<trans-unit id="tx_transitiontools_domain_model_venue.loc_longitude">
+				<source>Loc Longitude</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue.source">
 				<source>Source</source>

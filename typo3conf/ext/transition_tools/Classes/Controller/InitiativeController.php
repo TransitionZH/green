@@ -93,7 +93,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         
         $this->view->assignMultiple([
             'category' => $category,
-            'categoryCssClass' => $categoryCssClass,
+            'topCategory' => ['name' => $categoryName],
             'initiatives' => $initiatives,
         ]);
     }

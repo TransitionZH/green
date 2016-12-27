@@ -83,9 +83,13 @@ page {
 		transitionToolsLeafletMarkersCss = EXT:transition_tools/Resources/Public/StyleSheets/Css/leaflet.awesome-markers.css
 		transitionToolsMainCss = EXT:transition_tools/Resources/Public/StyleSheets/Css/main.css
 	}
-	includeJSFooter {
+	includeJSFooterlibs {
 		transitionToolsLeafletJs = https://unpkg.com/leaflet@1.0.2/dist/leaflet.js
+		transitionToolsLeafletJs.disableCompression = 1
+		transitionToolsLeafletJs.excludeFromConcatenation = 1
 		transitionToolsLeafletMarkersJs = EXT:transition_tools/Resources/Public/JavaScript/leaflet.awesome-markers.js
+	}
+	includeJSFooter {
 		transitionToolsMainJs = EXT:transition_tools/Resources/Public/JavaScript/main.js
 	}
 }

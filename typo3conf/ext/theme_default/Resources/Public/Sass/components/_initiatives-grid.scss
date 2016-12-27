@@ -1,0 +1,16 @@
+$initiatives-grid-vertical-padding: 30px;
+
+.initiatives-grid {
+    @include make-row;
+    margin-top: -($initiatives-grid-vertical-padding);
+}
+
+.initiatives-grid-initiative {
+    @include make-sm-column(3);
+    padding-top: $initiatives-grid-vertical-padding;
+}
+
+.initiatives-grid-initiative > img {
+    display: block;
+    margin: 0 auto;
+}

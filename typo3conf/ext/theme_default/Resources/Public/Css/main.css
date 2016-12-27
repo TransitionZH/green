@@ -8211,6 +8211,51 @@ html {
 .category-energy-environment-waste .subcategories > li::before {
   color: #355bc9; }
 
+.initiative {
+  color: #fff;
+  max-width: 700px;
+  padding: 5px;
+  position: relative; }
+
+.initiative-links {
+  float: right;
+  margin-top: 5px; }
+
+.initiative-links > a {
+  color: #fff; }
+  .initiative-links > a:hover {
+    color: #25cc37;
+    text-decoration: none; }
+
+.initiative-links > a + a {
+  border-left: 1px solid #fff;
+  padding-left: 5px; }
+
+.initiatives-grid {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -30px; }
+  .initiatives-grid:before, .initiatives-grid:after {
+    content: " ";
+    display: table; }
+  .initiatives-grid:after {
+    clear: both; }
+
+.initiatives-grid-initiative {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 30px; }
+  @media (min-width: 768px) {
+    .initiatives-grid-initiative {
+      float: left;
+      width: 25%; } }
+
+.initiatives-grid-initiative > img {
+  display: block;
+  margin: 0 auto; }
+
 footer {
   height: 50px;
   position: relative; }
@@ -8232,48 +8277,3 @@ footer {
 @media (min-width: 768px) {
   .navbar-fixed-top > .container {
     padding-left: 0; } }
-
-.organization {
-  color: #fff;
-  max-width: 700px;
-  padding: 5px;
-  position: relative; }
-
-.organization-links {
-  float: right;
-  margin-top: 5px; }
-
-.organization-links > a {
-  color: #fff; }
-  .organization-links > a:hover {
-    color: #25cc37;
-    text-decoration: none; }
-
-.organization-links > a + a {
-  border-left: 1px solid #fff;
-  padding-left: 5px; }
-
-.organizations-grid {
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-top: -30px; }
-  .organizations-grid:before, .organizations-grid:after {
-    content: " ";
-    display: table; }
-  .organizations-grid:after {
-    clear: both; }
-
-.organizations-grid-organization {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 30px; }
-  @media (min-width: 768px) {
-    .organizations-grid-organization {
-      float: left;
-      width: 25%; } }
-
-.organizations-grid-organization > img {
-  display: block;
-  margin: 0 auto; }

@@ -2,20 +2,20 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-    
+
     <f:flashMessages />
-    
+
     <f:if condition="{category}">
         <h3>{f:if(condition:'{category.parentCategory}', then:parentCategory.title, else:'')}
             {category.title}
         </h3>
     </f:if>
-    
+
     <f:if condition="{initiatives}">
         <f:then>
-            
+
             <f:for each="{initiatives}" as="initiative">
-                
+
                 <div class="media initiative initiative-{topCategory.name}">
                     <a class="media-left" href="">
                         <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image">
@@ -25,18 +25,18 @@
                         <p>{initiative.claim}</p>
                         <p>{initiative.description -> f:format.raw()}</p>
                         <div class="clearfix"></div>
-                        <div class="organization-links">
+                        <div class="initiative-links">
                             <a href="#"><f:translate key="tx_transitiontools_templates.webLink" /></a>
                             <a href="#"><f:translate key="tx_transitiontools_templates.mapLink" /></a>
                         </div>
                     </div>
                 </div>
             </f:for>
-            
+
         </f:then>
         <f:else>
             <p><f:translate key="tx_transitiontools_templates.noInitiativesFound" /></p>
         </f:else>
     </f:if>
-    
+
 </f:section>

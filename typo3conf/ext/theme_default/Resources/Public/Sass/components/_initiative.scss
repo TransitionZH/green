@@ -1,0 +1,27 @@
+$initiative-text-color: #fff;
+
+.initiative {
+    color: $initiative-text-color;
+    max-width: 700px;
+    padding: 5px;
+    position: relative;
+}
+
+.initiative-links {
+    float: right;
+    margin-top: 5px;
+}
+
+.initiative-links > a {
+    color: $initiative-text-color;
+
+    &:hover {
+        color: $brand-primary;
+        text-decoration: none;
+    }
+}
+
+.initiative-links > a + a {
+    border-left: 1px solid $initiative-text-color;
+    padding-left: 5px;
+}

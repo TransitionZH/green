@@ -57,7 +57,6 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function listAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
-        $category = null;
         $initiatives = null;
         if ($category) {
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
@@ -74,13 +73,12 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             }
         }
         else {
-            $category = null;
             $initiatives = $this->initiativeRepository->findAll();
         }
         
         $this->view->assignMultiple([
             'category' => $category,
-            'topCategory' => ($category->getParentCategory())?$category->getParentCategory():$category,
+            'topCategory' => ($category && $category->getParentCategory())?$category->getParentCategory():$category,
             'initiatives' => $initiatives,
         ]);
     }
@@ -147,12 +145,12 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     /**
      * action map
      *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
      * @return void
      */
-    public function mapAction()
+    public function mapAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
-        $initiatives = $this->initiativeRepository->findByCategory('education');
-        $this->view->assign('initiatives', json_encode($initiatives));
+        $this->listAction($category);
     }
     
     /**
@@ -162,7 +160,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function gridAction()
     {
-        
+        $this->listAction($category);
     }
     
     /**

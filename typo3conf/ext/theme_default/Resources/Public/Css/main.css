@@ -8219,6 +8219,24 @@ html {
   padding: 5px;
   position: relative; }
 
+.initiative-food {
+  background-color: #c937b7; }
+
+.initiative-living-mobility {
+  background-color: #c96836; }
+
+.initiative-shopping {
+  background-color: #36b7c9; }
+
+.initiative-economy {
+  background-color: #c93736; }
+
+.initiative-events-media-networks {
+  background-color: #b7c935; }
+
+.initiative-energy-environment-waste {
+  background-color: #355bc9; }
+
 .initiative-links {
   float: right;
   margin-top: 5px; }

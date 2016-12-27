@@ -87,7 +87,6 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	 */
     public function findByCategoryName($categoryName = '') {
         $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH," . $categoryName;
-        $openkiRoute = 'https://sandbox.openki.net/api/0/json/groups?tags=TransitionZH,education';
         $initiativesJson = file_get_contents($openkiRoute);
         $initiativesRaw = json_decode($initiativesJson);
         $initiatives = [];

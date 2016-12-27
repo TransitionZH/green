@@ -58,6 +58,8 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     {
         $initiatives = null;
         if ($this->request->hasArgument('category')) {
+            $category = $this->request->getArgument('category');
+            $categoryName = $category->getTitle();
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
         }
         elseif ($categoryName = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('category')) {
@@ -69,13 +71,19 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 //            if ($category) {
 //                $initiatives = $this->initiativeRepository->findByCategory($category);
 //            }
+            // set dummy category with existing initiatives in Openki
+            $categoryName = 'education';
             $initiatives = $this->initiativeRepository->findByCategoryName($categoryName);
         }
         else {
+            $categoryName = '';
             $initiatives = $this->initiativeRepository->findAll();
         }
         
-        $this->view->assign('initiatives', $initiatives);
+        $this->view->assignMultiple([
+            'categoryName' => $categoryName,
+            'initiatives' => $initiatives,
+        ]);
     }
     
     /**

@@ -2,9 +2,9 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-    
+
     <f:for each="{categoryTree}" as="topCategory">
-        <div class="media category category-{topCategory.item.name} {topCategory.item.css}" id="{topCategory.item.name}">
+        <div class="media category category-{topCategory.item.name}" id="{topCategory.item.name}">
             <div class="media-left">
                 <f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:topCategory.item.name}" noCacheHash="1">
                     <f:image

@@ -8196,19 +8196,19 @@ html {
 .category-food .subcategories > li::before {
   color: #c937b7; }
 
-.category-housing-mobility .subcategories > li::before {
+.category-living-mobility .subcategories > li::before {
   color: #c96836; }
 
 .category-shopping .subcategories > li::before {
   color: #36b7c9; }
 
-.category-economy-politics .subcategories > li::before {
+.category-economy .subcategories > li::before {
   color: #c93736; }
 
-.category-info-network .subcategories > li::before {
+.category-events-media-networks .subcategories > li::before {
   color: #b7c935; }
 
-.category-environment-energy-waste .subcategories > li::before {
+.category-energy-environment-waste .subcategories > li::before {
   color: #355bc9; }
 
 footer {

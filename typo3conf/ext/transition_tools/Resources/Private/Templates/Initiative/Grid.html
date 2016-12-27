@@ -2,30 +2,36 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-    <div class="initiatives-grid">
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-        <div class="initiatives-grid-initiative">
-            <img src="http://www.placehold.it/100x100">
-        </div>
-    </div>
+
+    <f:if condition="{category}">
+        <h3>
+            <f:image
+                image="{topCategory.image}"
+                alt="{topCategory.image.originalResource.title}"
+                treatIdAsReference="TRUE"
+            />
+            <f:if condition="{category.parentCategory}">{category.parentCategory.title} &gt; </f:if>
+            {category.title}
+        </h3>
+    </f:if>
+
+    <f:if condition="{initiatives}">
+        <f:then>
+            
+            <div class="initiatives-grid">
+                <f:for each="{initiatives}" as="initiative">
+                    
+                    <div class="initiatives-grid-initiative">
+                        <img src="http://www.placehold.it/100x100">
+                        <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
+                    </div>
+                    
+                </f:for>
+            </div>
+            
+        </f:then>
+        <f:else>
+            <p><f:translate key="tx_transitiontools_templates.noInitiativesFound" /></p>
+        </f:else>
+    </f:if>
 </f:section>

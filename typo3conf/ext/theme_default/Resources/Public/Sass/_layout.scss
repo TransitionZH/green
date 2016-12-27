@@ -14,6 +14,10 @@ html {
 
 #maincontent {
 	margin: 25px 0;
+
+	&-clean {
+		margin: 0;
+	}
 }
 
 #push {

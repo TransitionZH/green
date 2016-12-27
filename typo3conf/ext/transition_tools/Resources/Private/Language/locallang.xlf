@@ -288,6 +288,16 @@
 			<trans-unit id="tx_transitiontools_domain_model_category.source">
 				<source>Source</source>
 			</trans-unit>
+            
+			<trans-unit id="tx_transitiontools_templates.webLink">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_templates.mapLink">
+				<source>auf Karte</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_templates.noInitiativesFound">
+				<source>Keine Initiativen gefunden.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

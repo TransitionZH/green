@@ -52,14 +52,17 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     /**
      * action list
      *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
      * @return void
      */
-    public function listAction()
+    public function listAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
         $initiatives = null;
-        if ($this->request->hasArgument('category')) {
+        if ($category) {
+            $initiatives = $this->initiativeRepository->findByCategory($cateogry);
+        }
+        elseif ($this->request->hasArgument('category')) {
             $category = $this->request->getArgument('category');
-            $categoryName = $category->getTitle();
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
         }
         elseif ($categoryName = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('category')) {
@@ -72,16 +75,23 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 //                $initiatives = $this->initiativeRepository->findByCategory($category);
 //            }
             // set dummy category with existing initiatives in Openki
-            $categoryName = 'education';
-            $initiatives = $this->initiativeRepository->findByCategoryName($categoryName);
+            $category = [
+                'title' => 'Ausbildung',
+                'name' => 'education',
+                'parentCategory' => [
+                    'title' => 'Ausbildung',
+                    'name' => 'education',
+                ],
+            ];
+            $initiatives = $this->initiativeRepository->findByCategoryName($category['name']);
         }
         else {
-            $categoryName = '';
+            $category = null;
             $initiatives = $this->initiativeRepository->findAll();
         }
         
         $this->view->assignMultiple([
-            'categoryName' => $categoryName,
+            'category' => $category,
             'initiatives' => $initiatives,
         ]);
     }

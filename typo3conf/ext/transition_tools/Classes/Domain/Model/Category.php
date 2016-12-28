@@ -68,13 +68,13 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $image = null;
     
-    /**
-     * css
-     *
-     * @var string
-     */
-    protected $css = '';
-    
+//    /**
+//     * css
+//     *
+//     * @var string
+//     */
+//    protected $css = '';
+//    
     /**
      * parentCategory
      *
@@ -233,27 +233,27 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->image = $image;
     }
     
-    /**
-     * Returns the css
-     *
-     * @return string $css
-     */
-    public function getCss()
-    {
-        return $this->css;
-    }
-    
-    /**
-     * Sets the css
-     *
-     * @param string $css
-     * @return void
-     */
-    public function setCss($css)
-    {
-        $this->css = $css;
-    }
-    
+//    /**
+//     * Returns the css
+//     *
+//     * @return string $css
+//     */
+//    public function getCss()
+//    {
+//        return $this->css;
+//    }
+//    
+//    /**
+//     * Sets the css
+//     *
+//     * @param string $css
+//     * @return void
+//     */
+//    public function setCss($css)
+//    {
+//        $this->css = $css;
+//    }
+//    
     /**
      * Returns the parentCategory
      *

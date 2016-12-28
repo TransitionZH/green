@@ -276,9 +276,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_category.image">
 				<source>Image</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_category.css">
+<!--			<trans-unit id="tx_transitiontools_domain_model_category.css">
 				<source>Css</source>
-			</trans-unit>
+			</trans-unit>-->
 			<trans-unit id="tx_transitiontools_domain_model_category.parent_category">
 				<source>Parent Category</source>
 			</trans-unit>

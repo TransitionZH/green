@@ -69,6 +69,14 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $webLink = '';
     
     /**
+     * logoUrl - link to external logo
+     * ViewHelper for both internal & external images: http://stackoverflow.com/questions/39362668/typo3-fluid-image-from-external-resource
+     *
+     * @var string
+     */
+    protected $logoUrl = '';
+    
+    /**
      * logo
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -238,6 +246,27 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setWebLink($webLink)
     {
         $this->webLink = $webLink;
+    }
+    
+    /**
+     * Returns the logoUrl
+     *
+     * @return string $logoUrl
+     */
+    public function getLogoUrl()
+    {
+        return $this->logoUrl;
+    }
+    
+    /**
+     * Sets the logoUrl
+     *
+     * @param string $logoUrl
+     * @return void
+     */
+    public function setLogoUrl($logoUrl)
+    {
+        $this->logoUrl = $logoUrl;
     }
     
     /**

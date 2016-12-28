@@ -52,6 +52,7 @@ CREATE TABLE tx_transitiontools_domain_model_initiative (
 	claim varchar(255) DEFAULT '' NOT NULL,
 	description varchar(255) DEFAULT '' NOT NULL,
 	web_link varchar(255) DEFAULT '' NOT NULL,
+	logo_url varchar(255) DEFAULT '' NOT NULL,
 	logo int(11) unsigned NOT NULL default '0',
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	events int(11) unsigned DEFAULT '0' NOT NULL,

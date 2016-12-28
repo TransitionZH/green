@@ -33,6 +33,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_initiative.web_link">
 				<source>Web Link</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.logo_url">
+				<source>URL zu externem Logo</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.logo">
 				<source>Logo</source>
 			</trans-unit>

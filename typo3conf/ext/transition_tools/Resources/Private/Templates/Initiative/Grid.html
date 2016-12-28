@@ -22,7 +22,7 @@
                 <f:for each="{initiatives}" as="initiative">
                     
                     <div class="initiatives-grid-initiative">
-                        <img src="http://www.placehold.it/100x100">
+                        <f:render partial="Initiative/Logo" arguments="{initiative:initiative}" />
                         <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
                     </div>
                     

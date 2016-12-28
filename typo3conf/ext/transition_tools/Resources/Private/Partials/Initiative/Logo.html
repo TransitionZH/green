@@ -1,0 +1,17 @@
+{namespace vh=TransitionTeam\TransitionTools\ViewHelpers}
+
+<f:if condition="{initiative.logo}">
+    <f:then>
+        <f:image treatIdAsReference="1" src="{initiative.logo.id}" title="{initiative.logo.title}" alt="{initiative.logo.alternative}"/>
+    </f:then>
+    <f:else>
+        <f:if condition="{initiative.logoUrl}">
+            <f:then>
+                <vh:externalImage class="media-object" src="{initiative.logoUrl}" alt="{initiative.name}" width="120" />
+            </f:then>
+            <f:else>
+                <img class="media-object" src="http://www.placehold.it/120x120" alt="Generic placeholder image" />
+            </f:else>
+        </f:if>
+    </f:else>
+</f:if>

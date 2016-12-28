@@ -40,13 +40,18 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @inject
      */
     protected $categoryRepository = NULL;
-
+    
     /**
      * openkiBaseUrl - TODO: get dynamically from PartnerSystem & SynchRoute
      *
      * @var string
      */
     protected $openkiBaseUrl = "https://sandbox.openki.net/api/0/json/";
+
+    /**
+     * @var array $categoryCache
+     */
+    protected $categoryCache = [];
 
 
 	/** 
@@ -55,7 +60,70 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	public function initializeObject() {
         
     }
+    
+    /**
+     * Initializes the object with stdObject data from Openki
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative
+     * @param \stdClass $initiativeFromOpenki
+     * @return void
+     */
+    public function initFromOpenki(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative, \stdClass $initiativeFromOpenki)
+    {
+        $propertiesMap = [
+            'name' => 'name',
+            'claim' => 'claim',
+            'description' => 'description',
+            'venue' => 'venue',
+            'tags' => 'categories',
+        ];
         
+        // Loop and map all properties
+        foreach($propertiesMap as $openkiProperty => $property) {
+            if (property_exists($initiativeFromOpenki, $openkiProperty)) {
+                
+                //-- Set special cases first
+                // Set venue / geo coordinates
+                if ($property == 'venue') {
+                    if (property_exists($initiativeFromOpenki->venue, 'loc') && property_exists($initiativeFromOpenki->venue->loc, 'coordinates')) {
+                        $venue = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Venue');
+                        $venue->setLocLongitude($initiativeFromOpenki->venue->loc->coordinates[0]);
+                        $venue->setLocLatitude($initiativeFromOpenki->venue->loc->coordinates[1]);
+                        $initiative->addVenue($venue);
+                    }
+                }
+                
+                // Set categories from Openki tags
+                elseif ($property == 'categories') {
+                    $topCategories = [];
+                    foreach ($initiativeFromOpenki->tags as $tag) {
+
+                        // Get category using cache to prevent multiple identical requests on repository
+                        if (array_key_exists($tag, $this->categoryCache)) {
+                            $category = $this->categoryCache[$tag];
+                        }
+                        else {
+                            $category = $this->categoryRepository->findOneByName($tag);
+                            $this->categoryCache[$tag] = $category;
+                        }
+
+                        // Add to initiative
+                        if ($category) {
+                            $initiative->addCategory($category);
+                        }
+                    }
+                }
+                
+                //-- Then map the remaining standard properties
+                else {
+//                    $setter = 'set' . $this->underscoreToUpperCamelcase($property);
+                    $setter = 'set' . ucfirst($property);
+                    $initiative->$setter($initiativeFromOpenki->$property);
+                }
+            }
+        }
+    }
+    
 	/**
 	 * return all initiatives, get them from openki
 	 *
@@ -80,7 +148,7 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $initiatives = [];
         foreach($initiativesRaw as $initiativeRaw) {
             $initiative = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Initiative');
-            $initiative->initFromOpenki($initiativeRaw);
+            $this->initFromOpenki($initiative, $initiativeRaw);
             $initiatives[] = $initiative;
         }
         return $initiatives;
@@ -105,26 +173,14 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     public function findByCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category) {
         return $this->getFromOpenki($category);
     }
-//    
-//	/**
-//	 * return initiatives from openki, matching the given category
-//	 *
-//     * @param string $categoryName - optional
-//	 * @return array
-//	 */
-//    public function findByCategoryName($categoryName = '') {
-//        $openkiRoute = $this->openkiBaseUrl . "groups?tags=TransitionZH," . $categoryName;
-//        $initiativesJson = file_get_contents($openkiRoute);
-//        $initiativesRaw = json_decode($initiativesJson);
-//        $initiatives = [];
-//        foreach($initiativesRaw as $initiativeRaw) {
-//            /* @var \TransitionTeam\TransitionTools\Domain\Initiative $initiative */
-//            $initiative = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Initiative');
-//            $initiative->initFromOpenki($initiativeRaw);
-//            $initiatives[] = $initiative;
-//        }
-//        return $initiatives;
+    
+//    /**
+//     * underscore to camelcase
+//     */
+//    public function underscoreToUpperCamelcase($underscoreString) {
+//        $parts = explode('_', $underscoreString);
+//        $ucParts = array_map(function($part) { return ucfirst($part); }, $parts);
+//        return implode('', $ucParts);
 //    }
-//    
     
 }

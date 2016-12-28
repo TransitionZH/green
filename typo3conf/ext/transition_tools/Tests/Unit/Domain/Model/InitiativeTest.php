@@ -179,6 +179,31 @@ class InitiativeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
+	public function getLogoUrlReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getLogoUrl()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setLogoUrlForStringSetsLogoUrl()
+	{
+		$this->subject->setLogoUrl('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'logoUrl',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
 	public function getLogoReturnsInitialValueForFileReference()
 	{
 		$this->assertEquals(

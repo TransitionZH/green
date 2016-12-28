@@ -18,6 +18,9 @@
 			<trans-unit id="web_link.description">
 				<source>webLink</source>
 			</trans-unit>
+			<trans-unit id="logo_url.description">
+				<source>URL zu externem Logo</source>
+			</trans-unit>
 			<trans-unit id="logo.description">
 				<source>logo</source>
 			</trans-unit>

@@ -74,6 +74,7 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             'name' => 'name',
             'claim' => 'claim',
             'description' => 'description',
+            'logo' => 'logoUrl',
             'venue' => 'venue',
             'tags' => 'categories',
         ];
@@ -118,7 +119,10 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
                 else {
 //                    $setter = 'set' . $this->underscoreToUpperCamelcase($property);
                     $setter = 'set' . ucfirst($property);
-                    $initiative->$setter($initiativeFromOpenki->$property);
+                    $initiative->$setter($initiativeFromOpenki->$openkiProperty);
+//                    if ($openkiProperty == 'logo' && strpos('http', $initiativeFromOpenki->$openkiProperty) === false ) {
+//                        $initiative->$setter("https://openki.net/".$initiativeFromOpenki->$openkiProperty);
+//                    }
                 }
             }
         }

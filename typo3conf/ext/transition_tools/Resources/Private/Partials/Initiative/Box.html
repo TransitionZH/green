@@ -1,5 +1,6 @@
+{namespace vh=TransitionTeam\TransitionTools\ViewHelpers}
 
-<div class="media initiative initiative-{topCategory.name}">
+<div class="media initiative {vh:category.cssClasses(categories:initiative.categories)}">
     <a class="media-left" href="">
         <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image">
     </a>

@@ -1,10 +1,11 @@
+{namespace vh=TransitionTeam\TransitionTools\ViewHelpers}
 
 <f:layout name="Default" />
 
 <f:section name="main">
 
     <f:for each="{categoryTree}" as="topCategory">
-        <div class="media category category-{topCategory.item.name}" id="{topCategory.item.name}">
+        <div class="media category {vh:category.cssClasses(categories:topCategory.item)}" id="{topCategory.item.name}">
             <div class="media-left">
                 <f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:topCategory.item.uid, name:topCategory.item.name}}" noCacheHash="1">
                     <f:image

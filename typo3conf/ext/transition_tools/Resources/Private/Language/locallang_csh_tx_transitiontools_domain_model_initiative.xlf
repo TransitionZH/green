@@ -19,7 +19,7 @@
 				<source>webLink</source>
 			</trans-unit>
 			<trans-unit id="logo_url.description">
-				<source>URL zu externem Logo</source>
+				<source>logoUrl</source>
 			</trans-unit>
 			<trans-unit id="logo.description">
 				<source>logo</source>

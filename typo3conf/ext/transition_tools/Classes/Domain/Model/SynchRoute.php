@@ -1,12 +1,11 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2016 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
+ *  (c) 2017 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
  *
  *  All rights reserved
  *
@@ -55,84 +54,53 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $className = '';
     
     /**
-     * importRoute
+     * route
      *
      * @var string
      */
-    protected $importRoute = '';
+    protected $route = '';
     
     /**
-     * importFormat
+     * format
      *
      * @var int
      */
-    protected $importFormat = 0;
+    protected $format = 0;
     
     /**
-     * importTstamp
+     * timestamp
      *
      * @var \DateTime
      */
-    protected $importTstamp = null;
+    protected $timestamp = null;
     
     /**
-     * importMapping
-     * - key = modelClass property name, value = partner property name
+     * mapping
      *
      * @var string
      */
-    protected $importMapping = '';
-    
-    
-    /**
-     * importMappingExceptions
-     * - key = modelClass property name, value = partner property name
-     *
-     * @var array
-     */
-    protected $importMappingExceptions = [];
+    protected $mapping = '';
     
     /**
-     * importCacheData
+     * cacheData
      *
      * @var string
      */
-    protected $importCacheData = '';
+    protected $cacheData = '';
     
     /**
-     * importCacheLifetime
+     * cacheLifetime
      *
      * @var int
      */
-    protected $importCacheLifetime = 0;
+    protected $cacheLifetime = 0;
     
     /**
-     * exportRoute
+     * keysToMatch
      *
      * @var string
      */
-    protected $exportRoute = '';
-    
-    /**
-     * exportFormat
-     *
-     * @var int
-     */
-    protected $exportFormat = 0;
-    
-    /**
-     * exportTstamp
-     *
-     * @var \DateTime
-     */
-    protected $exportTstamp = null;
-    
-    /**
-     * exportMapping
-     *
-     * @var string
-     */
-    protected $exportMapping = '';
+    protected $keysToMatch = '';
     
     /**
      * partnerSystem
@@ -205,213 +173,150 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Returns the importRoute
+     * Returns the route
      *
-     * @return string $importRoute
+     * @return string $route
      */
-    public function getImportRoute()
+    public function getRoute()
     {
-        return $this->importRoute;
+        return $this->route;
     }
     
     /**
-     * Sets the importRoute
+     * Sets the route
      *
-     * @param string $importRoute
+     * @param string $route
      * @return void
      */
-    public function setImportRoute($importRoute)
+    public function setRoute($route)
     {
-        $this->importRoute = $importRoute;
+        $this->route = $route;
     }
     
     /**
-     * Returns the importFormat
+     * Returns the format
      *
-     * @return int $importFormat
+     * @return int $format
      */
-    public function getImportFormat()
+    public function getFormat()
     {
-        return $this->importFormat;
+        return $this->format;
     }
     
     /**
-     * Sets the importFormat
+     * Sets the format
      *
-     * @param int $importFormat
+     * @param int $format
      * @return void
      */
-    public function setImportFormat($importFormat)
+    public function setFormat($format)
     {
-        $this->importFormat = $importFormat;
+        $this->format = $format;
     }
     
     /**
-     * Returns the importTstamp
+     * Returns the timestamp
      *
-     * @return \DateTime $importTstamp
+     * @return \DateTime $timestamp
      */
-    public function getImportTstamp()
+    public function getTimestamp()
     {
-        return $this->importTstamp;
+        return $this->timestamp;
     }
     
     /**
-     * Sets the importTstamp
+     * Sets the timestamp
      *
-     * @param \DateTime $importTstamp
+     * @param \DateTime $timestamp
      * @return void
      */
-    public function setImportTstamp(\DateTime $importTstamp)
+    public function setTimestamp(\DateTime $timestamp)
     {
-        $this->importTstamp = $importTstamp;
+        $this->timestamp = $timestamp;
     }
     
     /**
-     * Returns the importMapping
+     * Returns the mapping
      *
-     * @return string $importMapping
+     * @return string $mapping
      */
-    public function getImportMapping()
+    public function getMapping()
     {
-        return $this->importMapping;
+        return $this->mapping;
     }
     
     /**
-     * Sets the importMapping
+     * Sets the mapping
      *
-     * @param string $importMapping
+     * @param string $mapping
      * @return void
      */
-    public function setImportMapping($importMapping)
+    public function setMapping($mapping)
     {
-        $this->importMapping = $importMapping;
+        $this->mapping = $mapping;
     }
     
     /**
-     * Returns the importCacheData
+     * Returns the cacheData
      *
-     * @return string $importCacheData
+     * @return string $cacheData
      */
-    public function getImportCacheData()
+    public function getCacheData()
     {
-        return $this->importCacheData;
+        return $this->cacheData;
     }
     
     /**
-     * Sets the importCacheData
+     * Sets the cacheData
      *
-     * @param string $importCacheData
+     * @param string $cacheData
      * @return void
      */
-    public function setImportCacheData($importCacheData)
+    public function setCacheData($cacheData)
     {
-        $this->importCacheData = $importCacheData;
+        $this->cacheData = $cacheData;
     }
     
     /**
-     * Returns the importCacheLifetime
+     * Returns the cacheLifetime
      *
-     * @return int $importCacheLifetime
+     * @return int $cacheLifetime
      */
-    public function getImportCacheLifetime()
+    public function getCacheLifetime()
     {
-        return $this->importCacheLifetime;
+        return $this->cacheLifetime;
     }
     
     /**
-     * Sets the importCacheLifetime
+     * Sets the cacheLifetime
      *
-     * @param int $importCacheLifetime
+     * @param int $cacheLifetime
      * @return void
      */
-    public function setImportCacheLifetime($importCacheLifetime)
+    public function setCacheLifetime($cacheLifetime)
     {
-        $this->importCacheLifetime = $importCacheLifetime;
+        $this->cacheLifetime = $cacheLifetime;
     }
     
     /**
-     * Returns the exportRoute
+     * Returns the keysToMatch
      *
-     * @return string $exportRoute
+     * @return string $keysToMatch
      */
-    public function getExportRoute()
+    public function getKeysToMatch()
     {
-        return $this->exportRoute;
+        return $this->keysToMatch;
     }
     
     /**
-     * Sets the exportRoute
+     * Sets the keysToMatch
      *
-     * @param string $exportRoute
+     * @param string $keysToMatch
      * @return void
      */
-    public function setExportRoute($exportRoute)
+    public function setKeysToMatch($keysToMatch)
     {
-        $this->exportRoute = $exportRoute;
-    }
-    
-    /**
-     * Returns the exportFormat
-     *
-     * @return int $exportFormat
-     */
-    public function getExportFormat()
-    {
-        return $this->exportFormat;
-    }
-    
-    /**
-     * Sets the exportFormat
-     *
-     * @param int $exportFormat
-     * @return void
-     */
-    public function setExportFormat($exportFormat)
-    {
-        $this->exportFormat = $exportFormat;
-    }
-    
-    /**
-     * Returns the exportTstamp
-     *
-     * @return \DateTime $exportTstamp
-     */
-    public function getExportTstamp()
-    {
-        return $this->exportTstamp;
-    }
-    
-    /**
-     * Sets the exportTstamp
-     *
-     * @param \DateTime $exportTstamp
-     * @return void
-     */
-    public function setExportTstamp(\DateTime $exportTstamp)
-    {
-        $this->exportTstamp = $exportTstamp;
-    }
-    
-    /**
-     * Returns the exportMapping
-     *
-     * @return string $exportMapping
-     */
-    public function getExportMapping()
-    {
-        return $this->exportMapping;
-    }
-    
-    /**
-     * Sets the exportMapping
-     *
-     * @param string $exportMapping
-     * @return void
-     */
-    public function setExportMapping($exportMapping)
-    {
-        $this->exportMapping = $exportMapping;
+        $this->keysToMatch = $keysToMatch;
     }
     
     /**

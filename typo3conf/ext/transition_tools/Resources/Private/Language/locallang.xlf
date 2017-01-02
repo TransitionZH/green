@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T15:24:27Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-02T21:11:32Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -162,35 +162,26 @@
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.class_name">
 				<source>Class Name</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_route">
-				<source>Import Route</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.route">
+				<source>Route</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_format">
-				<source>Import Format</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.format">
+				<source>Format</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_tstamp">
-				<source>Import Tstamp</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.timestamp">
+				<source>Timestamp</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_mapping">
-				<source>Import Mapping</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.mapping">
+				<source>Mapping</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_cache_data">
-				<source>Import Cache Data</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.cache_data">
+				<source>Cache Data</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_cache_lifetime">
-				<source>Import Cache Lifetime</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.cache_lifetime">
+				<source>Cache Lifetime</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_route">
-				<source>Export Route</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_format">
-				<source>Export Format</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_tstamp">
-				<source>Export Tstamp</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_mapping">
-				<source>Export Mapping</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.keys_to_match">
+				<source>Keys To Match</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.partner_system">
 				<source>Partner System</source>

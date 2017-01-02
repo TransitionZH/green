@@ -7,21 +7,14 @@ if (!defined('TYPO3_MODE')) {
 	'TransitionTeam.' . $_EXTKEY,
 	'Initiatives',
 	array(
-		'Initiative' => 'list, show, new, create, edit, update, categories, map, grid',
+		'Category' => 'list',
+		'Initiative' => 'list, show, new, create, edit, update, map, grid',
 		
 	),
 	// non-cacheable actions
 	array(
-		'PartnerSystem' => '',
 		'Initiative' => 'create, update, ',
-		'Event' => 'create, update, ',
-		'Venue' => '',
-		'Date' => 'create, update',
-		'SynchRoute' => '',
-		'Registration' => 'create, update, delete',
-		'FeUsers' => '',
 		'Category' => '',
-		
 	)
 );
 
@@ -34,12 +27,10 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'PartnerSystem' => '',
 		'Initiative' => 'create, update, ',
 		'Event' => 'create, update, ',
 		'Venue' => '',
 		'Date' => 'create, update',
-		'SynchRoute' => '',
 		'Registration' => 'create, update, delete',
 		'FeUsers' => '',
 		'Category' => '',
@@ -56,12 +47,10 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'PartnerSystem' => '',
 		'Initiative' => 'create, update, ',
 		'Event' => 'create, update, ',
 		'Venue' => '',
 		'Date' => 'create, update',
-		'SynchRoute' => '',
 		'Registration' => 'create, update, delete',
 		'FeUsers' => '',
 		'Category' => '',

@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'caption,description,class_name,import_route,import_format,import_tstamp,import_mapping,import_cache_data,import_cache_lifetime,export_route,export_format,export_tstamp,export_mapping,partner_system,',
+		'searchFields' => 'caption,description,class_name,route,format,timestamp,mapping,cache_data,cache_lifetime,keys_to_match,partner_system,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_synchroute.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, caption, description, class_name, import_route, import_format, import_tstamp, import_mapping, import_cache_data, import_cache_lifetime, export_route, export_format, export_tstamp, export_mapping, partner_system',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, caption, description, class_name, route, format, timestamp, mapping, cache_data, cache_lifetime, keys_to_match, partner_system',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, caption, description, class_name, import_route, import_format, import_tstamp, import_mapping, import_cache_data, import_cache_lifetime, export_route, export_format, export_tstamp, export_mapping, partner_system, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, caption, description, class_name, route, format, timestamp, mapping, cache_data, cache_lifetime, keys_to_match, partner_system, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -143,18 +143,18 @@ return array(
 				'eval' => 'trim'
 			),
 		),
-		'import_route' => array(
+		'route' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.import_route',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.route',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
-		'import_format' => array(
+		'format' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.import_format',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.format',
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
@@ -166,9 +166,9 @@ return array(
 				'eval' => ''
 			),
 		),
-		'import_tstamp' => array(
+		'timestamp' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.import_tstamp',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.timestamp',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -177,70 +177,36 @@ return array(
 				'default' => time()
 			),
 		),
-		'import_mapping' => array(
+		'mapping' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.import_mapping',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.mapping',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
-		'import_cache_data' => array(
+		'cache_data' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.import_cache_data',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.cache_data',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
-		'import_cache_lifetime' => array(
+		'cache_lifetime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.import_cache_lifetime',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.cache_lifetime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
 			)
 		),
-		'export_route' => array(
+		'keys_to_match' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.export_route',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'export_format' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.export_format',
-			'config' => array(
-				'type' => 'select',
-				'renderType' => 'selectSingle',
-				'items' => array(
-					array('-- Label --', 0),
-				),
-				'size' => 1,
-				'maxitems' => 1,
-				'eval' => ''
-			),
-		),
-		'export_tstamp' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.export_tstamp',
-			'config' => array(
-				'type' => 'input',
-				'size' => 10,
-				'eval' => 'datetime',
-				'checkbox' => 1,
-				'default' => time()
-			),
-		),
-		'export_mapping' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.export_mapping',
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_synchroute.keys_to_match',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,

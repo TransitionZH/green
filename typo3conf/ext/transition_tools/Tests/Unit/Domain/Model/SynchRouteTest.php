@@ -5,7 +5,7 @@ namespace TransitionTeam\TransitionTools\Tests\Unit\Domain\Model;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2016 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
+ *  (c) 2017 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
  *
  *  All rights reserved
  *
@@ -129,24 +129,24 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getImportRouteReturnsInitialValueForString()
+	public function getRouteReturnsInitialValueForString()
 	{
 		$this->assertSame(
 			'',
-			$this->subject->getImportRoute()
+			$this->subject->getRoute()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setImportRouteForStringSetsImportRoute()
+	public function setRouteForStringSetsRoute()
 	{
-		$this->subject->setImportRoute('Conceived at T3CON10');
+		$this->subject->setRoute('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			'importRoute',
+			'route',
 			$this->subject
 		);
 	}
@@ -154,37 +154,37 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getImportFormatReturnsInitialValueForInt()
+	public function getFormatReturnsInitialValueForInt()
 	{	}
 
 	/**
 	 * @test
 	 */
-	public function setImportFormatForIntSetsImportFormat()
+	public function setFormatForIntSetsFormat()
 	{	}
 
 	/**
 	 * @test
 	 */
-	public function getImportTstampReturnsInitialValueForDateTime()
+	public function getTimestampReturnsInitialValueForDateTime()
 	{
 		$this->assertEquals(
 			NULL,
-			$this->subject->getImportTstamp()
+			$this->subject->getTimestamp()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setImportTstampForDateTimeSetsImportTstamp()
+	public function setTimestampForDateTimeSetsTimestamp()
 	{
 		$dateTimeFixture = new \DateTime();
-		$this->subject->setImportTstamp($dateTimeFixture);
+		$this->subject->setTimestamp($dateTimeFixture);
 
 		$this->assertAttributeEquals(
 			$dateTimeFixture,
-			'importTstamp',
+			'timestamp',
 			$this->subject
 		);
 	}
@@ -192,24 +192,24 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getImportMappingReturnsInitialValueForString()
+	public function getMappingReturnsInitialValueForString()
 	{
 		$this->assertSame(
 			'',
-			$this->subject->getImportMapping()
+			$this->subject->getMapping()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setImportMappingForStringSetsImportMapping()
+	public function setMappingForStringSetsMapping()
 	{
-		$this->subject->setImportMapping('Conceived at T3CON10');
+		$this->subject->setMapping('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			'importMapping',
+			'mapping',
 			$this->subject
 		);
 	}
@@ -217,24 +217,24 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getImportCacheDataReturnsInitialValueForString()
+	public function getCacheDataReturnsInitialValueForString()
 	{
 		$this->assertSame(
 			'',
-			$this->subject->getImportCacheData()
+			$this->subject->getCacheData()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setImportCacheDataForStringSetsImportCacheData()
+	public function setCacheDataForStringSetsCacheData()
 	{
-		$this->subject->setImportCacheData('Conceived at T3CON10');
+		$this->subject->setCacheData('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			'importCacheData',
+			'cacheData',
 			$this->subject
 		);
 	}
@@ -242,99 +242,36 @@ class SynchRouteTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getImportCacheLifetimeReturnsInitialValueForInt()
+	public function getCacheLifetimeReturnsInitialValueForInt()
 	{	}
 
 	/**
 	 * @test
 	 */
-	public function setImportCacheLifetimeForIntSetsImportCacheLifetime()
+	public function setCacheLifetimeForIntSetsCacheLifetime()
 	{	}
 
 	/**
 	 * @test
 	 */
-	public function getExportRouteReturnsInitialValueForString()
+	public function getKeysToMatchReturnsInitialValueForString()
 	{
 		$this->assertSame(
 			'',
-			$this->subject->getExportRoute()
+			$this->subject->getKeysToMatch()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setExportRouteForStringSetsExportRoute()
+	public function setKeysToMatchForStringSetsKeysToMatch()
 	{
-		$this->subject->setExportRoute('Conceived at T3CON10');
+		$this->subject->setKeysToMatch('Conceived at T3CON10');
 
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
-			'exportRoute',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getExportFormatReturnsInitialValueForInt()
-	{	}
-
-	/**
-	 * @test
-	 */
-	public function setExportFormatForIntSetsExportFormat()
-	{	}
-
-	/**
-	 * @test
-	 */
-	public function getExportTstampReturnsInitialValueForDateTime()
-	{
-		$this->assertEquals(
-			NULL,
-			$this->subject->getExportTstamp()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setExportTstampForDateTimeSetsExportTstamp()
-	{
-		$dateTimeFixture = new \DateTime();
-		$this->subject->setExportTstamp($dateTimeFixture);
-
-		$this->assertAttributeEquals(
-			$dateTimeFixture,
-			'exportTstamp',
-			$this->subject
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function getExportMappingReturnsInitialValueForString()
-	{
-		$this->assertSame(
-			'',
-			$this->subject->getExportMapping()
-		);
-	}
-
-	/**
-	 * @test
-	 */
-	public function setExportMappingForStringSetsExportMapping()
-	{
-		$this->subject->setExportMapping('Conceived at T3CON10');
-
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'exportMapping',
+			'keysToMatch',
 			$this->subject
 		);
 	}

@@ -77,10 +77,20 @@ class SynchRoute extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     
     /**
      * importMapping
+     * - key = modelClass property name, value = partner property name
      *
      * @var string
      */
     protected $importMapping = '';
+    
+    
+    /**
+     * importMappingExceptions
+     * - key = modelClass property name, value = partner property name
+     *
+     * @var array
+     */
+    protected $importMappingExceptions = [];
     
     /**
      * importCacheData

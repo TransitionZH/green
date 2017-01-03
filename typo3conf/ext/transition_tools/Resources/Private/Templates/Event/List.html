@@ -20,6 +20,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <table  class="tx_transitiontools" >
 	<tr>
 		<th><f:translate key="tx_transitiontools_domain_model_event.uuid" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_event.source_id" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_event.name" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_event.description" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_event.contact" /></th>
@@ -31,6 +32,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:for each="{events}" as="event">
 		<tr>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.uuid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{event : event}"> {event.sourceId}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.name}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.description}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{event : event}"> {event.contact}</f:link.action></td>

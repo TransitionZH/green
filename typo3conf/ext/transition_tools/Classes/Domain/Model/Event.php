@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -38,6 +39,13 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $uuid = '';
+    
+    /**
+     * sourceId
+     *
+     * @var string
+     */
+    protected $sourceId = '';
     
     /**
      * name
@@ -147,6 +155,27 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setUuid($uuid)
     {
         $this->uuid = $uuid;
+    }
+    
+    /**
+     * Returns the sourceId
+     *
+     * @return string $sourceId
+     */
+    public function getSourceId()
+    {
+        return $this->sourceId;
+    }
+    
+    /**
+     * Sets the sourceId
+     *
+     * @param string $sourceId
+     * @return void
+     */
+    public function setSourceId($sourceId)
+    {
+        $this->sourceId = $sourceId;
     }
     
     /**

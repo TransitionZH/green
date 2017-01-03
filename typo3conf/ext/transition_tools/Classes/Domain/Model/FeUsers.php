@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice
@@ -32,6 +33,20 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
 class FeUsers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
+    /**
+     * uuid
+     *
+     * @var string
+     */
+    protected $uuid = '';
+    
+    /**
+     * sourceId
+     *
+     * @var string
+     */
+    protected $sourceId = '';
+    
     /**
      * title
      *
@@ -129,6 +144,48 @@ class FeUsers extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $comment = '';
+    
+    /**
+     * Returns the uuid
+     *
+     * @return string $uuid
+     */
+    public function getUuid()
+    {
+        return $this->uuid;
+    }
+    
+    /**
+     * Sets the uuid
+     *
+     * @param string $uuid
+     * @return void
+     */
+    public function setUuid($uuid)
+    {
+        $this->uuid = $uuid;
+    }
+    
+    /**
+     * Returns the sourceId
+     *
+     * @return string $sourceId
+     */
+    public function getSourceId()
+    {
+        return $this->sourceId;
+    }
+    
+    /**
+     * Sets the sourceId
+     *
+     * @param string $sourceId
+     * @return void
+     */
+    public function setSourceId($sourceId)
+    {
+        $this->sourceId = $sourceId;
+    }
     
     /**
      * Returns the title

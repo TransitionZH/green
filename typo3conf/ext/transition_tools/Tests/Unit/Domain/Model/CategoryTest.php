@@ -5,7 +5,7 @@ namespace TransitionTeam\TransitionTools\Tests\Unit\Domain\Model;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2016 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
+ *  (c) 2017 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
  *
  *  All rights reserved
  *
@@ -72,6 +72,31 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		$this->assertAttributeEquals(
 			'Conceived at T3CON10',
 			'uuid',
+			$this->subject
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function getSourceIdReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getSourceId()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setSourceIdForStringSetsSourceId()
+	{
+		$this->subject->setSourceId('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'sourceId',
 			$this->subject
 		);
 	}
@@ -177,18 +202,31 @@ class CategoryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 		);
 	}
 
-//	/**
-//	 * @test
-//	 */
-//	public function getCssReturnsInitialValueForInt()
-//	{	}
-//
-//	/**
-//	 * @test
-//	 */
-//	public function setCssForIntSetsCss()
-//	{	}
-//
+	/**
+	 * @test
+	 */
+	public function getCssReturnsInitialValueForString()
+	{
+		$this->assertSame(
+			'',
+			$this->subject->getCss()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setCssForStringSetsCss()
+	{
+		$this->subject->setCss('Conceived at T3CON10');
+
+		$this->assertAttributeEquals(
+			'Conceived at T3CON10',
+			'css',
+			$this->subject
+		);
+	}
+
 	/**
 	 * @test
 	 */

@@ -4,7 +4,7 @@
             "config": {
                 "position": [
                     1201,
-                    441
+                    440
                 ]
             },
             "name": "New Model Object",
@@ -74,7 +74,7 @@
             "config": {
                 "position": [
                     160,
-                    33
+                    32
                 ]
             },
             "name": "New Model Object",
@@ -116,6 +116,16 @@
                             "propertyName": "uuid",
                             "propertyType": "String",
                             "uid": "343657385502"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "1012584750286"
                         },
                         {
                             "allowedFileTypes": "",
@@ -239,7 +249,7 @@
             "config": {
                 "position": [
                     418,
-                    35
+                    34
                 ]
             },
             "name": "New Model Object",
@@ -279,6 +289,16 @@
                             "propertyName": "uuid",
                             "propertyType": "String",
                             "uid": "32079538049"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "1172572370573"
                         },
                         {
                             "allowedFileTypes": "",
@@ -382,7 +402,7 @@
             "config": {
                 "position": [
                     419,
-                    442
+                    441
                 ]
             },
             "name": "New Model Object",
@@ -411,6 +431,26 @@
                 },
                 "propertyGroup": {
                     "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "uuid",
+                            "propertyType": "String",
+                            "uid": "846770324949"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "133357062448"
+                        },
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
@@ -463,7 +503,7 @@
             "config": {
                 "position": [
                     675,
-                    38
+                    37
                 ]
             },
             "name": "New Model Object",
@@ -501,6 +541,16 @@
                             "propertyName": "uuid",
                             "propertyType": "String",
                             "uid": "478458884725"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "44887379229"
                         },
                         {
                             "allowedFileTypes": "",
@@ -654,7 +704,7 @@
             "config": {
                 "position": [
                     940,
-                    441
+                    440
                 ]
             },
             "name": "New Model Object",
@@ -808,7 +858,7 @@
             "config": {
                 "position": [
                     939,
-                    38
+                    37
                 ]
             },
             "name": "New Model Object",
@@ -846,6 +896,16 @@
                             "propertyName": "uuid",
                             "propertyType": "String",
                             "uid": "871649544295"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "780872684479"
                         },
                         {
                             "allowedFileTypes": "",
@@ -909,7 +969,7 @@
             "config": {
                 "position": [
                     1200,
-                    39
+                    38
                 ]
             },
             "name": "New Model Object",
@@ -940,6 +1000,26 @@
                 },
                 "propertyGroup": {
                     "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "uuid",
+                            "propertyType": "String",
+                            "uid": "835339755994"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "968593445516"
+                        },
                         {
                             "allowedFileTypes": "",
                             "maxItems": "1",
@@ -1091,7 +1171,7 @@
             "config": {
                 "position": [
                     158,
-                    440
+                    439
                 ]
             },
             "name": "New Model Object",
@@ -1129,6 +1209,16 @@
                             "propertyName": "uuid",
                             "propertyType": "String",
                             "uid": "665533640249"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "sourceId",
+                            "propertyType": "String",
+                            "uid": "553851409004"
                         },
                         {
                             "allowedFileTypes": "",
@@ -1541,7 +1631,7 @@
         }
     ],
     "log": {
-        "last_modified": "2017-01-02 09:11",
+        "last_modified": "2017-01-03 03:52",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

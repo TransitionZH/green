@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-02T21:11:32Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-03T15:52:31Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -20,6 +20,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.name">
 				<source>Name</source>
@@ -60,6 +63,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_event.uuid">
 				<source>Uuid</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_event.source_id">
+				<source>Source Id</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.name">
 				<source>Name</source>
 			</trans-unit>
@@ -90,6 +96,12 @@
 			<trans-unit id="tx_transitiontools_domain_model_venue">
 				<source>Venue</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_venue.uuid">
+				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_venue.source_id">
+				<source>Source Id</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue.type">
 				<source>Type</source>
 			</trans-unit>
@@ -107,6 +119,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_date.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_date.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_date.start">
 				<source>Start</source>
@@ -192,6 +207,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_registration.uuid">
 				<source>Uuid</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_registration.source_id">
+				<source>Source Id</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration.comment">
 				<source>Comment</source>
 			</trans-unit>
@@ -209,6 +227,12 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_feusers">
 				<source>Fe Users</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_feusers.uuid">
+				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_feusers.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_feusers.title">
 				<source>Title</source>
@@ -257,6 +281,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.title">
 				<source>Title</source>

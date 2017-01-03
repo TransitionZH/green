@@ -1,6 +1,7 @@
 <?php
 namespace TransitionTeam\TransitionTools\Domain\Model;
 
+
 /***************************************************************
  *
  *  Copyright notice

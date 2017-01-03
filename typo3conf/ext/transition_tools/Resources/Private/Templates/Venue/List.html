@@ -19,6 +19,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <table  class="tx_transitiontools" >
 	<tr>
+		<th><f:translate key="tx_transitiontools_domain_model_venue.uuid" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_venue.source_id" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_venue.type" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_venue.loc_latitude" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_venue.loc_longitude" /></th>
@@ -28,6 +30,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 	<f:for each="{venues}" as="venue">
 		<tr>
+			<td><f:link.action action="show" arguments="{venue : venue}"> {venue.uuid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{venue : venue}"> {venue.sourceId}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{venue : venue}"> {venue.type}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{venue : venue}"> {venue.locLatitude}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{venue : venue}"> {venue.locLongitude}</f:link.action></td>

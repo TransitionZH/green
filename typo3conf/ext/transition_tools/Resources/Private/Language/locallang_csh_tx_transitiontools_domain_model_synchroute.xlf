@@ -12,35 +12,26 @@
 			<trans-unit id="class_name.description">
 				<source>className</source>
 			</trans-unit>
-			<trans-unit id="import_route.description">
-				<source>importRoute</source>
+			<trans-unit id="route.description">
+				<source>route</source>
 			</trans-unit>
-			<trans-unit id="import_format.description">
-				<source>importFormat</source>
+			<trans-unit id="format.description">
+				<source>format</source>
 			</trans-unit>
-			<trans-unit id="import_tstamp.description">
-				<source>importTstamp</source>
+			<trans-unit id="timestamp.description">
+				<source>timestamp</source>
 			</trans-unit>
-			<trans-unit id="import_mapping.description">
-				<source>importMapping</source>
+			<trans-unit id="mapping.description">
+				<source>mapping</source>
 			</trans-unit>
-			<trans-unit id="import_cache_data.description">
-				<source>importCacheData</source>
+			<trans-unit id="cache_data.description">
+				<source>cacheData</source>
 			</trans-unit>
-			<trans-unit id="import_cache_lifetime.description">
-				<source>importCacheLifetime</source>
+			<trans-unit id="cache_lifetime.description">
+				<source>cacheLifetime</source>
 			</trans-unit>
-			<trans-unit id="export_route.description">
-				<source>exportRoute</source>
-			</trans-unit>
-			<trans-unit id="export_format.description">
-				<source>exportFormat</source>
-			</trans-unit>
-			<trans-unit id="export_tstamp.description">
-				<source>exportTstamp</source>
-			</trans-unit>
-			<trans-unit id="export_mapping.description">
-				<source>exportMapping</source>
+			<trans-unit id="keys_to_match.description">
+				<source>keysToMatch</source>
 			</trans-unit>
 			<trans-unit id="partner_system.description">
 				<source>partnerSystem</source>

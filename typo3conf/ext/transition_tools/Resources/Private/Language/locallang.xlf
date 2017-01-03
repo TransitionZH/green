@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-12-25T15:24:27Z" product-name="transition_tools">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-03T15:52:31Z" product-name="transition_tools">
 		<header/>
 		<body>
 			<trans-unit id="tx_transitiontools_domain_model_partnersystem">
@@ -20,6 +20,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.name">
 				<source>Name</source>
@@ -60,6 +63,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_event.uuid">
 				<source>Uuid</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_event.source_id">
+				<source>Source Id</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_event.name">
 				<source>Name</source>
 			</trans-unit>
@@ -90,6 +96,12 @@
 			<trans-unit id="tx_transitiontools_domain_model_venue">
 				<source>Venue</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_venue.uuid">
+				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_venue.source_id">
+				<source>Source Id</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue.type">
 				<source>Type</source>
 			</trans-unit>
@@ -107,6 +119,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_date.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_date.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_date.start">
 				<source>Start</source>
@@ -162,35 +177,26 @@
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.class_name">
 				<source>Class Name</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_route">
-				<source>Import Route</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.route">
+				<source>Route</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_format">
-				<source>Import Format</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.format">
+				<source>Format</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_tstamp">
-				<source>Import Tstamp</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.timestamp">
+				<source>Timestamp</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_mapping">
-				<source>Import Mapping</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.mapping">
+				<source>Mapping</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_cache_data">
-				<source>Import Cache Data</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.cache_data">
+				<source>Cache Data</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.import_cache_lifetime">
-				<source>Import Cache Lifetime</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.cache_lifetime">
+				<source>Cache Lifetime</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_route">
-				<source>Export Route</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_format">
-				<source>Export Format</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_tstamp">
-				<source>Export Tstamp</source>
-			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_synchroute.export_mapping">
-				<source>Export Mapping</source>
+			<trans-unit id="tx_transitiontools_domain_model_synchroute.keys_to_match">
+				<source>Keys To Match</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_synchroute.partner_system">
 				<source>Partner System</source>
@@ -200,6 +206,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_registration.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_registration.comment">
 				<source>Comment</source>
@@ -218,6 +227,12 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_feusers">
 				<source>Fe Users</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_feusers.uuid">
+				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_feusers.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_feusers.title">
 				<source>Title</source>
@@ -266,6 +281,9 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.uuid">
 				<source>Uuid</source>
+			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_category.source_id">
+				<source>Source Id</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.title">
 				<source>Title</source>

@@ -14,7 +14,7 @@
             />
 			<f:if condition="{category.parentCategory}">
 				<span class="initiative-list-parent-category">
-					<f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:topCategory.uid, name:topCategory.name}}" noCacheHash="1">
+					<f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:topCategory.uid, name:topCategory.name}}" noCacheHash="1">
 						{category.parentCategory.title}
 					</f:link.page>
 				</span>
@@ -27,28 +27,7 @@
         <f:then>
 
             <f:for each="{initiatives}" as="initiative">
-
-                <div class="media initiative initiative-{topCategory.name}">
-                    <a class="media-left" href="">
-                        <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image">
-                    </a>
-                    <div class="media-body initiative-body">
-                        <h4 class="media-heading">{initiative.name}</h4>
-                        <p>{initiative.claim}</p>
-                        <p>{initiative.description -> f:format.raw()}</p>
-                        <div class="clearfix"></div>
-                    </div>
-					<div class="initiative-links">
-						<a href="#">
-							<i class="fa fa-globe"></i>
-							<f:translate key="tx_transitiontools_templates.webLink" />
-						</a>
-						<a href="#">
-							<i class="fa fa-map-marker"></i>
-							<f:translate key="tx_transitiontools_templates.mapLink" />
-						</a>
-					</div>
-                </div>
+                <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
             </f:for>
 
         </f:then>

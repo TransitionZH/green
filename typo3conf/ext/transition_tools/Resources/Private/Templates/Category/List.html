@@ -17,7 +17,7 @@
                 <h4 class="media-heading category-heading category-heading-centered">
                     {topCategory.item.title}
 					<small class="category-heading-list-link">
-						<f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:topCategory.item.uid, name:topCategory.item.name}}" noCacheHash="1">
+						<f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:topCategory.item.uid, name:topCategory.item.name}}" noCacheHash="1">
 							<i class="fa fa-list" aria-hidden="true"></i>
 							<f:translate key="tx_transitiontools_templates.allInitiatives" />
 						</f:link.page>
@@ -26,7 +26,7 @@
                 <ul class="subcategories">
                 <f:for each="{topCategory.subCategories}" as="subCategory">
                     <li>
-                        <f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:subCategory.uid, name:subCategory.name}}" noCacheHash="1">
+                        <f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:subCategory.uid, name:subCategory.name}}" noCacheHash="1">
                             {subCategory.title}
                         </f:link.page>
                     </li>

@@ -20,6 +20,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <table  class="tx_transitiontools" >
 	<tr>
 		<th><f:translate key="tx_transitiontools_domain_model_registration.uuid" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_registration.source_id" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_registration.comment" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_registration.registration_status" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_registration.fee" /></th>
@@ -31,6 +32,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:for each="{registrations}" as="registration">
 		<tr>
 			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.uuid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.sourceId}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.comment}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.registrationStatus}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.fee}</f:link.action></td>

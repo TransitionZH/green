@@ -2,30 +2,22 @@
 
 <div class="media initiative {vh:category.cssClasses(categories:initiative.categories)}">
     <a class="media-left" href="">
-        <f:if condition="{initiative.logo}">
-            <f:then>
-                <f:image treatIdAsReference="1" src="{initiative.logo.id}" title="{initiative.logo.title}" alt="{initiative.logo.alternative}"/>
-            </f:then>
-            <f:else>
-                <f:if condition="{initiative.logoUrl}">
-                    <f:then>
-                        <vh:externalImage class="media-object" src="{initiative.logoUrl}" alt="{initiative.name}" width="120" />
-                    </f:then>
-                    <f:else>
-                        <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image" />
-                    </f:else>
-                </f:if>
-            </f:else>
-        </f:if>
+        <f:render partial="Initiative/Logo" arguments="{initiative:initiative}" />
     </a>
-    <div class="media-body">
+    <div class="media-body initiative-body">
         <h4 class="media-heading">{initiative.name}</h4>
         <p>{initiative.claim}</p>
         <p>{initiative.description -> f:format.raw()}</p>
         <div class="clearfix"></div>
-        <div class="initiative-links">
-            <a href="#"><f:translate key="tx_transitiontools_templates.webLink" /></a>
-            <a href="#"><f:translate key="tx_transitiontools_templates.mapLink" /></a>
-        </div>
+    </div>
+    <div class="initiative-links">
+        <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
+            <i class="fa fa-globe"></i>
+            <f:translate key="tx_transitiontools_templates.webLink" />
+        </f:link.typolink>
+        <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
+            <i class="fa fa-map-marker"></i>
+            <f:translate key="tx_transitiontools_templates.mapLink" />
+        </f:link.page>
     </div>
 </div>

@@ -20,6 +20,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <table  class="tx_transitiontools" >
 	<tr>
 		<th><f:translate key="tx_transitiontools_domain_model_date.uuid" /></th>
+		<th><f:translate key="tx_transitiontools_domain_model_date.source_id" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_date.start" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_date.end" /></th>
 		<th><f:translate key="tx_transitiontools_domain_model_date.description" /></th>
@@ -36,6 +37,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:for each="{dates}" as="date">
 		<tr>
 			<td><f:link.action action="show" arguments="{date : date}"> {date.uuid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{date : date}"> {date.sourceId}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{date : date}"> {date.start -> f:format.date()}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{date : date}"> {date.end -> f:format.date()}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{date : date}"> {date.description}</f:link.action></td>

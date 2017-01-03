@@ -6,7 +6,7 @@ namespace TransitionTeam\TransitionTools\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2016 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
+ *  (c) 2017 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
  *
  *  All rights reserved
  *

@@ -1,12 +1,11 @@
 <?php
 namespace TransitionTeam\TransitionTools\Controller;
 
-
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2016 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
+ *  (c) 2017 Benno Flory <benno.flory@gmx.ch>, Benno Flory - Web und Wandel
  *
  *  All rights reserved
  *
@@ -41,4 +40,17 @@ class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     protected $categoryRepository = NULL;
     
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function listAction()
+    {
+        $categoryTree = $this->categoryRepository->findTree();
+        $this->view->assign('categoryTree', $categoryTree);
+        
+        /* TODO: For import filter: match main AND subcategory */
+    }
+
 }

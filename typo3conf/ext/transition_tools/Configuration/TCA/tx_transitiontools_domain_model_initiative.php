@@ -19,14 +19,14 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'uuid,name,claim,description,web_link,logo_url,logo,venues,events,categories,related_initiatives,source,',
+		'searchFields' => 'uuid,source_id,name,claim,description,web_link,logo_url,logo,venues,events,categories,related_initiatives,source,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('transition_tools') . 'Resources/Public/Icons/tx_transitiontools_domain_model_initiative.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, name, claim, description, web_link, logo_url, logo, venues, events, categories, related_initiatives, source',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, uuid, source_id, name, claim, description, web_link, logo_url, logo, venues, events, categories, related_initiatives, source',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, name, claim, description, web_link, logo_url, logo, venues, events, categories, related_initiatives, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, uuid, source_id, name, claim, description, web_link, logo_url, logo, venues, events, categories, related_initiatives, source, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -119,6 +119,15 @@ return array(
 		'uuid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.uuid',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim'
+			),
+		),
+		'source_id' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:tx_transitiontools_domain_model_initiative.source_id',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,

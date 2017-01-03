@@ -8167,6 +8167,8 @@ html {
 
 .category > .media-left img {
   width: 100px; }
+  .category > .media-left img:hover {
+    cursor: pointer; }
 
 .category-heading {
   color: #25cc37; }
@@ -8176,6 +8178,17 @@ html {
 .category-heading-centered {
   color: #333333;
   line-height: 95px; }
+
+.category-heading-list-link a {
+  color: #777777;
+  font-style: italic;
+  padding-left: 5px; }
+  .category-heading-list-link a:hover, .category-heading-list-link a:focus {
+    color: #25cc37;
+    text-decoration: none; }
+
+.category-heading-centered > .category-heading-list-link {
+  display: none; }
 
 .subcategories {
   list-style: none;
@@ -8214,7 +8227,9 @@ html {
   color: #355bc9; }
 
 .initiative {
+  background-color: #b80606;
   border-radius: 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   color: #fff;
   max-width: 700px;
   padding: 10px;
@@ -8238,19 +8253,35 @@ html {
 .initiative-energy-environment-waste {
   background-color: #355bc9; }
 
+.initiative-body {
+  padding-bottom: 20px; }
+
 .initiative-links {
-  float: right;
-  margin-top: 5px; }
+  bottom: 10px;
+  position: absolute;
+  right: 10px; }
 
 .initiative-links > a {
-  color: #fff; }
+  border-radius: 4px;
+  color: #fff;
+  padding: 5px;
+  transition-duration: .3s;
+  transition-property: background-color, box-shadow; }
   .initiative-links > a:hover {
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     color: #25cc37;
     text-decoration: none; }
+  .initiative-links > a:nth-of-type(1):nth-last-child(2):hover {
+    border-right: 1px solid #fff; }
+    .initiative-links > a:nth-of-type(1):nth-last-child(2):hover + a {
+      border-left: 0; }
 
 .initiative-links > a + a {
   border-left: 1px solid #fff;
-  padding-left: 5px; }
+  border-radius: 0 4px 4px 0; }
+  .initiative-links > a + a:hover {
+    border-radius: 4px; }
 
 .initiatives-grid {
   margin-left: -15px;
@@ -8299,8 +8330,10 @@ html {
     text-decoration: none; }
 
 footer {
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
   height: 50px;
-  position: relative; }
+  position: relative;
+  z-index: 999; }
 
 .footer-address {
   box-sizing: border-box;
@@ -8315,6 +8348,9 @@ footer {
 
 .footer-address p {
   margin: 0; }
+
+.navbar-fixed-top {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
 
 @media (min-width: 768px) {
   .navbar-fixed-top > .container {

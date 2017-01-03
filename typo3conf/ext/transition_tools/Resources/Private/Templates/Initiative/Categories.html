@@ -7,17 +7,21 @@
     <f:for each="{categoryTree}" as="topCategory">
         <div class="media category {vh:category.cssClasses(categories:topCategory.item)}" id="{topCategory.item.name}">
             <div class="media-left">
-                <f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:topCategory.item.uid, name:topCategory.item.name}}" noCacheHash="1">
-                    <f:image
-                        image="{topCategory.item.image}"
-                        alt="{topCategory.item.image.originalResource.title}"
-                        treatIdAsReference="TRUE"
-                    />
-                </f:link.page>
+                <f:image
+                    image="{topCategory.item.image}"
+                    alt="{topCategory.item.image.originalResource.title}"
+                    treatIdAsReference="TRUE"
+                />
             </div>
             <div class="media-body">
                 <h4 class="media-heading category-heading category-heading-centered">
                     {topCategory.item.title}
+					<small class="category-heading-list-link">
+						<f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:topCategory.item.uid, name:topCategory.item.name}}" noCacheHash="1">
+							<i class="fa fa-list" aria-hidden="true"></i>
+							<f:translate key="tx_transitiontools_templates.allInitiatives" />
+						</f:link.page>
+					</small>
                 </h4>
                 <ul class="subcategories">
                 <f:for each="{topCategory.subCategories}" as="subCategory">

@@ -1,16 +1,14 @@
 $initiative-text-color: #fff;
+$initiative-padding: 10px;
 
 .initiative {
+	background-color: #b80606;
 	border-radius: 4px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     color: $initiative-text-color;
     max-width: 700px;
-    padding: 10px;
+    padding: $initiative-padding;
     position: relative;
-	transition: box-shadow .3s;
-
-	&:hover {
-		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-	}
 }
 
 @each $category, $category-color in $category-colors {
@@ -19,27 +17,44 @@ $initiative-text-color: #fff;
 	}
 }
 
-@each $category, $category-color in $category-colors {
-	.initiative-#{$category} {
-		background-color: $category-color;
-	}
+.initiative-body {
+	padding-bottom: 20px;
 }
 
 .initiative-links {
-    float: right;
-    margin-top: 5px;
+	bottom: $initiative-padding;
+	position: absolute;
+	right: $initiative-padding;
 }
 
 .initiative-links > a {
+	border-radius: 4px;
     color: $initiative-text-color;
+	padding: 5px;
+	transition-duration: .3s;
+	transition-property: #{'background-color, box-shadow'};
 
     &:hover {
+		background-color: #fff;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
         color: $brand-primary;
         text-decoration: none;
     }
+
+	&:nth-of-type(1):nth-last-child(2):hover {
+		border-right: 1px solid $initiative-text-color;
+
+		& + a {
+			border-left: 0;
+		}
+	}
 }
 
 .initiative-links > a + a {
     border-left: 1px solid $initiative-text-color;
-    padding-left: 5px;
+	border-radius: 0 4px 4px 0;
+
+	&:hover {
+		border-radius: 4px;
+	}
 }

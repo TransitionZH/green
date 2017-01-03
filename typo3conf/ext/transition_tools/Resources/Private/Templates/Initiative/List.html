@@ -32,16 +32,22 @@
                     <a class="media-left" href="">
                         <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image">
                     </a>
-                    <div class="media-body">
+                    <div class="media-body initiative-body">
                         <h4 class="media-heading">{initiative.name}</h4>
                         <p>{initiative.claim}</p>
                         <p>{initiative.description -> f:format.raw()}</p>
                         <div class="clearfix"></div>
-                        <div class="initiative-links">
-                            <a href="#"><f:translate key="tx_transitiontools_templates.webLink" /></a>
-                            <a href="#"><f:translate key="tx_transitiontools_templates.mapLink" /></a>
-                        </div>
                     </div>
+					<div class="initiative-links">
+						<a href="#">
+							<i class="fa fa-globe"></i>
+							<f:translate key="tx_transitiontools_templates.webLink" />
+						</a>
+						<a href="#">
+							<i class="fa fa-map-marker"></i>
+							<f:translate key="tx_transitiontools_templates.mapLink" />
+						</a>
+					</div>
                 </div>
             </f:for>
 

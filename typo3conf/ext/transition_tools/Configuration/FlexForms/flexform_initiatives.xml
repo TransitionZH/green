@@ -20,7 +20,7 @@
 									</numIndex>
 									<numIndex index="1">
 										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesMap</numIndex>
-										<numIndex index="1">Initiative->map</numIndex>
+										<numIndex index="1">Initiative->map;Initiative->mapData</numIndex>
 									</numIndex>
 									<numIndex index="2">
 										<numIndex index="0">LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.action.initiativesList</numIndex>
@@ -57,7 +57,12 @@
 					<settings.initiativeMapPid>
 						<TCEforms>
 							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.settings.initiativesMapPid</label>
-                            <displayCond><![CDATA[FIELD:switchableControllerActions:=:Category->list]]></displayCond>
+                            <displayCond>
+                                <OR>
+                                    <numIndex index="0"><![CDATA[FIELD:switchableControllerActions:=:Initiative->list]]></numIndex>
+                                    <numIndex index="1"><![CDATA[FIELD:switchableControllerActions:=:Initiative->grid]]></numIndex>
+                                </OR>
+                            </displayCond>
 							<config>
                                 <type>group</type>
                                 <internal_type>db</internal_type>

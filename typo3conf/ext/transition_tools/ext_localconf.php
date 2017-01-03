@@ -8,7 +8,7 @@ if (!defined('TYPO3_MODE')) {
 	'Initiatives',
 	array(
 		'Category' => 'list',
-		'Initiative' => 'list, show, new, create, edit, update, map, grid',
+		'Initiative' => 'list, show, new, create, edit, update, map, mapData, grid',
 		
 	),
 	// non-cacheable actions
@@ -22,7 +22,7 @@ if (!defined('TYPO3_MODE')) {
 	'TransitionTeam.' . $_EXTKEY,
 	'Events',
 	array(
-		'Event' => 'list, show, map',
+		'Event' => 'list, show, map, mapData',
 		
 	),
 	// non-cacheable actions

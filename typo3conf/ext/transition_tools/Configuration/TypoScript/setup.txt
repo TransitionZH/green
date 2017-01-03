@@ -116,8 +116,4 @@ json_view {
 
 	10 = COA
     10 < tt_content.list.20.transitiontools_initiatives
-#	10 < styles.content.get
-#
-#    # anker NICHT generieren
-#    10.renderObj.stdWrap.prepend.dataWrap =
 }

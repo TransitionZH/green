@@ -1,24 +1,2 @@
 <f:layout name="JSON" />
-
-<f:section name="main">
-    <f:format.raw>{initiatives}</f:format.raw>
-    <f:comment>
-    [
-    <f:for each="{initiatives}" as="initiative">
-        {
-            "uid": {initiative.uid},
-            "name": "{initiative.name}",
-            "infobox": "{f:render(partial:'Initiative/Box', arguments:'{initiative:initiative, topCategory:topCategory}')}",
-            "venues": [
-            <f:for each="{venues}" as="venue">
-                {
-                    "locLatitude": {venue.locLatitude},
-                    "locLongitude": {venue.locLongitude}
-                }
-            </f:for>
-            ]
-        }
-    </f:for>
-    ]
-    </f:comment>
-</f:section>
+<f:section name="main"><f:format.raw>{initiatives}</f:format.raw></f:section>

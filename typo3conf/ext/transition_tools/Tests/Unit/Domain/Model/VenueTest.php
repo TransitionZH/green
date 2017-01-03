@@ -106,24 +106,24 @@ class VenueTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	/**
 	 * @test
 	 */
-	public function getLocLongituteReturnsInitialValueForFloat()
+	public function getLocLongitudeReturnsInitialValueForFloat()
 	{
 		$this->assertSame(
 			0.0,
-			$this->subject->getLocLongitute()
+			$this->subject->getLocLongitude()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setLocLongituteForFloatSetsLocLongitute()
+	public function setLocLongitudeForFloatSetsLocLongitude()
 	{
-		$this->subject->setLocLongitute(3.14159265);
+		$this->subject->setLocLongitude(3.14159265);
 
 		$this->assertAttributeEquals(
 			3.14159265,
-			'locLongitute',
+			'locLongitude',
 			$this->subject,
 			'',
 			0.000000001

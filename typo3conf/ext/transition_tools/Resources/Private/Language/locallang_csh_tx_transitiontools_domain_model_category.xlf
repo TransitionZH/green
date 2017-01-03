@@ -18,9 +18,9 @@
 			<trans-unit id="image.description">
 				<source>image</source>
 			</trans-unit>
-			<trans-unit id="css.description">
+<!--			<trans-unit id="css.description">
 				<source>css</source>
-			</trans-unit>
+			</trans-unit>-->
 			<trans-unit id="parent_category.description">
 				<source>parentCategory</source>
 			</trans-unit>

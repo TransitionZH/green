@@ -52,6 +52,7 @@ CREATE TABLE tx_transitiontools_domain_model_initiative (
 	claim varchar(255) DEFAULT '' NOT NULL,
 	description varchar(255) DEFAULT '' NOT NULL,
 	web_link varchar(255) DEFAULT '' NOT NULL,
+	logo_url varchar(255) DEFAULT '' NOT NULL,
 	logo int(11) unsigned NOT NULL default '0',
 	venues int(11) unsigned DEFAULT '0' NOT NULL,
 	events int(11) unsigned DEFAULT '0' NOT NULL,
@@ -146,7 +147,7 @@ CREATE TABLE tx_transitiontools_domain_model_venue (
 
 	type varchar(255) DEFAULT '' NOT NULL,
 	loc_latitude double(11,2) DEFAULT '0.00' NOT NULL,
-	loc_longitute double(11,2) DEFAULT '0.00' NOT NULL,
+	loc_longitude double(11,2) DEFAULT '0.00' NOT NULL,
 	source int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -396,7 +397,7 @@ CREATE TABLE tx_transitiontools_domain_model_category (
 	name varchar(255) DEFAULT '' NOT NULL,
 	is_top_category tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
-	css varchar(100) DEFAULT '0' NOT NULL,
+-- 	css varchar(100) DEFAULT '0' NOT NULL,
 	parent_category int(11) unsigned DEFAULT '0',
 	related_categories int(11) unsigned DEFAULT '0' NOT NULL,
 	source int(11) unsigned DEFAULT '0',

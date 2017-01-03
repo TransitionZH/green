@@ -1,7 +1,22 @@
+{namespace vh=TransitionTeam\TransitionTools\ViewHelpers}
 
-<div class="media initiative initiative-{topCategory.name}">
+<div class="media initiative {vh:category.cssClasses(categories:initiative.categories)}">
     <a class="media-left" href="">
-        <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image">
+        <f:if condition="{initiative.logo}">
+            <f:then>
+                <f:image treatIdAsReference="1" src="{initiative.logo.id}" title="{initiative.logo.title}" alt="{initiative.logo.alternative}"/>
+            </f:then>
+            <f:else>
+                <f:if condition="{initiative.logoUrl}">
+                    <f:then>
+                        <vh:externalImage class="media-object" src="{initiative.logoUrl}" alt="{initiative.name}" width="120" />
+                    </f:then>
+                    <f:else>
+                        <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image" />
+                    </f:else>
+                </f:if>
+            </f:else>
+        </f:if>
     </a>
     <div class="media-body">
         <h4 class="media-heading">{initiative.name}</h4>

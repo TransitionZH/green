@@ -69,6 +69,14 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $webLink = '';
     
     /**
+     * logoUrl - link to external logo
+     * ViewHelper for both internal & external images: http://stackoverflow.com/questions/39362668/typo3-fluid-image-from-external-resource
+     *
+     * @var string
+     */
+    protected $logoUrl = '';
+    
+    /**
      * logo
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -133,36 +141,6 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->events = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->relatedInitiatives = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
-    
-    /**
-     * underscore to camelcase
-     */
-    public function underscoreToUpperCamelcase($underscoreString) {
-        $parts = explode('_', $underscoreString);
-        $ucParts = array_map(function($part) { return ucfirst($part); }, $parts);
-        return implode('', $ucParts);
-    }
-    
-    /**
-     * Initializes the object with stdObject data from Openki
-     *
-     * @param \stdClass $initiativeFromOpenki
-     * @return void
-     */
-    public function initFromOpenki(\stdClass $initiativeFromOpenki)
-    {
-        $propertiesMap = [
-            'name' => 'name',
-            'claim' => 'claim',
-            'description' => 'description',
-        ];
-        foreach($propertiesMap as $openkiProperty => $property) {
-            if (property_exists($initiativeFromOpenki, $openkiProperty)) {
-                $setter = 'set' . $this->underscoreToUpperCamelcase($property);
-                $this->$setter($initiativeFromOpenki->$property);
-            }
-        }
     }
     
     /**
@@ -268,6 +246,27 @@ class Initiative extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setWebLink($webLink)
     {
         $this->webLink = $webLink;
+    }
+    
+    /**
+     * Returns the logoUrl
+     *
+     * @return string $logoUrl
+     */
+    public function getLogoUrl()
+    {
+        return $this->logoUrl;
+    }
+    
+    /**
+     * Sets the logoUrl
+     *
+     * @param string $logoUrl
+     * @return void
+     */
+    public function setLogoUrl($logoUrl)
+    {
+        $this->logoUrl = $logoUrl;
     }
     
     /**

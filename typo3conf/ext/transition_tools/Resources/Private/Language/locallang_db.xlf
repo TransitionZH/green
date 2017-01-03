@@ -33,6 +33,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_initiative.web_link">
 				<source>Web Link</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.logo_url">
+				<source>URL zu externem Logo</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.logo">
 				<source>Logo</source>
 			</trans-unit>
@@ -93,8 +96,8 @@
 			<trans-unit id="tx_transitiontools_domain_model_venue.loc_latitude">
 				<source>Loc Latitude</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_venue.loc_longitute">
-				<source>Loc Longitute</source>
+			<trans-unit id="tx_transitiontools_domain_model_venue.loc_longitude">
+				<source>Loc Longitude</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_venue.source">
 				<source>Source</source>
@@ -276,7 +279,7 @@
 			<trans-unit id="tx_transitiontools_domain_model_category.image">
 				<source>Image</source>
 			</trans-unit>
-			<trans-unit id="tx_transitiontools_domain_model_category.css">
+<!--			<trans-unit id="tx_transitiontools_domain_model_category.css">
 				<source>CSS class</source>
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.css.violet">
@@ -296,7 +299,7 @@
 			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_category.css.blue">
 				<source>Blue</source>
-			</trans-unit>
+			</trans-unit>-->
 			<trans-unit id="tx_transitiontools_domain_model_category.parent_category">
 				<source>Parent Category</source>
 			</trans-unit>

@@ -1,10 +1,22 @@
 $initiative-text-color: #fff;
 
 .initiative {
+	border-radius: 4px;
     color: $initiative-text-color;
     max-width: 700px;
-    padding: 5px;
+    padding: 10px;
     position: relative;
+	transition: box-shadow .3s;
+
+	&:hover {
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+	}
+}
+
+@each $category, $category-color in $category-colors {
+	.initiative-#{$category} {
+		background-color: $category-color;
+	}
 }
 
 @each $category, $category-color in $category-colors {

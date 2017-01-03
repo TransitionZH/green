@@ -4,18 +4,20 @@
     <a class="media-left" href="">
         <f:render partial="Initiative/Logo" arguments="{initiative:initiative}" />
     </a>
-    <div class="media-body">
+    <div class="media-body initiative-body">
         <h4 class="media-heading">{initiative.name}</h4>
         <p>{initiative.claim}</p>
         <p>{initiative.description -> f:format.raw()}</p>
         <div class="clearfix"></div>
-        <div class="initiative-links">
-            <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
-                <f:translate key="tx_transitiontools_templates.webLink" />
-            </f:link.typolink>
-            <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
-                <f:translate key="tx_transitiontools_templates.mapLink" />
-            </f:link.page>
-        </div>
+    </div>
+    <div class="initiative-links">
+        <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
+            <i class="fa fa-globe"></i>
+            <f:translate key="tx_transitiontools_templates.webLink" />
+        </f:link.typolink>
+        <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
+            <i class="fa fa-map-marker"></i>
+            <f:translate key="tx_transitiontools_templates.mapLink" />
+        </f:link.page>
     </div>
 </div>

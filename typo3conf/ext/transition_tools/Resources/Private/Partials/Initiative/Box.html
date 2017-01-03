@@ -13,7 +13,7 @@
             <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
                 <f:translate key="tx_transitiontools_templates.webLink" />
             </f:link.typolink>
-            <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{initiative:initiative}" noCacheHash="1">
+            <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
                 <f:translate key="tx_transitiontools_templates.mapLink" />
             </f:link.page>
         </div>

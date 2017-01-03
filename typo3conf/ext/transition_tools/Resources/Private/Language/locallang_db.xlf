@@ -317,7 +317,10 @@
 				<source>Show initiatives as grid</source>
 			</trans-unit>
 			<trans-unit id="flexform_initiatives.settings.initiativesListPid">
-				<source>Initiatives list page</source>
+				<source>Initiatives list view</source>
+			</trans-unit>
+			<trans-unit id="flexform_initiatives.settings.initiativesMapPid">
+				<source>Initiatives map view</source>
 			</trans-unit>
 		</body>
 	</file>

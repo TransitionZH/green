@@ -56,7 +56,7 @@
 					</settings.initiativeListPid>
 					<settings.initiativeMapPid>
 						<TCEforms>
-							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.settings.initiativesListPid</label>
+							<label>LLL:EXT:transition_tools/Resources/Private/Language/locallang_db.xlf:flexform_initiatives.settings.initiativesMapPid</label>
                             <displayCond><![CDATA[FIELD:switchableControllerActions:=:Category->list]]></displayCond>
 							<config>
                                 <type>group</type>

@@ -49,16 +49,41 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     protected $categoryRepository = NULL;
 
     /**
-     * action list
-     *
-     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
-     * @return void
+     * Render standalone view
+     * Source: http://stackoverflow.com/questions/21429075/getting-html-of-fluid-template-in-controller-action-in-typo3
+     * Or:     https://gist.github.com/fedir/49e3aadbd97552e60e3a
+     * 
+     * @param string $controllerName
+     * @param string $templateName
+     * @param array $variables
+     * @param boolean $partialOnly
+     * @return string (html)
      */
-    public function listAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
-    {
-        $this->assignInitiatives($category);
+    public function getTemplateHtml($controllerName, $templateName, array $variables = array(), $partialOnly) {
+        /** @var \TYPO3\CMS\Fluid\View\StandaloneView $tempView */
+        $tempView = $this->objectManager->get('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
+
+        $extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+
+        // From TYPO3 7 templateRootPath has changed to templateRootPaths (plural), so get the last existing template file in array (fallback)
+        $templateRootPaths = $extbaseFrameworkConfiguration['view']['templateRootPaths'];
+        foreach (array_reverse($templateRootPaths) as $templateRootPath) {
+            $templatePathAndFilename = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($templateRootPath . $controllerName . '/' . $templateName . '.html');
+            if (file_exists($templatePathAndFilename)) {
+                break;
+            }
+        }
+        $tempView->setTemplatePathAndFilename($templatePathAndFilename);
+        // Set layout and partial root path
+        $tempView->setLayoutRootPaths($extbaseFrameworkConfiguration['view']['layoutRootPaths']);
+        $tempView->setPartialRootPaths($extbaseFrameworkConfiguration['view']['partialRootPaths']);
+        
+        $tempView->assignMultiple($variables);
+        $tempHtml = $tempView->render();
+
+        return $tempHtml;
     }
-    
+
     /**
      * assign initiatives
      *
@@ -89,19 +114,11 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             $initiativesArray = [];
             foreach ($initiatives as $initiative) {
                 // render infobox
-                $infoboxView = $this->objectManager->get('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
-                $extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
-                $partialRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($extbaseFrameworkConfiguration['view']['partialRootPath']);
-                $partialPathAndFilename = $partialRootPath . 'Initiative/Box.html';
-                $infoboxView->setTemplatePathAndFilename($partialPathAndFilename);
-                $infoboxView->assignMultiple([
-                    "initiative" => $initiative,
-                ]);
-                $infoboxBody = $infoboxView->render();
+                $infoboxBody = $this->getTemplateHtml("Initiative", "Box", ["initiative" => $initiative]);
                 
                 // get venues array
                 $venuesArray = [];
-                foreach ($initiatives->getVenues() as $venue) {
+                foreach ($initiative->getVenues() as $venue) {
                     $venuesArray[] = [
                         "locLatitude" => $venue->getLocLatitude(),
                         "locLongitude" => $venue->getLocLongitude(),
@@ -109,13 +126,13 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 }
                 
                 $initiativesArray[] = [
-                    "uid" => $initiatives->getUid(),
-                    "name" => $initiatives->getName(),
+                    "uid" => $initiative->getUid(),
+                    "name" => $initiative->getName(),
                     "infobox" => $infoboxBody,
                     "venues" => $venuesArray,
                 ];
             }
-            $initiatives = json_encode($initiativesArray, JSON_FORCE_OBJECT);
+            $initiatives = json_encode($initiativesArray);
         }
         
         $this->view->assignMultiple([
@@ -124,6 +141,18 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             'initiatives' => $initiatives,
         ]);
     }
+    
+    /**
+     * action list
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+     * @return void
+     */
+    public function listAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
+    {
+        $this->assignInitiatives($category);
+    }
+    
 //    
 //    /**
 //     * action show

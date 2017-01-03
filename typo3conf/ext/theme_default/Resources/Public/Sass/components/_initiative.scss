@@ -7,6 +7,12 @@ $initiative-text-color: #fff;
     position: relative;
 }
 
+@each $category, $category-color in $category-colors {
+	.initiative-#{$category} {
+		background-color: $category-color;
+	}
+}
+
 .initiative-links {
     float: right;
     margin-top: 5px;

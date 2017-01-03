@@ -1,5 +1,9 @@
 .category > .media-left img {
     width: 100px;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .category-heading {
@@ -13,6 +17,22 @@
 .category-heading-centered {
     color: $text-color;
     line-height: 95px; // Img height - bottom margin of heading
+}
+
+.category-heading-list-link a {
+	color: $gray-light;
+	font-style: italic;
+	padding-left: 5px;
+
+	&:hover,
+	&:focus {
+		color: $brand-primary;
+		text-decoration: none;
+	}
+}
+
+.category-heading-centered > .category-heading-list-link {
+	display: none;
 }
 
 .subcategories {

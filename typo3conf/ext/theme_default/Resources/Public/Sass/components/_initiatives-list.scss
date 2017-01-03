@@ -1,0 +1,27 @@
+.initiative-list-heading {
+	margin-top: 0;
+}
+
+.initiative-list-heading > img {
+	height: 40px;
+	margin-right: 5px;
+	width: 40px;
+}
+
+.initiative-list-parent-category::after {
+	content: "/";
+	color: $gray-light;
+	font-style: italic;
+	position: relative;
+}
+
+.initiative-list-parent-category > a {
+	color: $gray-light;
+	font-style: italic;
+
+	&:hover,
+	&:focus {
+		color: $brand-primary;
+		text-decoration: none;
+	}
+}

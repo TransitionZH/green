@@ -6,22 +6,49 @@
     <f:flashMessages />
 
     <f:if condition="{category}">
-        <h3>
-            <f:image
+        <h4 class="initiative-list-heading">
+			<f:image
                 image="{topCategory.image}"
                 alt="{topCategory.image.originalResource.title}"
                 treatIdAsReference="TRUE"
             />
-            <f:if condition="{category.parentCategory}">{category.parentCategory.title} &gt; </f:if>
+			<f:if condition="{category.parentCategory}">
+				<span class="initiative-list-parent-category">
+					<f:link.page pageUid="{settings.projectListPid}" additionalParams="{category:{uid:topCategory.uid, name:topCategory.name}}" noCacheHash="1">
+						{category.parentCategory.title}
+					</f:link.page>
+				</span>
+			</f:if>
             {category.title}
-        </h3>
+        </h4>
     </f:if>
 
     <f:if condition="{initiatives}">
         <f:then>
 
             <f:for each="{initiatives}" as="initiative">
-                <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
+
+                <div class="media initiative initiative-{topCategory.name}">
+                    <a class="media-left" href="">
+                        <img class="media-object" src="http://www.placehold.it/100x100" alt="Generic placeholder image">
+                    </a>
+                    <div class="media-body initiative-body">
+                        <h4 class="media-heading">{initiative.name}</h4>
+                        <p>{initiative.claim}</p>
+                        <p>{initiative.description -> f:format.raw()}</p>
+                        <div class="clearfix"></div>
+                    </div>
+					<div class="initiative-links">
+						<a href="#">
+							<i class="fa fa-globe"></i>
+							<f:translate key="tx_transitiontools_templates.webLink" />
+						</a>
+						<a href="#">
+							<i class="fa fa-map-marker"></i>
+							<f:translate key="tx_transitiontools_templates.mapLink" />
+						</a>
+					</div>
+                </div>
             </f:for>
 
         </f:then>

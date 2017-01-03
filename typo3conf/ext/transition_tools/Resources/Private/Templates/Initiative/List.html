@@ -25,11 +25,9 @@
 
     <f:if condition="{initiatives}">
         <f:then>
-
             <f:for each="{initiatives}" as="initiative">
                 <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
             </f:for>
-
         </f:then>
         <f:else>
             <p><f:translate key="tx_transitiontools_templates.noInitiativesFound" /></p>

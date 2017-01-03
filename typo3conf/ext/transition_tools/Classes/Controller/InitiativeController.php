@@ -56,6 +56,18 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function listAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
+        $this->assignInitiatives($category);
+    }
+    
+    /**
+     * assign initiatives
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+     * @param string $format - '' or 'json'
+     * @return void
+     */
+    public function assignInitiatives(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null, $format = '')
+    {
         $initiatives = null;
         if ($category) {
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
@@ -67,12 +79,43 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             if ($category) {
                 $initiatives = $this->initiativeRepository->findByCategory($category);
             }
-            else {
-                $initiatives = null;
-            }
         }
         else {
             $initiatives = $this->initiativeRepository->findAll();
+        }
+        
+        // Render result as json?
+        if ($format == 'json') {
+            $initiativesArray = [];
+            foreach ($initiatives as $initiative) {
+                // render infobox
+                $infoboxView = $this->objectManager->get('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
+                $extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+                $partialRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($extbaseFrameworkConfiguration['view']['partialRootPath']);
+                $partialPathAndFilename = $partialRootPath . 'Initiative/Box.html';
+                $infoboxView->setTemplatePathAndFilename($partialPathAndFilename);
+                $infoboxView->assignMultiple([
+                    "initiative" => $initiative,
+                ]);
+                $infoboxBody = $infoboxView->render();
+                
+                // get venues array
+                $venuesArray = [];
+                foreach ($initiatives->getVenues() as $venue) {
+                    $venuesArray[] = [
+                        "locLatitude" => $venue->getLocLatitude(),
+                        "locLongitude" => $venue->getLocLongitude(),
+                    ];
+                }
+                
+                $initiativesArray[] = [
+                    "uid" => $initiatives->getUid(),
+                    "name" => $initiatives->getName(),
+                    "infobox" => $infoboxBody,
+                    "venues" => $venuesArray,
+                ];
+            }
+            $initiatives = json_encode($initiativesArray, JSON_FORCE_OBJECT);
         }
         
         $this->view->assignMultiple([
@@ -149,17 +192,35 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function mapAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
-        $this->listAction($category);
+//        // Get data asynchronous from mapDataAction()
+//        $this->assignInitiatives($category);
+        $this->view->assignMultiple([
+            'category' => $category,
+            'topCategory' => ($category && $category->getParentCategory())?$category->getParentCategory():$category,
+        ]);
+    }
+    
+    /**
+     * action mapData - renders initiatives as json data - use typeNum as defined in setup.txt!
+     *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
+     * @return void
+     */
+    public function mapDataAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
+    {
+//        $this->assignInitiatives($category);
+        $this->assignInitiatives($category, 'json');
     }
     
     /**
      * action grid
      *
+     * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category
      * @return void
      */
-    public function gridAction()
+    public function gridAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
-        $this->listAction($category);
+        $this->assignInitiatives($category);
     }
     
 }

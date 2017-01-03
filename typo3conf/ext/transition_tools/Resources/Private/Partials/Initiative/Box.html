@@ -11,10 +11,12 @@
         <div class="clearfix"></div>
     </div>
     <div class="initiative-links">
-        <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
-            <i class="fa fa-globe"></i>
-            <f:translate key="tx_transitiontools_templates.webLink" />
-        </f:link.typolink>
+        <f:if condition="{initiative.webLink}">
+            <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
+                <i class="fa fa-globe"></i>
+                <f:translate key="tx_transitiontools_templates.webLink" />
+            </f:link.typolink>
+        </f:if>
         <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
             <i class="fa fa-map-marker"></i>
             <f:translate key="tx_transitiontools_templates.mapLink" />

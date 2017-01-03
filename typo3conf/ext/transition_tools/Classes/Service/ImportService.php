@@ -53,6 +53,7 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
             'description' => 'description',
             'logo' => 'logoUrl',
             'venue' => 'venue',
+            'webLink' => 'webLink',
             'tags' => 'categories',
         ];
         

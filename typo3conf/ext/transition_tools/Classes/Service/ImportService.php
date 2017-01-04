@@ -64,7 +64,9 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
                 //-- Set special cases first
                 // Set venue / geo coordinates
                 if ($property == 'venue') {
-                    if (property_exists($source->venue, 'loc') && property_exists($source->venue->loc, 'coordinates')) {
+                    if (property_exists($source->venue, 'loc') 
+                        && property_exists($source->venue->loc, 'coordinates') 
+                        && $source->venue->loc->coordinates) {
                         $venue = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Venue');
                         $venue->setLocLongitude($source->venue->loc->coordinates[0]);
                         $venue->setLocLatitude($source->venue->loc->coordinates[1]);

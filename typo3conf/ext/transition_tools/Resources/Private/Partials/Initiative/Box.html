@@ -18,10 +18,12 @@
             </f:link.typolink>
         </f:if>
         <f:if condition="{settings.initiativeMapPid}">
-            <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
-                <i class="fa fa-map-marker"></i>
-                <f:translate key="tx_transitiontools_templates.mapLink" />
-            </f:link.page>
+            <f:if condition="{initiative.venues}">
+                <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
+                    <i class="fa fa-map-marker"></i>
+                    <f:translate key="tx_transitiontools_templates.mapLink" />
+                </f:link.page>
+            </f:if>
         </f:if>
     </div>
     <!-- Tbd: List linked categories -->

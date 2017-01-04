@@ -2,7 +2,6 @@ $initiative-text-color: #fff;
 $initiative-padding: 10px;
 
 .initiative {
-	background-color: #b80606;
 	border-radius: 4px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     color: $initiative-text-color;
@@ -11,8 +10,12 @@ $initiative-padding: 10px;
     position: relative;
 }
 
+.category-undefined {
+	background-color: $gray-light;
+}
+
 @each $category, $category-color in $category-colors {
-	.initiative-#{$category} {
+	.category-#{$category} {
 		background-color: $category-color;
 	}
 }

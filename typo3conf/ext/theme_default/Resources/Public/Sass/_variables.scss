@@ -11,3 +11,6 @@ $category-colors: (
     events-media-networks: #b7c935,
     energy-environment-waste: #355bc9
 );
+
+$zindex-initiatives-box: $zindex-navbar-fixed - 1;
+$zindex-footer: $zindex-initiatives-box - 1;

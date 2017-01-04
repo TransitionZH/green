@@ -8300,13 +8300,35 @@ html {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  height: 150px;
   padding-top: 30px; }
   @media (min-width: 768px) {
     .initiatives-grid-initiative {
       float: left;
       width: 25%; } }
 
-.initiatives-grid-initiative > img {
+.initiatives-grid-initiative > .initiative {
+  display: none;
+  left: 15px;
+  position: absolute;
+  top: 75px;
+  width: 500px;
+  z-index: 1029; }
+
+@media only screen and (min-width: 768px) {
+  .initiatives-grid > .initiatives-grid-initiative:nth-child(4n-1) > .initiative,
+  .initiatives-grid > .initiatives-grid-initiative:nth-child(4n) > .initiative {
+    left: auto;
+    right: 15px; } }
+
+.initiatives-grid > .initiatives-grid-initiative:last-child > .initiative {
+  bottom: 150px;
+  top: auto; }
+
+.initiatives-grid-initiative:hover > .initiative {
+  display: block; }
+
+.initiatives-grid-initiative > a > img {
   display: block;
   margin: 0 auto; }
 
@@ -8335,7 +8357,7 @@ footer {
   box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
   height: 50px;
   position: relative;
-  z-index: 999; }
+  z-index: 1028; }
 
 .footer-address {
   box-sizing: border-box;

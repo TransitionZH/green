@@ -122,9 +122,10 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * return all initiatives, get them from imported source
 	 *
      * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
+     * @param string $sorting - field name to sort by
 	 * @return array
 	 */
-    public function importFromSource(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null) {
+    public function importFromSource(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null, $sorting = '') {
         // Build route
         $sourceRoute = $this->importBaseUrl . "groups?tags=TransitionZH";
         if ($category) {
@@ -145,6 +146,14 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
             $this->initFromSource($initiative, $initiativeRaw);
             $initiatives[] = $initiative;
         }
+        
+        // Sort initiatives?
+        if ($sorting == 'name') {
+            usort($initiatives, function ($i1, $i2) {
+                return strcmp($i1->getName(), $i2->getName());
+            });
+        }
+        
         return $initiatives;
     }
         

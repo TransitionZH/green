@@ -113,6 +113,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         if ($format == 'json') {
             $initiativesArray = [];
             foreach ($initiatives as $initiative) {
+                
                 // render infobox
                 $infoboxBody = $this->getTemplateHtml("Initiative", "Box", ["initiative" => $initiative]);
                 
@@ -125,8 +126,8 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     ];
                 }
                 
-                $initiativesArray[] = [
-                    "uid" => $initiative->getUid(),
+                // Add initiative to assoc array (key = id)
+                $initiativesArray[$initiative->getUuid()] = [
                     "name" => $initiative->getName(),
                     "infobox" => $infoboxBody,
                     "venues" => $venuesArray,

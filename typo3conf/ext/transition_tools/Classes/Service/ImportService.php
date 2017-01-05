@@ -47,7 +47,9 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
      */
     public function initFromSource(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative, \stdClass $source)
     {
+        // $propertiesMap: key = field name of data source, value = field name in typo3 model
         $propertiesMap = [
+            '_id' => 'uuid', // Tbd: Temporatily use Openki _id as uuid
             'name' => 'name',
             'claim' => 'claim',
             'description' => 'description',

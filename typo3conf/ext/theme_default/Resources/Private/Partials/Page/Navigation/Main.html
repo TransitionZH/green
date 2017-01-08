@@ -51,14 +51,14 @@
                         </li>
                     </f:for>
                 </ul>
-				<form class="navbar-form navbar-right">
+				<f:form class="navbar-form navbar-right" pageUid="4" name="search" noCacheHash="1" controller="InitiativeController">
 					<div class="form-group">
-						<input type="text" class="form-control">
+						<f:form.textfield class="form-control" name="query" type="text" />
 					</div>
 					<button type="submit" class="btn btn-default">
-						Suchen
+						{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:search')}
 					</button>
-				</form>
+				</f:form>
             </div>
         </f:if>
     </div>

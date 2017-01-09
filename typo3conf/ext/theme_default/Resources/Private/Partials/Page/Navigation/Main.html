@@ -1,3 +1,5 @@
+{namespace vh=TransitionTeam\ThemeDefault\ViewHelpers}
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -51,12 +53,12 @@
                         </li>
                     </f:for>
                 </ul>
-				<form class="navbar-form navbar-right">
+				<form class="navbar-form navbar-right" action="{f:uri.page(pageUid:4)}" name="search" method="GET" >
 					<div class="form-group">
-						<input type="text" class="form-control">
+						<input class="form-control" type="search" name="query" value="{vh:gP(name:'query')}" />
 					</div>
 					<button type="submit" class="btn btn-default">
-						Suchen
+						{f:translate(key:'LLL:EXT:theme_default/Resources/Private/Language/locallang.xlf:search')}
 					</button>
 				</form>
             </div>

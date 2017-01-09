@@ -17,8 +17,8 @@
             <trans-unit id="signIn">
                 <source>Sign in</source>
             </trans-unit>
-            <trans-unit id="">
-                <source></source>
+            <trans-unit id="search">
+                <source>Suchen</source>
             </trans-unit>
 
         </body>

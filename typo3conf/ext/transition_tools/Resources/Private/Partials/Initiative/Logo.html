@@ -10,7 +10,7 @@
                 <vh:externalImage class="media-object" src="{initiative.logoUrl}" alt="{initiative.name}" width="120" />
             </f:then>
             <f:else>
-                <img class="media-object" src="http://www.placehold.it/120x120" alt="Generic placeholder image" />
+                <img class="media-object" src="/typo3conf/ext/transition_tools/Resources/Public/Images/blank.gif" width="120" height="120" alt="{f:translate(key:'tx_transitiontools_domain_model_initiative.nologo')}" />
             </f:else>
         </f:if>
     </f:else>

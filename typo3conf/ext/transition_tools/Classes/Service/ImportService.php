@@ -47,7 +47,9 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
      */
     public function initFromSource(\TransitionTeam\TransitionTools\Domain\Model\Initiative $initiative, \stdClass $source)
     {
+        // $propertiesMap: key = field name of data source, value = field name in typo3 model
         $propertiesMap = [
+            '_id' => 'uuid', // Tbd: Temporatily use Openki _id as uuid
             'name' => 'name',
             'claim' => 'claim',
             'description' => 'description',
@@ -64,7 +66,9 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
                 //-- Set special cases first
                 // Set venue / geo coordinates
                 if ($property == 'venue') {
-                    if (property_exists($source->venue, 'loc') && property_exists($source->venue->loc, 'coordinates')) {
+                    if (property_exists($source->venue, 'loc') 
+                        && property_exists($source->venue->loc, 'coordinates') 
+                        && $source->venue->loc->coordinates) {
                         $venue = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TransitionTeam\\TransitionTools\\Domain\\Model\\Venue');
                         $venue->setLocLongitude($source->venue->loc->coordinates[0]);
                         $venue->setLocLatitude($source->venue->loc->coordinates[1]);
@@ -118,9 +122,10 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * return all initiatives, get them from imported source
 	 *
      * @param \TransitionTeam\TransitionTools\Domain\Model\Category $category - optional
+     * @param string $sorting - field name to sort by
 	 * @return array
 	 */
-    public function importFromSource(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null) {
+    public function importFromSource(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null, $sorting = '') {
         // Build route
         $sourceRoute = $this->importBaseUrl . "groups?tags=TransitionZH";
         if ($category) {
@@ -141,6 +146,14 @@ class ImportService implements \TYPO3\CMS\Core\SingletonInterface {
             $this->initFromSource($initiative, $initiativeRaw);
             $initiatives[] = $initiative;
         }
+        
+        // Sort initiatives?
+        if ($sorting == 'name') {
+            usort($initiatives, function ($i1, $i2) {
+                return strcmp($i1->getName(), $i2->getName());
+            });
+        }
+        
         return $initiatives;
     }
         

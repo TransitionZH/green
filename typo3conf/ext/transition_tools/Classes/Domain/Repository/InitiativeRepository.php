@@ -55,7 +55,7 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	 * @return array
 	 */
     public function findAll() {
-        return $this->importService->importFromSource();
+        return $this->importService->importFromSource(null, 'name');
     }
     
 	/**
@@ -65,7 +65,7 @@ class InitiativeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 	 * @return array
 	 */
     public function findByCategory(\TransitionTeam\TransitionTools\Domain\Model\Category $category) {
-        return $this->importService->importFromSource($category);
+        return $this->importService->importFromSource($category, 'name');
     }
     
 }

@@ -5,6 +5,7 @@ return [
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$P$Cq7Ms7DkpB27OpDgge/WZj7cU6W1wg0',
         'loginSecurityLevel' => 'rsa',
+        'versionNumberInFilename' => '0',
     ],
     'DB' => [
         'database' => '***',
@@ -34,6 +35,7 @@ return [
         'loginSecurityLevel' => 'rsa',
     ],
     'GFX' => [
+        'colorspace' => 'sRGB',
         'jpg_quality' => '80',
     ],
     'INSTALL' => [

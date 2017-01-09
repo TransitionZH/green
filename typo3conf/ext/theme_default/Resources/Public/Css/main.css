@@ -8386,6 +8386,16 @@ html {
     color: #25cc37;
     text-decoration: none; }
 
+.leaflet-popup-content-wrapper {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  padding: 20px 10px 10px !important; }
+
+.leaflet-popup-tip {
+  background-color: rgba(255, 255, 255, 0.8) !important; }
+
+.leaflet-popup-content {
+  margin: 0 !important; }
+
 footer {
   box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
   height: 50px;

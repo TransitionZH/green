@@ -99,12 +99,11 @@ $(document).ready(function() {
 	);
 
 	$('.initiative-body').dotdotdot({
-		after: ".initiative-links",
-		watch: true
+		after: '.initiative-links'
 	});
 
 	$('.initiative-show-more').click(function() {
-		var initiative = $(this).closest('.initiative');
-		initiative.height('300px');
+		$(this).closest('.initiative').height('auto');
+		$(this).closest('.initiative-body').trigger('destroy.dot');
 	});
 });

@@ -42,6 +42,9 @@
 			<trans-unit id="tx_transitiontools_domain_model_initiative.logo">
 				<source>Logo</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_domain_model_initiative.nologo">
+				<source>Kein Logo</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_domain_model_initiative.venues">
 				<source>Venues</source>
 			</trans-unit>

@@ -1,28 +1,33 @@
 {namespace vh=TransitionTeam\TransitionTools\ViewHelpers}
 
-<div class="media initiative {vh:category.cssClasses(categories:initiative.categories)}">
-    <a class="media-left" href="">
+<div class="initiative {vh:category.cssClasses(categories:initiative.categories)}">
+    <div class="initiative-left">
         <f:render partial="Initiative/Logo" arguments="{initiative:initiative}" />
-    </a>
-    <div class="media-body initiative-body">
-        <h4 class="media-heading">{initiative.name}</h4>
-        <p>{initiative.claim}</p>
-        <p>{initiative.description -> f:format.raw()}</p>
-        <div class="clearfix"></div>
     </div>
-    <div class="initiative-links">
-        <f:if condition="{initiative.webLink}">
-            <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
-                <i class="fa fa-globe"></i>
-                <f:translate key="tx_transitiontools_templates.webLink" />
-            </f:link.typolink>
+    <div class="initiative-body">
+        <h4 class="initiative-heading">{initiative.name}</h4>
+        <f:if condition="{initiative.claim}">
+            <p>{initiative.claim}</p>
         </f:if>
-        <f:if condition="{settings.initiativeMapPid}">
-            <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
-                <i class="fa fa-map-marker"></i>
-                <f:translate key="tx_transitiontools_templates.mapLink" />
-            </f:link.page>
-        </f:if>
+        <p>{initiative.description -> f:format.raw()}</p>
+        <div class="initiative-links">
+            <button class="btn-link initiative-show-more">
+                <i class="fa fa-chevron-circle-down"></i>
+                <f:translate key="tx_transitiontools_template.showMore" />
+            </button>
+            <f:if condition="{initiative.webLink}">
+                <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank">
+                    <i class="fa fa-globe"></i>
+                    <f:translate key="tx_transitiontools_templates.webLink" />
+                </f:link.typolink>
+            </f:if>
+            <f:if condition="{settings.initiativeMapPid}">
+                <f:link.page pageUid="{settings.initiativeMapPid}" additionalParams="{tx_transitiontools_initiatives:{initiative:initiative.uid}}" noCacheHash="1">
+                    <i class="fa fa-map-marker"></i>
+                    <f:translate key="tx_transitiontools_templates.mapLink" />
+                </f:link.page>
+            </f:if>
+        </div>
     </div>
     <!-- Tbd: List linked categories -->
 </div>

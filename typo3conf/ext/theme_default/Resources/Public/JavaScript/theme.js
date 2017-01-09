@@ -98,8 +98,13 @@ $(document).ready(function() {
 		}
 	);
 
-	$('.initiatives-grid-initiative > .initiative').click(function() {
-		$(this).hide(0);
+	$('.initiative-body').dotdotdot({
+		after: ".initiative-links",
+		watch: true
 	});
 
+	$('.initiative-show-more').click(function() {
+		var initiative = $(this).closest('.initiative');
+		initiative.height('300px');
+	});
 });

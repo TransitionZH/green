@@ -33,7 +33,7 @@ $(document).ready(function(){
     $.ajax({
         url: $('#initiatives-map').data('source'),
         dataType: "json",
-        
+
         success: function (data) {
             // Loop initiatives and set marker for each venue
             $.each( data, function( key, initiative ) {
@@ -44,11 +44,11 @@ $(document).ready(function(){
                 });
             });
         },
-        
+
         error: function(jqXHR, textStatus) {
             console.log("Request failed: " + textStatus);
             console.log("Source: " + $('#initiatives-map').data('source'));
         }
     });
-    
+
 });

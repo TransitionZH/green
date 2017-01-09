@@ -316,6 +316,9 @@
 			<trans-unit id="tx_transitiontools_templates.mapLink">
 				<source>auf Karte</source>
 			</trans-unit>
+			<trans-unit id="tx_transitiontools_template.showMore">
+				<source>Mehr</source>
+			</trans-unit>
 			<trans-unit id="tx_transitiontools_templates.noInitiativesFound">
 				<source>Keine Initiativen gefunden.</source>
 			</trans-unit>

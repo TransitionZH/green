@@ -8325,9 +8325,6 @@ html {
   bottom: 150px;
   top: auto; }
 
-.initiatives-grid-initiative:hover > .initiative {
-  display: block; }
-
 .initiatives-grid-initiative > a > img {
   display: block;
   margin: 0 auto; }

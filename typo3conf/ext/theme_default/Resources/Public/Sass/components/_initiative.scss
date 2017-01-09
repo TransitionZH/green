@@ -7,10 +7,13 @@ $initiative-left-columns: 3;
     border-radius: 4px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     color: $initiative-text-color;
-    height: 150px;
     max-width: 700px;
     padding: $initiative-padding;
     position: relative;
+}
+
+.initiatives-list > .initiative {
+    height: 150px;
 }
 
 .initiative.category-undefined {

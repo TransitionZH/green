@@ -90,6 +90,10 @@ $(document).ready(function() {
 		}
 	);
 
+	$('.initiatives-grid-initiative > .initiative').click(function() {
+		$(this).hide(0);
+	});
+
 	$('.initiatives-grid-initiative').hover(
 		function() {
 			$(this).children('.initiative').show(0);

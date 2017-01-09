@@ -8230,7 +8230,6 @@ html {
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   color: #fff;
-  height: 150px;
   max-width: 700px;
   padding: 10px;
   position: relative; }
@@ -8239,6 +8238,9 @@ html {
     display: table; }
   .initiative:after {
     clear: both; }
+
+.initiatives-list > .initiative {
+  height: 150px; }
 
 .initiative.category-undefined {
   background-color: #777777; }

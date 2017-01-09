@@ -58,6 +58,8 @@ page {
             # cat=bootstrap package: basic/160/130; type=boolean; label=MetaSection: Enable to display the MetaSection at bottom
             enable = 1
         }
+        # Geklaut von http://blog.teamgeist-medien.de/
+        favicon = EXT:theme_default/Resources/Public/Icons/favicon.png
 
         news {
             list {
@@ -89,11 +91,6 @@ page {
         partialRootPath = EXT:theme_default/Resources/Private/Partials/Page/
         # cat=bootstrap package: advanced/100/120; type=string; label=Template Root Path: Path to templates
         templateRootPath = EXT:theme_default/Resources/Private/Templates/Page/
-    }
-
-    includePath {
-        # cat=bootstrap package: advanced/130/100; type=string; label=Icon Include Path: Path to css files
-        icons = EXT:theme_default/Resources/Public/Icons/
     }
 
     meta {

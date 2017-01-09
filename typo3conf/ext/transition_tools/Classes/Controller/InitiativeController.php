@@ -49,6 +49,14 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     protected $categoryRepository = NULL;
 
     /**
+     * searchService
+     *
+     * @var \TransitionTeam\TransitionTools\Service\SearchService
+     * @inject
+     */
+    protected $searchService = NULL;
+    
+    /**
      * Render standalone view
      * Source: http://stackoverflow.com/questions/21429075/getting-html-of-fluid-template-in-controller-action-in-typo3
      * Or:     https://gist.github.com/fedir/49e3aadbd97552e60e3a
@@ -94,6 +102,7 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     public function assignInitiatives(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null, $format = '')
     {
         $initiatives = null;
+
         if ($category) {
             $initiatives = $this->initiativeRepository->findByCategory($cateogry);
         }
@@ -108,7 +117,17 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         else {
             $initiatives = $this->initiativeRepository->findAll();
         }
-        
+
+        // Filter initiatives by query term?
+        $query = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('query');
+        if ($query) {
+            if (!is_array($initiatives)) {
+                $initiatives = $initiatives->toArray();
+            }
+            // Get initiatives which match as least 50% of the characters, sorted by matching factor
+            $initiatives = $this->searchService->findByQuery($initiatives, $query, 50);
+        }
+
         // Render result as json?
         if ($format == 'json') {
             $initiativesArray = [];

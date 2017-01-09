@@ -12,6 +12,14 @@ class GPViewHelper extends AbstractViewHelper implements CompilableInterface
 {
 
     /**
+     * searchService
+     *
+     * @var \TransitionTeam\TransitionTools\Service\SearchService
+     * @inject
+     */
+    protected $searchService = NULL;
+
+    /**
      * Render
      *
      * @param string $name

@@ -1,6 +1,15 @@
 
 $(document).ready(function() {
 
+	$('.initiative-body').dotdotdot({
+		after: '.initiative-links'
+	});
+
+	$('.initiative-show-more').click(function() {
+		$(this).closest('.initiative').height('auto');
+		$(this).closest('.initiative-body').trigger('destroy.dot');
+	});
+
   //
   // cookie bar
   // -------------------------------------------- //
@@ -101,13 +110,4 @@ $(document).ready(function() {
 			$(this).children('.initiative').hide(0);
 		}
 	);
-
-	$('.initiative-body').dotdotdot({
-		after: '.initiative-links'
-	});
-
-	$('.initiative-show-more').click(function() {
-		$(this).closest('.initiative').height('auto');
-		$(this).closest('.initiative-body').trigger('destroy.dot');
-	});
 });

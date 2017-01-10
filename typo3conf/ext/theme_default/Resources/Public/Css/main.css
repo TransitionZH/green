@@ -8227,6 +8227,7 @@ html {
   color: #355bc9; }
 
 .initiative {
+  background-color: #777777;
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -8278,6 +8279,7 @@ html {
 .initiative-left > img {
   margin: 0 auto;
   max-height: 100%;
+  max-width: 100%;
   width: auto !important; }
 
 .initiative-body {
@@ -8344,13 +8346,15 @@ html {
     .initiatives-grid-initiative {
       float: left;
       width: 25%; } }
+  .initiatives-grid-initiative:hover {
+    cursor: pointer; }
 
 .initiatives-grid-initiative > .initiative {
   display: none;
   left: 15px;
   position: absolute;
-  top: 150px;
-  width: 700px;
+  top: 30px;
+  width: 500px;
   z-index: 1029; }
 
 @media only screen and (min-width: 768px) {
@@ -8367,7 +8371,7 @@ html {
   bottom: 150px;
   top: auto; }
 
-.initiatives-grid-initiative > a > img {
+.initiatives-grid-initiative > img {
   display: block;
   margin: 0 auto;
   max-height: 100%;

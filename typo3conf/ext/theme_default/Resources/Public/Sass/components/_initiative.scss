@@ -4,6 +4,7 @@ $initiative-left-columns: 3;
 
 .initiative {
     @include clearfix;
+	background-color: $gray-light;
     border-radius: 4px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     color: $initiative-text-color;
@@ -38,6 +39,7 @@ $initiative-left-columns: 3;
 .initiative-left > img {
 	margin: 0 auto;
 	max-height: 100%;
+	max-width: 100%;
     width: auto !important;
 }
 

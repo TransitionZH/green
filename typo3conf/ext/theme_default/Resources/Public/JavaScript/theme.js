@@ -111,3 +111,11 @@ $(document).ready(function() {
 		}
 	);
 });
+
+//// Tbd: Encode query of search form
+//$(document).ready(function(){
+//    $('input[type="search"]').closest('form').on('submit', function(e) {
+//        var queryField = $(this).find('input[type="search"]');
+//        queryField.val(encodeURIComponent(queryField.val()));
+//    });
+//});

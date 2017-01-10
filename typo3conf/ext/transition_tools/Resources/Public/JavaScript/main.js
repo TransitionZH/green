@@ -19,67 +19,69 @@ function getUrlParameter(sParam) {
 
 $(document).ready(function(){
     /* create leaflet map object */
-    var map = L.map('initiatives-map');
-    var initiativeUuid = getUrlParameter('tx_transitiontools_initiatives[initiative]');
+    if ($('#initiatives-map').length > 0) {
+        var map = L.map('initiatives-map');
+        var initiativeUuid = getUrlParameter('tx_transitiontools_initiatives[initiative]');
 
-    function resizeMap() {
-        var computedHeight = $(window).height() - $('.navbar').height() - $('.footer').height(); // footer & navbar are both 50px in height
-        $('#initiatives-map').height(computedHeight);
-    }
-
-    /* set map view to zürich */
-    map.setView([47.38, 8.60], 11);
-
-    /* load tiles from open street map */
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Maps data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-        maxZoom: 18
-    }).addTo(map);
-
-
-    // Set the map's height on first pageload
-    resizeMap();
-    map.invalidateSize();
-
-    // And resize map also when changing the window size
-    $(window).resize(function() {
-        resizeMap();
-    });
-
-    // Get initiatives data and set markers
-    $.ajax({
-        url: $('#initiatives-map').data('source'),
-        dataType: "json",
-
-        success: function (data) {
-
-            // Loop initiatives and set marker for each venue
-            $.each( data, function(initiativeKey, initiative) {
-                $.each(initiative.venues, function(venueKey, venue) {
-                    // Set marker and infobox
-                    var marker = L.marker(
-                        [venue.locLatitude, venue.locLongitude],
-                        {icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'red'})}
-                    )
-                    .bindPopup(initiative.infobox, {
-                        maxWidth: 699
-                    })
-                    .addTo(map);
-
-                    // Open popup (infobox) if marker matches initiative passed in url
-                    // If an initiative has multiple venues, all popups are displayed
-                    if (initiativeUuid && initiativeKey == initiativeUuid) {
-                        marker.openPopup();
-                    }
-
-                });
-            });
-        },
-
-        error: function(jqXHR, textStatus) {
-            console.log("Request failed: " + textStatus);
-            console.log("Source: " + $('#initiatives-map').data('source'));
+        function resizeMap() {
+            var computedHeight = $(window).height() - $('.navbar').height() - $('.footer').height(); // footer & navbar are both 50px in height
+            $('#initiatives-map').height(computedHeight);
         }
-    });
 
+        /* set map view to zürich */
+        map.setView([47.38, 8.60], 11);
+
+        /* load tiles from open street map */
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Maps data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+
+        // Set the map's height on first pageload
+        resizeMap();
+        map.invalidateSize();
+
+        // And resize map also when changing the window size
+        $(window).resize(function() {
+            resizeMap();
+        });
+
+        // Get initiatives data and set markers
+        $.ajax({
+            url: $('#initiatives-map').data('source'),
+            dataType: "json",
+
+            success: function (data) {
+
+                // Loop initiatives and set marker for each venue
+                $.each( data, function(initiativeKey, initiative) {
+                    $.each(initiative.venues, function(venueKey, venue) {
+
+                        // Set marker and infobox
+                        var marker = L.marker(
+                            [venue.locLatitude, venue.locLongitude],
+                            {icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'red'})}
+                        )
+                        .bindPopup(initiative.infobox, {
+                            maxWidth: 699
+                        })
+                        .addTo(map);
+
+                        // Open popup (infobox) if marker matches initiative passed in url
+                        // If an initiative has multiple venues, all popups are displayed
+                        if (initiativeUuid && initiativeKey == initiativeUuid) {
+                            marker.openPopup();
+                        }
+
+                    });
+                });
+            },
+
+            error: function(jqXHR, textStatus) {
+                console.log("Request failed: " + textStatus);
+                console.log("Source: " + $('#initiatives-map').data('source'));
+            }
+        });
+    }
 });

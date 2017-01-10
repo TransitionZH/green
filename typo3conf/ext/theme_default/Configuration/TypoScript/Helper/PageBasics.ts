@@ -51,7 +51,7 @@ page = PAGE
 page {
     bodyTag = <body>
     typeNum = 0
-    shortcutIcon = {$page.includePath.icons}favicon.ico
+    shortcutIcon = {$page.theme.favicon}
 
     headerData {
         // Flip ahead browsing for IE10/11

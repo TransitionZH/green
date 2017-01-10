@@ -8368,7 +8368,7 @@ html {
 .initiatives-grid > .initiatives-grid-initiative:nth-last-child(3) > .initiative,
 .initiatives-grid > .initiatives-grid-initiative:nth-last-child(4) > .initiative,
 .initiatives-grid > .initiatives-grid-initiative:nth-last-child(5) > .initiative {
-  bottom: 150px;
+  bottom: 30px;
   top: auto; }
 
 .initiatives-grid-initiative > img {

@@ -61,20 +61,21 @@ class SearchService implements \TYPO3\CMS\Core\SingletonInterface
      */
     public function findByQuery(array $items, $query, $minMatchingFactor = 0) 
     {
-        $result = [];
         // replace all non-alphanumeric characters by space, remove multiple spaces and and split by space
-        $query = $this->cleanupSearchQuery(strtolower($query));
+        $query = $this->cleanupSearchQuery(mb_strtolower($query, 'UTF-8'));
         $queryLength = strlen(str_replace(' ', '', $query));
         $queryParts = explode(' ', $query);
         
+        $result = [];
         foreach ($items as $item) {
             // Create searchable string for initiative
             if (get_class($item) == 'TransitionTeam\\TransitionTools\\Domain\\Model\\Initiative') {
-                $haystack = strtolower(
+                $haystack = mb_strtolower(
                         $item->getName().';'.
                         $item->getName().';'. // Add double = counts double
                         $item->getClaim().';'.
-                        $item->getDescription().';');
+                        $item->getDescription().';',
+                        'UTF-8');
             }
             
             // Calc matching factor

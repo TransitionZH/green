@@ -1,7 +1,7 @@
 $initiatives-grid-initiative-padding-top: 30px;
 $initiatives-grid-initiative-padding-horizontal: $grid-gutter-width / 2;
 $initiatives-grid-initiative-height: 150px;
-$initiatives-grid-initiative-hover-area: $initiatives-grid-initiative-height / 2;
+$initiatives-grid-initiative-hover-area: $initiatives-grid-initiative-height;
 
 .initiatives-grid {
     @include make-row;
@@ -19,7 +19,7 @@ $initiatives-grid-initiative-hover-area: $initiatives-grid-initiative-height / 2
     left: $initiatives-grid-initiative-padding-horizontal;
     position: absolute;
     top: $initiatives-grid-initiative-hover-area;
-    width: 500px;
+    width: 700px;
     z-index: $zindex-initiatives-box;
 }
 
@@ -31,7 +31,11 @@ $initiatives-grid-initiative-hover-area: $initiatives-grid-initiative-height / 2
     }
 }
 
-.initiatives-grid > .initiatives-grid-initiative:last-child > .initiative {
+.initiatives-grid > .initiatives-grid-initiative:last-child > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(2) > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(3) > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(4) > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(5) > .initiative {
     bottom: $initiatives-grid-initiative-height;
     top: auto;
 }
@@ -39,4 +43,6 @@ $initiatives-grid-initiative-hover-area: $initiatives-grid-initiative-height / 2
 .initiatives-grid-initiative > a > img {
     display: block;
     margin: 0 auto;
+	max-height: 100%;
+	width: auto;
 }

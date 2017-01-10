@@ -8276,7 +8276,9 @@ html {
   height: 100%; }
 
 .initiative-left > img {
-  max-width: 100%; }
+  margin: 0 auto;
+  max-height: 100%;
+  width: auto !important; }
 
 .initiative-body {
   position: relative;
@@ -8301,7 +8303,7 @@ html {
 .initiative-links > .btn-link {
   border-radius: 4px;
   border-width: 0;
-  color: #fff;
+  color: #fff !important;
   padding: 5px;
   transition-duration: .3s;
   transition-property: background-color, box-shadow; }
@@ -8309,7 +8311,7 @@ html {
   .initiative-links > .btn-link:hover {
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    color: #25cc37;
+    color: #25cc37 !important;
     text-decoration: none; }
 
 .initiative-show-more {
@@ -8347,8 +8349,8 @@ html {
   display: none;
   left: 15px;
   position: absolute;
-  top: 75px;
-  width: 500px;
+  top: 150px;
+  width: 700px;
   z-index: 1029; }
 
 @media only screen and (min-width: 768px) {
@@ -8357,13 +8359,19 @@ html {
     left: auto;
     right: 15px; } }
 
-.initiatives-grid > .initiatives-grid-initiative:last-child > .initiative {
+.initiatives-grid > .initiatives-grid-initiative:last-child > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(2) > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(3) > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(4) > .initiative,
+.initiatives-grid > .initiatives-grid-initiative:nth-last-child(5) > .initiative {
   bottom: 150px;
   top: auto; }
 
 .initiatives-grid-initiative > a > img {
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-height: 100%;
+  width: auto; }
 
 .initiative-list-heading {
   margin-top: 0; }

@@ -99,17 +99,10 @@ $(document).ready(function() {
 		}
 	);
 
-	$('.initiatives-grid-initiative > .initiative').click(function() {
-		$(this).hide(0);
+	$('.initiatives-grid-initiative').click(function() {
+		$('.initiative').hide(0);
+		$(this).children('.initiative').toggle(0);
 	});
-
-	$('.initiatives-grid-initiative').hover(
-		function() {
-			$(this).children('.initiative').show(0);
-		}, function() {
-			$(this).children('.initiative').hide(0);
-		}
-	);
 });
 
 //// Tbd: Encode query of search form

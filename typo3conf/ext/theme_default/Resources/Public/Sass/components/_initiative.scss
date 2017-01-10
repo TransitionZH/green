@@ -4,6 +4,7 @@ $initiative-left-columns: 3;
 
 .initiative {
     @include clearfix;
+	background-color: $gray-light;
     border-radius: 4px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     color: $initiative-text-color;
@@ -36,7 +37,10 @@ $initiative-left-columns: 3;
 }
 
 .initiative-left > img {
-    max-width: 100%;
+	margin: 0 auto;
+	max-height: 100%;
+	max-width: 100%;
+    width: auto !important;
 }
 
 .initiative-body {
@@ -60,7 +64,7 @@ $initiative-left-columns: 3;
 .initiative-links > .btn-link {
     border-radius: 4px;
     border-width: 0;
-    color: $initiative-text-color;
+    color: $initiative-text-color !important;
     padding: 5px;
     transition-duration: .3s;
     transition-property: #{'background-color, box-shadow'};
@@ -68,7 +72,7 @@ $initiative-left-columns: 3;
     &:hover {
         background-color: #fff;
         box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-        color: $brand-primary;
+        color: $brand-primary !important;
         text-decoration: none;
     }
 

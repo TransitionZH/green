@@ -19,7 +19,7 @@ function getUrlParameter(sParam) {
 
 $(document).ready(function(){
     /* create leaflet map object */
-    if ($('initiatives-map').length > 0) {
+    if ($('#initiatives-map').length > 0) {
         var map = L.map('initiatives-map');
         var initiativeUuid = getUrlParameter('tx_transitiontools_initiatives[initiative]');
 

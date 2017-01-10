@@ -8227,61 +8227,99 @@ html {
   color: #355bc9; }
 
 .initiative {
-  background-color: #b80606;
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   color: #fff;
   max-width: 700px;
   padding: 10px;
   position: relative; }
+  .initiative:before, .initiative:after {
+    content: " ";
+    display: table; }
+  .initiative:after {
+    clear: both; }
 
-.initiative-food {
+.initiatives-list > .initiative {
+  height: 150px; }
+
+.initiative.category-undefined {
+  background-color: #777777; }
+
+.initiative.category-food {
   background-color: #c937b7; }
 
-.initiative-living-mobility {
+.initiative.category-living-mobility {
   background-color: #c96836; }
 
-.initiative-shopping {
+.initiative.category-shopping {
   background-color: #36b7c9; }
 
-.initiative-economy {
+.initiative.category-economy {
   background-color: #c93736; }
 
-.initiative-events-media-networks {
+.initiative.category-events-media-networks {
   background-color: #b7c935; }
 
-.initiative-energy-environment-waste {
+.initiative.category-energy-environment-waste {
   background-color: #355bc9; }
 
+.initiative + .initiative {
+  margin-top: 15px; }
+
+.initiative-left {
+  position: relative;
+  float: left;
+  width: 25%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%; }
+
+.initiative-left > img {
+  max-width: 100%; }
+
 .initiative-body {
-  padding-bottom: 20px; }
+  position: relative;
+  float: left;
+  width: 75%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 40px; }
+
+.initiative-heading {
+  margin: 0 0 5px; }
 
 .initiative-links {
-  bottom: 10px;
+  bottom: 5px;
   position: absolute;
-  right: 10px; }
+  right: 0; }
 
-.initiative-links > a {
+.initiative-links > a,
+.initiative-links > .btn-link {
   border-radius: 4px;
+  border-width: 0;
   color: #fff;
   padding: 5px;
   transition-duration: .3s;
   transition-property: background-color, box-shadow; }
-  .initiative-links > a:hover {
+  .initiative-links > a:hover,
+  .initiative-links > .btn-link:hover {
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     color: #25cc37;
     text-decoration: none; }
-  .initiative-links > a:nth-of-type(1):nth-last-child(2):hover {
-    border-right: 1px solid #fff; }
-    .initiative-links > a:nth-of-type(1):nth-last-child(2):hover + a {
-      border-left: 0; }
 
-.initiative-links > a + a {
-  border-left: 1px solid #fff;
-  border-radius: 0 4px 4px 0; }
-  .initiative-links > a + a:hover {
-    border-radius: 4px; }
+.initiative-show-more {
+  display: none; }
+
+.initiative-body.is-truncated .initiative-links {
+  bottom: 0; }
+
+.initiative-body.is-truncated .initiative-show-more {
+  display: inline-block; }
 
 .initiatives-grid {
   margin-left: -15px;
@@ -8298,13 +8336,32 @@ html {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  height: 150px;
   padding-top: 30px; }
   @media (min-width: 768px) {
     .initiatives-grid-initiative {
       float: left;
       width: 25%; } }
 
-.initiatives-grid-initiative > img {
+.initiatives-grid-initiative > .initiative {
+  display: none;
+  left: 15px;
+  position: absolute;
+  top: 75px;
+  width: 500px;
+  z-index: 1029; }
+
+@media only screen and (min-width: 768px) {
+  .initiatives-grid > .initiatives-grid-initiative:nth-child(4n-1) > .initiative,
+  .initiatives-grid > .initiatives-grid-initiative:nth-child(4n) > .initiative {
+    left: auto;
+    right: 15px; } }
+
+.initiatives-grid > .initiatives-grid-initiative:last-child > .initiative {
+  bottom: 150px;
+  top: auto; }
+
+.initiatives-grid-initiative > a > img {
   display: block;
   margin: 0 auto; }
 
@@ -8329,11 +8386,24 @@ html {
     color: #25cc37;
     text-decoration: none; }
 
+.leaflet-container a.leaflet-popup-close-button {
+  color: #fff !important;
+  z-index: 1020; }
+
+.leaflet-popup-content-wrapper {
+  padding: 0 !important; }
+
+.leaflet-popup-tip {
+  background-color: rgba(255, 255, 255, 0.6) !important; }
+
+.leaflet-popup-content {
+  margin: 0 !important; }
+
 footer {
   box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
   height: 50px;
   position: relative;
-  z-index: 999; }
+  z-index: 1028; }
 
 .footer-address {
   box-sizing: border-box;

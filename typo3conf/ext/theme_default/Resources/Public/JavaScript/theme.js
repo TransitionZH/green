@@ -1,6 +1,15 @@
 
 $(document).ready(function() {
 
+	$('.initiative-body').dotdotdot({
+		after: '.initiative-links'
+	});
+
+	$('.initiative-show-more').click(function() {
+		$(this).closest('.initiative').height('auto');
+		$(this).closest('.initiative-body').trigger('destroy.dot');
+	});
+
   //
   // cookie bar
   // -------------------------------------------- //
@@ -59,7 +68,6 @@ $(document).ready(function() {
 	var posHide = 20;
 	$(window).bind( 'scroll', function() {
 		posY = $(window).scrollTop();
-    console.log(posHide, posY);
 		if(posY>posHide && !$('header#pageHeader').hasClass('fixedHeader')) {
 			$('header#pageHeader, section#pageMedia').addClass('fixedHeader');
 		}
@@ -91,6 +99,17 @@ $(document).ready(function() {
 		}
 	);
 
+	$('.initiatives-grid-initiative > .initiative').click(function() {
+		$(this).hide(0);
+	});
+
+	$('.initiatives-grid-initiative').hover(
+		function() {
+			$(this).children('.initiative').show(0);
+		}, function() {
+			$(this).children('.initiative').hide(0);
+		}
+	);
 });
 
 //// Tbd: Encode query of search form

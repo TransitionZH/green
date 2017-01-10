@@ -1,60 +1,87 @@
 $initiative-text-color: #fff;
 $initiative-padding: 10px;
+$initiative-left-columns: 3;
 
 .initiative {
-	background-color: #b80606;
-	border-radius: 4px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    @include clearfix;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     color: $initiative-text-color;
     max-width: 700px;
     padding: $initiative-padding;
     position: relative;
 }
 
+.initiatives-list > .initiative {
+    height: 150px;
+}
+
+.initiative.category-undefined {
+    background-color: $gray-light;
+}
+
 @each $category, $category-color in $category-colors {
-	.initiative-#{$category} {
-		background-color: $category-color;
-	}
+    .initiative.category-#{$category} {
+        background-color: $category-color;
+    }
+}
+
+.initiative + .initiative {
+    margin-top: 15px;
+}
+
+.initiative-left {
+    @include make-xs-column($initiative-left-columns);
+    height: 100%;
+}
+
+.initiative-left > img {
+    max-width: 100%;
 }
 
 .initiative-body {
-	padding-bottom: 20px;
+    @include make-xs-column(12 - $initiative-left-columns);
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.initiative-heading {
+    margin: 0 0 5px;
 }
 
 .initiative-links {
-	bottom: $initiative-padding;
-	position: absolute;
-	right: $initiative-padding;
+    bottom: $initiative-padding / 2;
+    position: absolute;
+    right: 0;
 }
 
-.initiative-links > a {
-	border-radius: 4px;
+.initiative-links > a,
+.initiative-links > .btn-link {
+    border-radius: 4px;
+    border-width: 0;
     color: $initiative-text-color;
-	padding: 5px;
-	transition-duration: .3s;
-	transition-property: #{'background-color, box-shadow'};
+    padding: 5px;
+    transition-duration: .3s;
+    transition-property: #{'background-color, box-shadow'};
 
     &:hover {
-		background-color: #fff;
-		box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+        background-color: #fff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
         color: $brand-primary;
         text-decoration: none;
     }
 
-	&:nth-of-type(1):nth-last-child(2):hover {
-		border-right: 1px solid $initiative-text-color;
-
-		& + a {
-			border-left: 0;
-		}
-	}
 }
 
-.initiative-links > a + a {
-    border-left: 1px solid $initiative-text-color;
-	border-radius: 0 4px 4px 0;
+.initiative-show-more {
+    display: none;
+}
 
-	&:hover {
-		border-radius: 4px;
-	}
+.initiative-body.is-truncated .initiative-links {
+    bottom: 0;
+}
+
+.initiative-body.is-truncated .initiative-show-more {
+    display: inline-block;
 }

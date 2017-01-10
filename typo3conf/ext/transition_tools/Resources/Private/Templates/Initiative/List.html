@@ -2,36 +2,37 @@
 <f:layout name="Default" />
 
 <f:section name="main">
+    <div class="initiatives-list">
+        <f:flashMessages />
 
-    <f:flashMessages />
+        <f:if condition="{category}">
+            <h4 class="initiative-list-heading">
+                <f:image
+                    image="{topCategory.image}"
+                    alt="{topCategory.image.originalResource.title}"
+                    treatIdAsReference="TRUE"
+                />
+                <f:if condition="{category.parentCategory}">
+                    <span class="initiative-list-parent-category">
+                        <f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:topCategory.uid, name:topCategory.name}}" noCacheHash="1">
+                            {category.parentCategory.title}
+                        </f:link.page>
+                    </span>
+                </f:if>
+                {category.title}
+            </h4>
+        </f:if>
 
-    <f:if condition="{category}">
-        <h4 class="initiative-list-heading">
-			<f:image
-                image="{topCategory.image}"
-                alt="{topCategory.image.originalResource.title}"
-                treatIdAsReference="TRUE"
-            />
-			<f:if condition="{category.parentCategory}">
-				<span class="initiative-list-parent-category">
-					<f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:topCategory.uid, name:topCategory.name}}" noCacheHash="1">
-						{category.parentCategory.title}
-					</f:link.page>
-				</span>
-			</f:if>
-            {category.title}
-        </h4>
-    </f:if>
-
-    <f:if condition="{initiatives}">
-        <f:then>
-            <f:for each="{initiatives}" as="initiative">
-                <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
-            </f:for>
-        </f:then>
-        <f:else>
-            <p><f:translate key="tx_transitiontools_templates.noInitiativesFound" /></p>
-        </f:else>
-    </f:if>
-
+        <f:if condition="{initiatives}">
+            <f:then>
+                <f:for each="{initiatives}" as="initiative">
+                    <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
+                </f:for>
+            </f:then>
+            <f:else>
+                <p><f:translate key="tx_transitiontools_templates.noInitiativesFound" /></p>
+            </f:else>
+        </f:if>
+    </div>
+    
 </f:section>

@@ -303,7 +303,7 @@ page {
             pageClass < lib.page.class
             sysLanguage = TEXT
             sysLanguage.data = TSFE:sys_language_uid
-            
+
         }
 
         stdWrap.replacement {
@@ -415,7 +415,7 @@ page {
         modernizr.forceOnTop = 1
         modernizr.async = 1
         wpfix = EXT:theme_default/Resources/Public/JavaScript/windowsphone-viewportfix.min.js
-        wpfix.async = 1        
+        wpfix.async = 1
     }
 
     includeJSFooterlibs {
@@ -430,6 +430,8 @@ page {
       colorbox = EXT:theme_default/Resources/Public/JavaScript/Libs/jquery.colorbox.js
       # Make height of set of elements equal - http://brm.io/jquery-match-height/
       matchheight = EXT:theme_default/Resources/Public/JavaScript/Libs/jquery.matchheight.min.js
+	  # DotDotDot - http://dotdotdot.frebsite.nl/
+	  dotdotdot = EXT:theme_default/Resources/Public/JavaScript/Libs/jquery.dotdotdot.min.js
       # Slick slider
 #      slick = EXT:theme_default/Resources/Public/JavaScript/Libs/slick.min.js
       # Add swipe support for boostrap components - http://hammerjs.github.io/

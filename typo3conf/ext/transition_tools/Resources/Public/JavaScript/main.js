@@ -60,10 +60,12 @@ $(document).ready(function(){
 
                         // Set marker and infobox
                         var marker = L.marker(
-                            [venue.locLatitude, venue.locLongitude], 
+                            [venue.locLatitude, venue.locLongitude],
                             {icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'red'})}
                         )
-                        .bindPopup(initiative.infobox)
+                        .bindPopup(initiative.infobox, {
+                            maxWidth: 699
+                        })
                         .addTo(map);
 
                         // Open popup (infobox) if marker matches initiative passed in url

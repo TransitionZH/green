@@ -85,9 +85,11 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         // Set layout and partial root path
         $tempView->setLayoutRootPaths($extbaseFrameworkConfiguration['view']['layoutRootPaths']);
         $tempView->setPartialRootPaths($extbaseFrameworkConfiguration['view']['partialRootPaths']);
+        // Controller context needed to find language files
         $tempView->setControllerContext($this->controllerContext);
-        
+        // Assign the data
         $tempView->assignMultiple($variables);
+        // Do the magic
         $tempHtml = $tempView->render();
 
         return $tempHtml;

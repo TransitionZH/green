@@ -25,3 +25,6 @@
 .c-category-list__item:hover > ul {
     display: block
 }
+.initiative-category:last-child .category-separator {
+    display: none;
+}

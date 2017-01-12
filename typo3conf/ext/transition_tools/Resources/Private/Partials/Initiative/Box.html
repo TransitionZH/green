@@ -5,6 +5,17 @@
         <f:render partial="Initiative/Logo" arguments="{initiative:initiative}" />
     </div>
     <div class="initiative-body">
+        <!-- Initiative top categories -->
+        <div class="initiative-categories">
+            <f:for each="{initiative.categories}" as="category">
+                <f:if condition="{category.isTopCategory}">
+                    <div class="initiative-category">
+                        <f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:category.uid, name:category.name}}" noCacheHash="1">{category.title}</f:link.page><span class="category-separator">, </span>
+                    </div>
+                </f:if>
+            </f:for>
+        </div>
+        
         <h4 class="initiative-heading">{initiative.name}</h4>
         <f:if condition="{initiative.claim}">
             <p>{initiative.claim}</p>

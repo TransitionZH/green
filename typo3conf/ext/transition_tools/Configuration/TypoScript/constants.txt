@@ -12,6 +12,12 @@ plugin.tx_transitiontools_initiatives {
 		# cat=plugin.tx_transitiontools_initiatives//a; type=string; label=Default storage PID
 		storagePid =
 	}
+    #-- tbd: reactivate flexform and get settings in InitiativeController::assignInitiatives() like http://blog.wolf-whv.de/flexform-daten-eines-plugins-ajax-abfragen
+    settings {
+        initiativeMapPid = 3
+        initiativeListPid = 4
+        initiativeGridPid = 5
+    }
 }
 
 plugin.tx_transitiontools_events {

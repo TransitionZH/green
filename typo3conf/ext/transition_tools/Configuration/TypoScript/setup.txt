@@ -8,6 +8,11 @@ plugin.tx_transitiontools_initiatives {
 	persistence {
 		storagePid = {$plugin.tx_transitiontools_initiatives.persistence.storagePid}
 	}
+    settings {
+        initiativeMapPid = {$plugin.tx_transitiontools_initiatives.settings.initiativeMapPid}
+        initiativeListPid = {$plugin.tx_transitiontools_initiatives.settings.initiativeListPid}
+        initiativeGridPid = {$plugin.tx_transitiontools_initiatives.settings.initiativeGridPid}
+    }
 }
 
 plugin.tx_transitiontools_events {
@@ -116,4 +121,6 @@ json_view {
 
 	10 = COA
     10 < tt_content.list.20.transitiontools_initiatives
+    settings < plugin.tx_transitiontools_initiatives.settings
+
 }

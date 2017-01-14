@@ -6,15 +6,15 @@
     </div>
     <div class="initiative-body">
         <!-- Initiative top categories -->
-        <div class="initiative-categories">
+        <ul class="initiative-categories">
             <f:for each="{initiative.categories}" as="category">
                 <f:if condition="{category.isTopCategory}">
-                    <div class="initiative-category">
+                    <li class="initiative-category">
                         <f:link.page pageUid="{settings.initiativeListPid}" additionalParams="{category:{uid:category.uid, name:category.name}}" noCacheHash="1">{category.title}</f:link.page><span class="category-separator">, </span>
-                    </div>
+                    </li>
                 </f:if>
             </f:for>
-        </div>
+        </ul>
         
         <h4 class="initiative-heading">{initiative.name}</h4>
         <f:if condition="{initiative.claim}">
@@ -42,5 +42,4 @@
             </f:if>
         </div>
     </div>
-    <!-- Tbd: List linked categories -->
 </div>

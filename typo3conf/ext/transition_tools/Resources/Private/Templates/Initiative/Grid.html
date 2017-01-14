@@ -25,7 +25,7 @@
                         <!-- <f:link.typolink parameter="{initiative.webLink}" additionalParams="{referer:'{f:uri.page}'}" target="_blank"> -->
                             <f:render partial="Initiative/Logo" arguments="{initiative:initiative}" />
                         <!-- </f:link.typolink> -->
-                        <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory}" />
+                        <f:render partial="Initiative/Box" arguments="{initiative:initiative, topCategory:topCategory, settings:'{initiativeListPid:settings.initiativeGridPid}'}" />
                     </div>
 
                 </f:for>

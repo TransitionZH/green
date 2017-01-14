@@ -28,3 +28,9 @@
 .initiative-category:last-child .category-separator {
     display: none;
 }
+ul.initiative-categories {
+    padding-left: 0;
+}
+li.initiative-category {
+    list-style: none;
+}

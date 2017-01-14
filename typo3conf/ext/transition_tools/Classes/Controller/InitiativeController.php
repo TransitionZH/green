@@ -137,7 +137,8 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             foreach ($initiatives as $initiative) {
                 
                 // render infobox
-                $infoboxBody = $this->getTemplateHtml("Initiative", "Box", ["initiative" => $initiative]);
+                // tbd: reactivate flexform and get settings like http://blog.wolf-whv.de/flexform-daten-eines-plugins-ajax-abfragen
+                $infoboxBody = $this->getTemplateHtml("Initiative", "Box", ["initiative" => $initiative, 'settings' => $this->settings]);
                 
                 // get venues array
                 $venuesArray = [];
@@ -260,7 +261,6 @@ class InitiativeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      */
     public function mapDataAction(\TransitionTeam\TransitionTools\Domain\Model\Category $category = null)
     {
-//        $this->assignInitiatives($category);
         $this->assignInitiatives($category, 'json');
     }
     
